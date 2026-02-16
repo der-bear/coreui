@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CoreUI - All Components Boilerplate</title>
   <link rel="stylesheet" href="node_modules/@coreui/coreui/dist/css/coreui.min.css">
+  <link rel="stylesheet" href="src/css/combobox.css">
   <style>
     .component-section {
       padding: 2rem 0;
@@ -63,6 +64,7 @@
           <li class="nav-item"><a class="nav-link" href="#input-group">Input Group</a></li>
         </ul>
       </li>
+      <li class="nav-item"><a class="nav-link" href="#combobox">Combobox</a></li>
       <li class="nav-item"><a class="nav-link" href="#dropdowns">Dropdowns</a></li>
       <li class="nav-item"><a class="nav-link" href="#list-group">List Group</a></li>
       <li class="nav-item"><a class="nav-link" href="#modal">Modal</a></li>
@@ -425,6 +427,66 @@
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
           </button>
+        </div>
+      </section>
+
+      <!-- ========== COMBOBOX (Custom Component) ========== -->
+      <section id="combobox" class="component-section">
+        <h2>Combobox (Custom Component)</h2>
+        <p class="text-body-secondary mb-4">A searchable select component built following CoreUI's architecture — supports single/multi select, keyboard navigation, filtering, tags, and full dark-mode theming via <code>--cui-*</code> CSS custom properties.</p>
+
+        <div class="row g-4">
+          <!-- Single Select -->
+          <div class="col-md-6">
+            <label class="form-label fw-semibold">Single Select</label>
+            <div id="comboboxSingle"></div>
+          </div>
+
+          <!-- Multi Select -->
+          <div class="col-md-6">
+            <label class="form-label fw-semibold">Multi Select</label>
+            <div id="comboboxMulti"></div>
+          </div>
+
+          <!-- Searchable with groups -->
+          <div class="col-md-6">
+            <label class="form-label fw-semibold">Searchable (type to filter)</label>
+            <div id="comboboxSearch"></div>
+          </div>
+
+          <!-- Disabled -->
+          <div class="col-md-6">
+            <label class="form-label fw-semibold">Disabled</label>
+            <div id="comboboxDisabled"></div>
+          </div>
+
+          <!-- Small size -->
+          <div class="col-md-4">
+            <label class="form-label fw-semibold">Small</label>
+            <div id="comboboxSm" class="combobox-sm"></div>
+          </div>
+
+          <!-- Default size -->
+          <div class="col-md-4">
+            <label class="form-label fw-semibold">Default</label>
+            <div id="comboboxDefault"></div>
+          </div>
+
+          <!-- Large size -->
+          <div class="col-md-4">
+            <label class="form-label fw-semibold">Large</label>
+            <div id="comboboxLg" class="combobox-lg"></div>
+          </div>
+
+          <!-- Validation -->
+          <div class="col-md-6">
+            <label class="form-label fw-semibold">Valid State</label>
+            <div id="comboboxValid"></div>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label fw-semibold">Invalid State</label>
+            <div id="comboboxInvalid"></div>
+          </div>
         </div>
       </section>
 
@@ -1049,6 +1111,7 @@
 
 <!-- CoreUI Bundle (includes Popper) -->
 <script src="node_modules/@coreui/coreui/dist/js/coreui.bundle.min.js"></script>
+<script src="src/js/combobox.js"></script>
 <script>
   // Initialize all tooltips
   document.querySelectorAll('[data-coreui-toggle="tooltip"]').forEach(function (el) {
@@ -1065,6 +1128,97 @@
     var toast = new coreui.Toast(document.getElementById('liveToast'));
     toast.show();
   });
+
+  // Combobox demos
+  (function () {
+    var Combobox = coreui.Combobox;
+
+    var fruits = [
+      { value: 'apple', label: 'Apple' },
+      { value: 'banana', label: 'Banana' },
+      { value: 'cherry', label: 'Cherry' },
+      { value: 'dragonfruit', label: 'Dragon Fruit' },
+      { value: 'elderberry', label: 'Elderberry' },
+      { value: 'fig', label: 'Fig' },
+      { value: 'grape', label: 'Grape' },
+      { value: 'honeydew', label: 'Honeydew' },
+    ];
+
+    var countries = [
+      { value: 'us', label: 'United States' },
+      { value: 'uk', label: 'United Kingdom' },
+      { value: 'ca', label: 'Canada' },
+      { value: 'au', label: 'Australia' },
+      { value: 'de', label: 'Germany' },
+      { value: 'fr', label: 'France' },
+      { value: 'jp', label: 'Japan' },
+      { value: 'br', label: 'Brazil' },
+      { value: 'in', label: 'India' },
+      { value: 'mx', label: 'Mexico' },
+    ];
+
+    // Single select
+    new Combobox(document.getElementById('comboboxSingle'), {
+      options: fruits,
+      placeholder: 'Pick a fruit...',
+    });
+
+    // Multi select
+    new Combobox(document.getElementById('comboboxMulti'), {
+      options: fruits,
+      multiple: true,
+      placeholder: 'Pick multiple fruits...',
+      closeOnSelect: false,
+    });
+
+    // Searchable
+    new Combobox(document.getElementById('comboboxSearch'), {
+      options: countries,
+      placeholder: 'Search countries...',
+      searchable: true,
+    });
+
+    // Disabled
+    var disabledCb = new Combobox(document.getElementById('comboboxDisabled'), {
+      options: fruits,
+      placeholder: 'Disabled combobox',
+      disabled: true,
+    });
+    disabledCb.value = 'cherry';
+
+    // Small
+    new Combobox(document.getElementById('comboboxSm'), {
+      options: fruits,
+      placeholder: 'Small size...',
+    });
+
+    // Default (size demo)
+    new Combobox(document.getElementById('comboboxDefault'), {
+      options: fruits,
+      placeholder: 'Default size...',
+    });
+
+    // Large
+    new Combobox(document.getElementById('comboboxLg'), {
+      options: fruits,
+      placeholder: 'Large size...',
+    });
+
+    // Valid state
+    var validCb = new Combobox(document.getElementById('comboboxValid'), {
+      options: fruits,
+      placeholder: 'Valid combobox...',
+    });
+    validCb.value = 'apple';
+    document.getElementById('comboboxValid').classList.add('is-valid');
+
+    // Invalid state
+    new Combobox(document.getElementById('comboboxInvalid'), {
+      options: fruits,
+      placeholder: 'Select a fruit...',
+    });
+    document.getElementById('comboboxInvalid').classList.add('is-invalid');
+  })();
 
   // Theme switcher
   (function () {

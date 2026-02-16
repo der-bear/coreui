@@ -1,0 +1,1105 @@
+<!DOCTYPE html>
+<html lang="en" data-coreui-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CoreUI - All Components Boilerplate</title>
+  <link rel="stylesheet" href="node_modules/@coreui/coreui/dist/css/coreui.min.css">
+  <style>
+    .component-section {
+      padding: 2rem 0;
+      border-bottom: 1px solid var(--cui-border-color);
+    }
+    .component-section h2 {
+      margin-bottom: 1.5rem;
+      color: var(--cui-primary);
+    }
+    .sidebar {
+      --cui-sidebar-width: 256px;
+    }
+    body {
+      min-height: 100vh;
+    }
+    .wrapper {
+      display: flex;
+      min-height: 100vh;
+    }
+    .body-content {
+      flex: 1;
+      min-width: 0;
+    }
+  </style>
+</head>
+<body>
+
+<div class="wrapper">
+
+  <!-- ========== SIDEBAR ========== -->
+  <div class="sidebar sidebar-dark sidebar-fixed" id="sidebar">
+    <div class="sidebar-header border-bottom">
+      <div class="sidebar-brand d-none d-md-flex">
+        <strong class="text-white fs-5">CoreUI Demo</strong>
+      </div>
+    </div>
+    <ul class="sidebar-nav" data-coreui="navigation">
+      <li class="nav-title">Navigation</li>
+      <li class="nav-item"><a class="nav-link" href="#alerts">Alerts</a></li>
+      <li class="nav-item"><a class="nav-link" href="#accordion">Accordion</a></li>
+      <li class="nav-item"><a class="nav-link" href="#avatars">Avatars</a></li>
+      <li class="nav-item"><a class="nav-link" href="#badges">Badges</a></li>
+      <li class="nav-item"><a class="nav-link" href="#breadcrumb">Breadcrumb</a></li>
+      <li class="nav-item"><a class="nav-link" href="#buttons">Buttons</a></li>
+      <li class="nav-item"><a class="nav-link" href="#button-group">Button Group</a></li>
+      <li class="nav-item"><a class="nav-link" href="#callout">Callout</a></li>
+      <li class="nav-item"><a class="nav-link" href="#cards">Cards</a></li>
+      <li class="nav-item"><a class="nav-link" href="#carousel">Carousel</a></li>
+      <li class="nav-group">
+        <a class="nav-link nav-group-toggle" href="#">Forms</a>
+        <ul class="nav-group-items">
+          <li class="nav-item"><a class="nav-link" href="#forms">Form Controls</a></li>
+          <li class="nav-item"><a class="nav-link" href="#checks-radios">Checks & Radios</a></li>
+          <li class="nav-item"><a class="nav-link" href="#range">Range</a></li>
+          <li class="nav-item"><a class="nav-link" href="#select">Select</a></li>
+          <li class="nav-item"><a class="nav-link" href="#input-group">Input Group</a></li>
+        </ul>
+      </li>
+      <li class="nav-item"><a class="nav-link" href="#dropdowns">Dropdowns</a></li>
+      <li class="nav-item"><a class="nav-link" href="#list-group">List Group</a></li>
+      <li class="nav-item"><a class="nav-link" href="#modal">Modal</a></li>
+      <li class="nav-item"><a class="nav-link" href="#navs-tabs">Navs & Tabs</a></li>
+      <li class="nav-item"><a class="nav-link" href="#offcanvas">Offcanvas</a></li>
+      <li class="nav-item"><a class="nav-link" href="#pagination">Pagination</a></li>
+      <li class="nav-item"><a class="nav-link" href="#placeholders">Placeholders</a></li>
+      <li class="nav-item"><a class="nav-link" href="#progress">Progress</a></li>
+      <li class="nav-item"><a class="nav-link" href="#spinners">Spinners</a></li>
+      <li class="nav-item"><a class="nav-link" href="#tables">Tables</a></li>
+      <li class="nav-item"><a class="nav-link" href="#toasts">Toasts</a></li>
+      <li class="nav-item"><a class="nav-link" href="#tooltips-popovers">Tooltips & Popovers</a></li>
+      <li class="nav-item"><a class="nav-link" href="#typography">Typography</a></li>
+    </ul>
+  </div>
+
+  <!-- ========== MAIN CONTENT ========== -->
+  <div class="body-content">
+
+    <!-- HEADER -->
+    <header class="header header-sticky mb-4 p-0" style="z-index: 1029;">
+      <div class="container-fluid px-4">
+        <button class="header-toggler" type="button" onclick="document.getElementById('sidebar').classList.toggle('show')">
+          <span class="header-toggler-icon"></span>
+        </button>
+        <ul class="header-nav ms-3">
+          <li class="nav-item"><a class="nav-link" href="#">Dashboard</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Settings</a></li>
+        </ul>
+        <ul class="header-nav ms-auto">
+          <li class="nav-item">
+            <button class="btn btn-ghost-secondary nav-link" id="themeSwitcher" type="button" aria-label="Toggle theme">
+              <svg id="themeIconLight" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6m0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8M8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0m0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13m8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5M3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8m10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0m-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0m9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707M3.757 4.464a.5.5 0 0 1-.707 0L1.636 3.05a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707"/>
+              </svg>
+              <svg id="themeIconDark" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16" style="display:none;">
+                <path d="M6 .278a.77.77 0 0 1 .08.858 7.2 7.2 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277q.792-.001 1.533-.16a.79.79 0 0 1 .81.316.73.73 0 0 1-.031.893A8.35 8.35 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.75.75 0 0 1 6 .278"/>
+              </svg>
+            </button>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-coreui-toggle="dropdown">
+              Admin
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><a class="dropdown-item" href="#">Profile</a></li>
+              <li><a class="dropdown-item" href="#">Settings</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Logout</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <!-- Sub-header / Breadcrumb -->
+      <div class="header-divider"></div>
+      <div class="container-fluid px-4">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb my-0">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">All Components</li>
+          </ol>
+        </nav>
+      </div>
+    </header>
+
+    <div class="container-lg px-4">
+      <h1 class="mb-4">CoreUI Components Boilerplate</h1>
+      <p class="text-body-secondary mb-5">A showcase of every CoreUI 5 component using vanilla JavaScript.</p>
+
+      <!-- ========== TYPOGRAPHY ========== -->
+      <section id="typography" class="component-section">
+        <h2>Typography</h2>
+        <h1>h1 - Heading</h1>
+        <h2>h2 - Heading</h2>
+        <h3>h3 - Heading</h3>
+        <h4>h4 - Heading</h4>
+        <h5>h5 - Heading</h5>
+        <h6>h6 - Heading</h6>
+        <p class="lead">This is a lead paragraph for important introductory text.</p>
+        <p>This is a regular paragraph with <mark>highlighted text</mark>, <del>deleted text</del>, <u>underlined text</u>, <strong>bold text</strong>, <em>italic text</em>, and <small>small text</small>.</p>
+        <blockquote class="blockquote">
+          <p>A well-known quote, contained in a blockquote element.</p>
+          <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+        </blockquote>
+      </section>
+
+      <!-- ========== ALERTS ========== -->
+      <section id="alerts" class="component-section">
+        <h2>Alerts</h2>
+        <div class="alert alert-primary" role="alert">A simple primary alert.</div>
+        <div class="alert alert-secondary" role="alert">A simple secondary alert.</div>
+        <div class="alert alert-success" role="alert">A simple success alert.</div>
+        <div class="alert alert-danger" role="alert">A simple danger alert.</div>
+        <div class="alert alert-warning" role="alert">A simple warning alert.</div>
+        <div class="alert alert-info" role="alert">A simple info alert.</div>
+        <div class="alert alert-light" role="alert">A simple light alert.</div>
+        <div class="alert alert-dark" role="alert">A simple dark alert.</div>
+        <div class="alert alert-primary alert-dismissible fade show" role="alert">
+          <strong>Dismissible!</strong> You can close this alert.
+          <button type="button" class="btn-close" data-coreui-dismiss="alert" aria-label="Close"></button>
+        </div>
+      </section>
+
+      <!-- ========== ACCORDION ========== -->
+      <section id="accordion" class="component-section">
+        <h2>Accordion</h2>
+        <div class="accordion" id="accordionExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button" type="button" data-coreui-toggle="collapse" data-coreui-target="#collapseOne">
+                Accordion Item #1
+              </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" data-coreui-parent="#accordionExample">
+              <div class="accordion-body">First item content. CoreUI accordion works just like Bootstrap's but with CoreUI data attributes.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-coreui-toggle="collapse" data-coreui-target="#collapseTwo">
+                Accordion Item #2
+              </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" data-coreui-parent="#accordionExample">
+              <div class="accordion-body">Second item content. Fully collapsible with smooth animation.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-coreui-toggle="collapse" data-coreui-target="#collapseThree">
+                Accordion Item #3
+              </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" data-coreui-parent="#accordionExample">
+              <div class="accordion-body">Third item content. Great for FAQ sections and collapsible panels.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== AVATARS ========== -->
+      <section id="avatars" class="component-section">
+        <h2>Avatars</h2>
+        <div class="d-flex align-items-center gap-3 mb-3">
+          <div class="avatar avatar-xs bg-primary text-white"><span class="avatar-text">XS</span></div>
+          <div class="avatar avatar-sm bg-secondary text-white"><span class="avatar-text">SM</span></div>
+          <div class="avatar bg-success text-white"><span class="avatar-text">MD</span></div>
+          <div class="avatar avatar-lg bg-warning text-white"><span class="avatar-text">LG</span></div>
+          <div class="avatar avatar-xl bg-danger text-white"><span class="avatar-text">XL</span></div>
+        </div>
+        <div class="d-flex align-items-center gap-3">
+          <div class="avatar bg-info text-white">
+            <span class="avatar-text">AB</span>
+            <span class="avatar-status bg-success"></span>
+          </div>
+          <div class="avatar bg-dark text-white">
+            <span class="avatar-text">CD</span>
+            <span class="avatar-status bg-danger"></span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== BADGES ========== -->
+      <section id="badges" class="component-section">
+        <h2>Badges</h2>
+        <div class="d-flex gap-2 flex-wrap mb-3">
+          <span class="badge bg-primary">Primary</span>
+          <span class="badge bg-secondary">Secondary</span>
+          <span class="badge bg-success">Success</span>
+          <span class="badge bg-danger">Danger</span>
+          <span class="badge bg-warning text-dark">Warning</span>
+          <span class="badge bg-info text-dark">Info</span>
+          <span class="badge bg-light text-dark">Light</span>
+          <span class="badge bg-dark">Dark</span>
+        </div>
+        <div class="d-flex gap-2 flex-wrap">
+          <span class="badge rounded-pill bg-primary">Pill Primary</span>
+          <span class="badge rounded-pill bg-success">Pill Success</span>
+          <span class="badge rounded-pill bg-danger">Pill Danger</span>
+        </div>
+      </section>
+
+      <!-- ========== BREADCRUMB ========== -->
+      <section id="breadcrumb" class="component-section">
+        <h2>Breadcrumb</h2>
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item"><a href="#">Library</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Data</li>
+          </ol>
+        </nav>
+        <nav style="--cui-breadcrumb-divider: '>';" aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item"><a href="#">Components</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Breadcrumb</li>
+          </ol>
+        </nav>
+      </section>
+
+      <!-- ========== BUTTONS ========== -->
+      <section id="buttons" class="component-section">
+        <h2>Buttons</h2>
+        <h5>Solid Buttons</h5>
+        <div class="d-flex gap-2 flex-wrap mb-3">
+          <button type="button" class="btn btn-primary">Primary</button>
+          <button type="button" class="btn btn-secondary">Secondary</button>
+          <button type="button" class="btn btn-success">Success</button>
+          <button type="button" class="btn btn-danger">Danger</button>
+          <button type="button" class="btn btn-warning">Warning</button>
+          <button type="button" class="btn btn-info">Info</button>
+          <button type="button" class="btn btn-light">Light</button>
+          <button type="button" class="btn btn-dark">Dark</button>
+          <button type="button" class="btn btn-link">Link</button>
+        </div>
+        <h5>Outline Buttons</h5>
+        <div class="d-flex gap-2 flex-wrap mb-3">
+          <button type="button" class="btn btn-outline-primary">Primary</button>
+          <button type="button" class="btn btn-outline-secondary">Secondary</button>
+          <button type="button" class="btn btn-outline-success">Success</button>
+          <button type="button" class="btn btn-outline-danger">Danger</button>
+          <button type="button" class="btn btn-outline-warning">Warning</button>
+          <button type="button" class="btn btn-outline-info">Info</button>
+        </div>
+        <h5>Ghost Buttons (CoreUI Exclusive)</h5>
+        <div class="d-flex gap-2 flex-wrap mb-3">
+          <button type="button" class="btn btn-ghost-primary">Primary</button>
+          <button type="button" class="btn btn-ghost-secondary">Secondary</button>
+          <button type="button" class="btn btn-ghost-success">Success</button>
+          <button type="button" class="btn btn-ghost-danger">Danger</button>
+        </div>
+        <h5>Sizes</h5>
+        <div class="d-flex gap-2 align-items-center flex-wrap">
+          <button type="button" class="btn btn-primary btn-sm">Small</button>
+          <button type="button" class="btn btn-primary">Default</button>
+          <button type="button" class="btn btn-primary btn-lg">Large</button>
+          <button type="button" class="btn btn-primary" disabled>Disabled</button>
+        </div>
+      </section>
+
+      <!-- ========== BUTTON GROUP ========== -->
+      <section id="button-group" class="component-section">
+        <h2>Button Group</h2>
+        <div class="btn-group mb-3" role="group">
+          <button type="button" class="btn btn-primary">Left</button>
+          <button type="button" class="btn btn-primary">Middle</button>
+          <button type="button" class="btn btn-primary">Right</button>
+        </div>
+        <br>
+        <div class="btn-group mb-3" role="group">
+          <button type="button" class="btn btn-outline-secondary">Left</button>
+          <button type="button" class="btn btn-outline-secondary">Middle</button>
+          <button type="button" class="btn btn-outline-secondary">Right</button>
+        </div>
+        <br>
+        <div class="btn-toolbar gap-2" role="toolbar">
+          <div class="btn-group" role="group">
+            <button type="button" class="btn btn-primary">1</button>
+            <button type="button" class="btn btn-primary">2</button>
+            <button type="button" class="btn btn-primary">3</button>
+          </div>
+          <div class="btn-group" role="group">
+            <button type="button" class="btn btn-secondary">4</button>
+            <button type="button" class="btn btn-secondary">5</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== CALLOUT ========== -->
+      <section id="callout" class="component-section">
+        <h2>Callout (CoreUI Exclusive)</h2>
+        <div class="callout callout-primary">
+          <h5>Primary Callout</h5>
+          This is a primary callout, great for highlighting important information.
+        </div>
+        <div class="callout callout-success">
+          <h5>Success Callout</h5>
+          This is a success callout for positive messages.
+        </div>
+        <div class="callout callout-warning">
+          <h5>Warning Callout</h5>
+          This is a warning callout for cautionary information.
+        </div>
+        <div class="callout callout-danger">
+          <h5>Danger Callout</h5>
+          This is a danger callout for critical issues.
+        </div>
+        <div class="callout callout-info">
+          <h5>Info Callout</h5>
+          This is an info callout for general notes.
+        </div>
+      </section>
+
+      <!-- ========== CARDS ========== -->
+      <section id="cards" class="component-section">
+        <h2>Cards</h2>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="card">
+              <div class="card-header">Card Header</div>
+              <div class="card-body">
+                <h5 class="card-title">Card Title</h5>
+                <p class="card-text">Some example text to build on the card title and make up the content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+              <div class="card-footer text-body-secondary">Card Footer</div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card text-white bg-primary">
+              <div class="card-body">
+                <h5 class="card-title">Primary Card</h5>
+                <p class="card-text">A colored card with white text on a primary background.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card border-success">
+              <div class="card-body text-success">
+                <h5 class="card-title">Border Card</h5>
+                <p class="card-text">A card with a colored border and matching text.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== CAROUSEL ========== -->
+      <section id="carousel" class="component-section">
+        <h2>Carousel</h2>
+        <div id="carouselExample" class="carousel slide" data-coreui-ride="carousel" style="max-width: 600px;">
+          <div class="carousel-indicators">
+            <button type="button" data-coreui-target="#carouselExample" data-coreui-slide-to="0" class="active"></button>
+            <button type="button" data-coreui-target="#carouselExample" data-coreui-slide-to="1"></button>
+            <button type="button" data-coreui-target="#carouselExample" data-coreui-slide-to="2"></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="d-flex align-items-center justify-content-center bg-primary text-white" style="height: 250px;">
+                <h3>Slide 1</h3>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="d-flex align-items-center justify-content-center bg-success text-white" style="height: 250px;">
+                <h3>Slide 2</h3>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="d-flex align-items-center justify-content-center bg-danger text-white" style="height: 250px;">
+                <h3>Slide 3</h3>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-coreui-target="#carouselExample" data-coreui-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-coreui-target="#carouselExample" data-coreui-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- ========== DROPDOWNS ========== -->
+      <section id="dropdowns" class="component-section">
+        <h2>Dropdowns</h2>
+        <div class="d-flex gap-2 flex-wrap">
+          <div class="dropdown">
+            <button class="btn btn-primary dropdown-toggle" type="button" data-coreui-toggle="dropdown">
+              Dropdown
+            </button>
+            <ul class="dropdown-menu">
+              <li><h6 class="dropdown-header">Dropdown Header</h6></li>
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Separated link</a></li>
+            </ul>
+          </div>
+          <div class="btn-group">
+            <button type="button" class="btn btn-success">Split Button</button>
+            <button type="button" class="btn btn-success dropdown-toggle dropdown-toggle-split" data-coreui-toggle="dropdown">
+              <span class="visually-hidden">Toggle</span>
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+            </ul>
+          </div>
+          <div class="dropup">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-coreui-toggle="dropdown">
+              Dropup
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== FORMS ========== -->
+      <section id="forms" class="component-section">
+        <h2>Form Controls</h2>
+        <form>
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label for="inputEmail" class="form-label">Email address</label>
+              <input type="email" class="form-control" id="inputEmail" placeholder="name@example.com">
+            </div>
+            <div class="col-md-6">
+              <label for="inputPassword" class="form-label">Password</label>
+              <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+            </div>
+            <div class="col-md-6">
+              <label for="validInput" class="form-label">Valid Input</label>
+              <input type="text" class="form-control is-valid" id="validInput" value="Correct value">
+              <div class="valid-feedback">Looks good!</div>
+            </div>
+            <div class="col-md-6">
+              <label for="invalidInput" class="form-label">Invalid Input</label>
+              <input type="text" class="form-control is-invalid" id="invalidInput" value="Wrong value">
+              <div class="invalid-feedback">Please fix this field.</div>
+            </div>
+            <div class="col-md-6">
+              <label for="disabledInput" class="form-label">Disabled Input</label>
+              <input type="text" class="form-control" id="disabledInput" placeholder="Disabled" disabled>
+            </div>
+            <div class="col-md-6">
+              <label for="readonlyInput" class="form-label">Readonly Input</label>
+              <input type="text" class="form-control" id="readonlyInput" value="Readonly value" readonly>
+            </div>
+            <div class="col-12">
+              <label for="textareaExample" class="form-label">Textarea</label>
+              <textarea class="form-control" id="textareaExample" rows="3" placeholder="Write something..."></textarea>
+            </div>
+            <div class="col-md-6">
+              <label for="floatingInput" class="form-label visually-hidden">Floating Label</label>
+              <div class="form-floating">
+                <input type="text" class="form-control" id="floatingInput" placeholder="Floating label">
+                <label for="floatingInput">Floating Label Input</label>
+              </div>
+            </div>
+          </div>
+        </form>
+      </section>
+
+      <!-- ========== CHECKS & RADIOS ========== -->
+      <section id="checks-radios" class="component-section">
+        <h2>Checks & Radios</h2>
+        <div class="row">
+          <div class="col-md-4">
+            <h5>Checkboxes</h5>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="check1" checked>
+              <label class="form-check-label" for="check1">Checked checkbox</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="check2">
+              <label class="form-check-label" for="check2">Default checkbox</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="check3" disabled>
+              <label class="form-check-label" for="check3">Disabled checkbox</label>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <h5>Radios</h5>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="radioGroup" id="radio1" checked>
+              <label class="form-check-label" for="radio1">First radio</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="radioGroup" id="radio2">
+              <label class="form-check-label" for="radio2">Second radio</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="radioGroup" id="radio3" disabled>
+              <label class="form-check-label" for="radio3">Disabled radio</label>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <h5>Switches</h5>
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" id="switch1" checked>
+              <label class="form-check-label" for="switch1">Checked switch</label>
+            </div>
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" id="switch2">
+              <label class="form-check-label" for="switch2">Default switch</label>
+            </div>
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" id="switch3" disabled>
+              <label class="form-check-label" for="switch3">Disabled switch</label>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== RANGE ========== -->
+      <section id="range" class="component-section">
+        <h2>Range</h2>
+        <label for="rangeDefault" class="form-label">Default range</label>
+        <input type="range" class="form-range" id="rangeDefault">
+        <label for="rangeSteps" class="form-label">Range with steps (0-5)</label>
+        <input type="range" class="form-range" min="0" max="5" step="1" id="rangeSteps">
+        <label for="rangeDisabled" class="form-label">Disabled range</label>
+        <input type="range" class="form-range" id="rangeDisabled" disabled>
+      </section>
+
+      <!-- ========== SELECT ========== -->
+      <section id="select" class="component-section">
+        <h2>Select</h2>
+        <div class="row g-3">
+          <div class="col-md-4">
+            <label for="selectDefault" class="form-label">Default select</label>
+            <select class="form-select" id="selectDefault">
+              <option selected>Open this select menu</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
+          </div>
+          <div class="col-md-4">
+            <label for="selectSmall" class="form-label">Small select</label>
+            <select class="form-select form-select-sm" id="selectSmall">
+              <option selected>Small select</option>
+              <option value="1">One</option>
+            </select>
+          </div>
+          <div class="col-md-4">
+            <label for="selectLarge" class="form-label">Large select</label>
+            <select class="form-select form-select-lg" id="selectLarge">
+              <option selected>Large select</option>
+              <option value="1">One</option>
+            </select>
+          </div>
+          <div class="col-md-6">
+            <label for="selectMultiple" class="form-label">Multiple select</label>
+            <select class="form-select" id="selectMultiple" multiple>
+              <option>Option 1</option>
+              <option>Option 2</option>
+              <option>Option 3</option>
+              <option>Option 4</option>
+            </select>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== INPUT GROUP ========== -->
+      <section id="input-group" class="component-section">
+        <h2>Input Group</h2>
+        <div class="row g-3">
+          <div class="col-md-6">
+            <div class="input-group">
+              <span class="input-group-text">@</span>
+              <input type="text" class="form-control" placeholder="Username">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Amount">
+              <span class="input-group-text">.00</span>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="input-group">
+              <span class="input-group-text">$</span>
+              <input type="text" class="form-control" placeholder="Price">
+              <span class="input-group-text">.00</span>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Search...">
+              <button class="btn btn-primary" type="button">Search</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== LIST GROUP ========== -->
+      <section id="list-group" class="component-section">
+        <h2>List Group</h2>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <h5>Basic</h5>
+            <ul class="list-group">
+              <li class="list-group-item active" aria-current="true">Active item</li>
+              <li class="list-group-item">A second item</li>
+              <li class="list-group-item">A third item</li>
+              <li class="list-group-item disabled" aria-disabled="true">Disabled item</li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <h5>With badges</h5>
+            <ul class="list-group">
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                Inbox <span class="badge bg-primary rounded-pill">14</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                Drafts <span class="badge bg-primary rounded-pill">2</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                Sent <span class="badge bg-primary rounded-pill">1</span>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <h5>Contextual</h5>
+            <ul class="list-group">
+              <li class="list-group-item list-group-item-primary">Primary item</li>
+              <li class="list-group-item list-group-item-success">Success item</li>
+              <li class="list-group-item list-group-item-danger">Danger item</li>
+              <li class="list-group-item list-group-item-warning">Warning item</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== MODAL ========== -->
+      <section id="modal" class="component-section">
+        <h2>Modal</h2>
+        <button type="button" class="btn btn-primary me-2" data-coreui-toggle="modal" data-coreui-target="#exampleModal">
+          Launch Demo Modal
+        </button>
+        <button type="button" class="btn btn-secondary" data-coreui-toggle="modal" data-coreui-target="#staticBackdropModal">
+          Static Backdrop Modal
+        </button>
+
+        <div class="modal fade" id="exampleModal" tabindex="-1">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Modal Title</h5>
+                <button type="button" class="btn-close" data-coreui-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <p>This is a standard CoreUI modal dialog.</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-coreui-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal fade" id="staticBackdropModal" data-coreui-backdrop="static" tabindex="-1">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Static Backdrop</h5>
+                <button type="button" class="btn-close" data-coreui-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <p>Clicking outside won't close this modal.</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-coreui-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== NAVS & TABS ========== -->
+      <section id="navs-tabs" class="component-section">
+        <h2>Navs & Tabs</h2>
+        <h5>Basic Nav</h5>
+        <ul class="nav mb-3">
+          <li class="nav-item"><a class="nav-link active" href="#">Active</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+          <li class="nav-item"><a class="nav-link disabled" aria-disabled="true">Disabled</a></li>
+        </ul>
+
+        <h5>Pills</h5>
+        <ul class="nav nav-pills mb-3">
+          <li class="nav-item"><a class="nav-link active" href="#">Active</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+        </ul>
+
+        <h5>Tabs with Content</h5>
+        <ul class="nav nav-tabs" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" data-coreui-toggle="tab" data-coreui-target="#tab-home" type="button" role="tab">Home</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" data-coreui-toggle="tab" data-coreui-target="#tab-profile" type="button" role="tab">Profile</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" data-coreui-toggle="tab" data-coreui-target="#tab-contact" type="button" role="tab">Contact</button>
+          </li>
+        </ul>
+        <div class="tab-content border border-top-0 p-3">
+          <div class="tab-pane fade show active" id="tab-home" role="tabpanel">Home tab content. CoreUI tabs work seamlessly with JavaScript.</div>
+          <div class="tab-pane fade" id="tab-profile" role="tabpanel">Profile tab content goes here.</div>
+          <div class="tab-pane fade" id="tab-contact" role="tabpanel">Contact tab content goes here.</div>
+        </div>
+      </section>
+
+      <!-- ========== OFFCANVAS ========== -->
+      <section id="offcanvas" class="component-section">
+        <h2>Offcanvas</h2>
+        <button class="btn btn-primary me-2" type="button" data-coreui-toggle="offcanvas" data-coreui-target="#offcanvasStart">
+          Open Left
+        </button>
+        <button class="btn btn-secondary me-2" type="button" data-coreui-toggle="offcanvas" data-coreui-target="#offcanvasEnd">
+          Open Right
+        </button>
+        <button class="btn btn-info" type="button" data-coreui-toggle="offcanvas" data-coreui-target="#offcanvasTop">
+          Open Top
+        </button>
+
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasStart">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title">Left Offcanvas</h5>
+            <button type="button" class="btn-close" data-coreui-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">Content for the left offcanvas panel.</div>
+        </div>
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasEnd">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title">Right Offcanvas</h5>
+            <button type="button" class="btn-close" data-coreui-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">Content for the right offcanvas panel.</div>
+        </div>
+        <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title">Top Offcanvas</h5>
+            <button type="button" class="btn-close" data-coreui-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">Content for the top offcanvas panel.</div>
+        </div>
+      </section>
+
+      <!-- ========== PAGINATION ========== -->
+      <section id="pagination" class="component-section">
+        <h2>Pagination</h2>
+        <nav>
+          <ul class="pagination mb-3">
+            <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item active"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+          </ul>
+        </nav>
+        <nav>
+          <ul class="pagination pagination-sm">
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+          </ul>
+        </nav>
+      </section>
+
+      <!-- ========== PLACEHOLDERS ========== -->
+      <section id="placeholders" class="component-section">
+        <h2>Placeholders / Loading Skeletons</h2>
+        <div class="card" style="max-width: 400px;">
+          <div class="card-body">
+            <h5 class="card-title placeholder-glow">
+              <span class="placeholder col-6"></span>
+            </h5>
+            <p class="card-text placeholder-glow">
+              <span class="placeholder col-7"></span>
+              <span class="placeholder col-4"></span>
+              <span class="placeholder col-4"></span>
+              <span class="placeholder col-6"></span>
+              <span class="placeholder col-8"></span>
+            </p>
+            <a class="btn btn-primary disabled placeholder col-6" aria-disabled="true"></a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== PROGRESS ========== -->
+      <section id="progress" class="component-section">
+        <h2>Progress Bars</h2>
+        <div class="progress mb-3">
+          <div class="progress-bar" role="progressbar" style="width: 25%">25%</div>
+        </div>
+        <div class="progress mb-3">
+          <div class="progress-bar bg-success" role="progressbar" style="width: 50%">50%</div>
+        </div>
+        <div class="progress mb-3">
+          <div class="progress-bar bg-info" role="progressbar" style="width: 75%">75%</div>
+        </div>
+        <div class="progress mb-3">
+          <div class="progress-bar bg-warning" role="progressbar" style="width: 100%">100%</div>
+        </div>
+        <div class="progress mb-3">
+          <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 60%">Striped 60%</div>
+        </div>
+        <div class="progress mb-3">
+          <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 80%">Animated 80%</div>
+        </div>
+        <h5>Stacked</h5>
+        <div class="progress">
+          <div class="progress-bar" role="progressbar" style="width: 15%">15%</div>
+          <div class="progress-bar bg-success" role="progressbar" style="width: 30%">30%</div>
+          <div class="progress-bar bg-info" role="progressbar" style="width: 20%">20%</div>
+        </div>
+      </section>
+
+      <!-- ========== SPINNERS ========== -->
+      <section id="spinners" class="component-section">
+        <h2>Spinners</h2>
+        <div class="d-flex gap-3 align-items-center flex-wrap mb-3">
+          <div class="spinner-border text-primary" role="status"><span class="visually-hidden">Loading...</span></div>
+          <div class="spinner-border text-secondary" role="status"><span class="visually-hidden">Loading...</span></div>
+          <div class="spinner-border text-success" role="status"><span class="visually-hidden">Loading...</span></div>
+          <div class="spinner-border text-danger" role="status"><span class="visually-hidden">Loading...</span></div>
+          <div class="spinner-border text-warning" role="status"><span class="visually-hidden">Loading...</span></div>
+          <div class="spinner-border text-info" role="status"><span class="visually-hidden">Loading...</span></div>
+        </div>
+        <div class="d-flex gap-3 align-items-center flex-wrap mb-3">
+          <div class="spinner-grow text-primary" role="status"><span class="visually-hidden">Loading...</span></div>
+          <div class="spinner-grow text-secondary" role="status"><span class="visually-hidden">Loading...</span></div>
+          <div class="spinner-grow text-success" role="status"><span class="visually-hidden">Loading...</span></div>
+          <div class="spinner-grow text-danger" role="status"><span class="visually-hidden">Loading...</span></div>
+        </div>
+        <div class="d-flex gap-3 align-items-center">
+          <div class="spinner-border spinner-border-sm" role="status"><span class="visually-hidden">Loading...</span></div>
+          <div class="spinner-grow spinner-grow-sm" role="status"><span class="visually-hidden">Loading...</span></div>
+          <button class="btn btn-primary" type="button" disabled>
+            <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
+            Loading...
+          </button>
+        </div>
+      </section>
+
+      <!-- ========== TABLES ========== -->
+      <section id="tables" class="component-section">
+        <h2>Tables</h2>
+        <div class="table-responsive">
+          <table class="table table-striped table-hover">
+            <thead class="table-dark">
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Role</th>
+                <th scope="col">Status</th>
+                <th scope="col">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>John Doe</td>
+                <td>john@example.com</td>
+                <td>Admin</td>
+                <td><span class="badge bg-success">Active</span></td>
+                <td>
+                  <button class="btn btn-sm btn-outline-primary me-1">Edit</button>
+                  <button class="btn btn-sm btn-outline-danger">Delete</button>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Jane Smith</td>
+                <td>jane@example.com</td>
+                <td>Editor</td>
+                <td><span class="badge bg-warning text-dark">Pending</span></td>
+                <td>
+                  <button class="btn btn-sm btn-outline-primary me-1">Edit</button>
+                  <button class="btn btn-sm btn-outline-danger">Delete</button>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>Bob Wilson</td>
+                <td>bob@example.com</td>
+                <td>Viewer</td>
+                <td><span class="badge bg-danger">Inactive</span></td>
+                <td>
+                  <button class="btn btn-sm btn-outline-primary me-1">Edit</button>
+                  <button class="btn btn-sm btn-outline-danger">Delete</button>
+                </td>
+              </tr>
+              <tr class="table-info">
+                <th scope="row">4</th>
+                <td>Alice Brown</td>
+                <td>alice@example.com</td>
+                <td>Admin</td>
+                <td><span class="badge bg-success">Active</span></td>
+                <td>
+                  <button class="btn btn-sm btn-outline-primary me-1">Edit</button>
+                  <button class="btn btn-sm btn-outline-danger">Delete</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ========== TOASTS ========== -->
+      <section id="toasts" class="component-section">
+        <h2>Toasts</h2>
+        <button type="button" class="btn btn-primary mb-3" id="liveToastBtn">Show Live Toast</button>
+
+        <div class="toast-container position-fixed bottom-0 end-0 p-3">
+          <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+              <div class="rounded me-2 bg-primary" style="width:20px;height:20px;"></div>
+              <strong class="me-auto">CoreUI</strong>
+              <small>just now</small>
+              <button type="button" class="btn-close" data-coreui-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body">Hello! This is a toast notification.</div>
+          </div>
+        </div>
+
+        <div class="d-flex gap-3 flex-wrap">
+          <div class="toast show" role="alert">
+            <div class="toast-header">
+              <div class="rounded me-2 bg-success" style="width:20px;height:20px;"></div>
+              <strong class="me-auto">Success</strong>
+              <small>2 min ago</small>
+              <button type="button" class="btn-close" data-coreui-dismiss="toast"></button>
+            </div>
+            <div class="toast-body">Operation completed successfully.</div>
+          </div>
+          <div class="toast show bg-danger text-white" role="alert">
+            <div class="toast-body d-flex justify-content-between align-items-center">
+              <span>Error! Something went wrong.</span>
+              <button type="button" class="btn-close btn-close-white" data-coreui-dismiss="toast"></button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== TOOLTIPS & POPOVERS ========== -->
+      <section id="tooltips-popovers" class="component-section">
+        <h2>Tooltips & Popovers</h2>
+        <div class="d-flex gap-3 flex-wrap mb-4">
+          <button type="button" class="btn btn-primary" data-coreui-toggle="tooltip" data-coreui-placement="top" title="Tooltip on top">
+            Tooltip Top
+          </button>
+          <button type="button" class="btn btn-secondary" data-coreui-toggle="tooltip" data-coreui-placement="right" title="Tooltip on right">
+            Tooltip Right
+          </button>
+          <button type="button" class="btn btn-success" data-coreui-toggle="tooltip" data-coreui-placement="bottom" title="Tooltip on bottom">
+            Tooltip Bottom
+          </button>
+          <button type="button" class="btn btn-info" data-coreui-toggle="tooltip" data-coreui-placement="left" title="Tooltip on left">
+            Tooltip Left
+          </button>
+        </div>
+        <div class="d-flex gap-3 flex-wrap">
+          <button type="button" class="btn btn-danger" data-coreui-toggle="popover" data-coreui-placement="top"
+                  title="Popover Title" data-coreui-content="And here's some amazing content. It's very engaging.">
+            Popover Top
+          </button>
+          <button type="button" class="btn btn-warning" data-coreui-toggle="popover" data-coreui-placement="right"
+                  title="Right Popover" data-coreui-content="Content appears to the right.">
+            Popover Right
+          </button>
+          <button type="button" class="btn btn-dark" data-coreui-toggle="popover" data-coreui-trigger="focus"
+                  title="Dismissible" data-coreui-content="Click anywhere else to dismiss this popover.">
+            Dismissible Popover
+          </button>
+        </div>
+      </section>
+
+    </div><!-- /.container-lg -->
+
+    <!-- FOOTER -->
+    <footer class="footer px-4 mt-5">
+      <div>CoreUI Components Boilerplate &copy; 2026</div>
+      <div class="ms-auto">Powered by <strong>CoreUI 5.5.0</strong></div>
+    </footer>
+
+  </div><!-- /.body-content -->
+
+</div><!-- /.wrapper -->
+
+<!-- CoreUI Bundle (includes Popper) -->
+<script src="node_modules/@coreui/coreui/dist/js/coreui.bundle.min.js"></script>
+<script>
+  // Initialize all tooltips
+  document.querySelectorAll('[data-coreui-toggle="tooltip"]').forEach(function (el) {
+    new coreui.Tooltip(el);
+  });
+
+  // Initialize all popovers
+  document.querySelectorAll('[data-coreui-toggle="popover"]').forEach(function (el) {
+    new coreui.Popover(el);
+  });
+
+  // Live toast trigger
+  document.getElementById('liveToastBtn').addEventListener('click', function () {
+    var toast = new coreui.Toast(document.getElementById('liveToast'));
+    toast.show();
+  });
+
+  // Theme switcher
+  (function () {
+    var html = document.documentElement;
+    var switcher = document.getElementById('themeSwitcher');
+    var iconLight = document.getElementById('themeIconLight');
+    var iconDark = document.getElementById('themeIconDark');
+
+    function setTheme(theme) {
+      html.setAttribute('data-coreui-theme', theme);
+      localStorage.setItem('coreui-theme', theme);
+      iconLight.style.display = theme === 'light' ? 'inline' : 'none';
+      iconDark.style.display = theme === 'dark' ? 'inline' : 'none';
+    }
+
+    // Restore saved preference or respect OS preference
+    var saved = localStorage.getItem('coreui-theme');
+    if (saved) {
+      setTheme(saved);
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      setTheme('dark');
+    }
+
+    switcher.addEventListener('click', function () {
+      var current = html.getAttribute('data-coreui-theme');
+      setTheme(current === 'dark' ? 'light' : 'dark');
+    });
+
+    // React to OS-level theme changes
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function (e) {
+      if (!localStorage.getItem('coreui-theme')) {
+        setTheme(e.matches ? 'dark' : 'light');
+      }
+    });
+  })();
+</script>
+</body>
+</html>

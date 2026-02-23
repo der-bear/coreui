@@ -1,0 +1,2454 @@
+[
+  {
+    "Colors": {
+      "modes": {
+        "Light": {
+          "accent": {
+            "ai": {
+              "$codeSyntax": {
+                "WEB": "accent/primary"
+              },
+              "$scopes": [
+                "FRAME_FILL"
+              ],
+              "$type": "color",
+              "$value": "#5d4bff"
+            },
+            "primary": {
+              "$codeSyntax": {
+                "WEB": "accent/primary"
+              },
+              "$scopes": [
+                "FRAME_FILL"
+              ],
+              "$type": "color",
+              "$value": "#321fdb"
+            },
+            "success": {
+              "$scopes": [
+                "FRAME_FILL"
+              ],
+              "$type": "color",
+              "$value": "#2eb85c"
+            },
+            "danger": {
+              "$scopes": [
+                "FRAME_FILL"
+              ],
+              "$type": "color",
+              "$value": "#e55353"
+            },
+            "warning": {
+              "$scopes": [
+                "FRAME_FILL"
+              ],
+              "$type": "color",
+              "$value": "#f7a402"
+            },
+            "info": {
+              "$codeSyntax": {
+                "WEB": "accent/info"
+              },
+              "$scopes": [
+                "FRAME_FILL"
+              ],
+              "$type": "color",
+              "$value": "#498bff"
+            },
+            "neutral-dark": {
+              "$scopes": [
+                "FRAME_FILL"
+              ],
+              "$description": "invertible",
+              "$type": "color",
+              "$value": "#4f5d73"
+            },
+            "neutral-light": {
+              "$scopes": [
+                "FRAME_FILL"
+              ],
+              "$description": "invertible",
+              "$type": "color",
+              "$value": "#c4c9d0"
+            }
+          },
+          "background": {
+            "main": {
+              "$codeSyntax": {
+                "WEB": "background/main"
+              },
+              "$scopes": [
+                "FRAME_FILL"
+              ],
+              "$type": "color",
+              "$value": "#ffffff"
+            },
+            "secondary": {
+              "$scopes": [
+                "FRAME_FILL"
+              ],
+              "$type": "color",
+              "$value": "#f5f6f7"
+            },
+            "tertiary": {
+              "$scopes": [
+                "FRAME_FILL"
+              ],
+              "$type": "color",
+              "$value": "#fbfbfb"
+            },
+            "ai-subtle": {
+              "$scopes": [
+                "FRAME_FILL"
+              ],
+              "$type": "color",
+              "$value": "#ccc7f6"
+            },
+            "ai-subtle-alt": {
+              "$scopes": [
+                "FRAME_FILL"
+              ],
+              "$type": "color",
+              "$value": "#f2f1ff"
+            },
+            "primary-subtle": {
+              "$scopes": [
+                "FRAME_FILL"
+              ],
+              "$type": "color",
+              "$value": "#ccc7f6"
+            },
+            "success-subtle": {
+              "$scopes": [
+                "FRAME_FILL"
+              ],
+              "$type": "color",
+              "$value": "#cbedd6"
+            },
+            "danger-subtle": {
+              "$scopes": [
+                "FRAME_FILL"
+              ],
+              "$type": "color",
+              "$value": "#f9d4d4"
+            },
+            "warning-subtle": {
+              "$scopes": [
+                "FRAME_FILL"
+              ],
+              "$type": "color",
+              "$value": "#feecc5"
+            },
+            "info-subtle": {
+              "$scopes": [
+                "FRAME_FILL"
+              ],
+              "$type": "color",
+              "$value": "#c0e6ff"
+            }
+          },
+          "text+icons": {
+            "neutral": {
+              "high": {
+                "$scopes": [
+                  "SHAPE_FILL",
+                  "TEXT_FILL"
+                ],
+                "$type": "color",
+                "$value": "#3c4b64"
+              },
+              "medium*": {
+                "$scopes": [
+                  "SHAPE_FILL",
+                  "TEXT_FILL"
+                ],
+                "$type": "color",
+                "$value": "#636f83"
+              },
+              "low": {
+                "$scopes": [
+                  "SHAPE_FILL",
+                  "TEXT_FILL"
+                ],
+                "$type": "color",
+                "$value": "#7c8697"
+              },
+              "on-accent": {
+                "$scopes": [
+                  "SHAPE_FILL",
+                  "TEXT_FILL"
+                ],
+                "$type": "color",
+                "$value": "#ffffff"
+              }
+            },
+            "primary": {
+              "high": {
+                "$scopes": [
+                  "SHAPE_FILL",
+                  "TEXT_FILL"
+                ],
+                "$type": "color",
+                "$value": "#20159e"
+              },
+              "medium*": {
+                "$scopes": [
+                  "SHAPE_FILL",
+                  "TEXT_FILL"
+                ],
+                "$type": "color",
+                "$value": "#321fdb"
+              },
+              "on-accent": {
+                "$scopes": [
+                  "SHAPE_FILL",
+                  "TEXT_FILL"
+                ],
+                "$type": "color",
+                "$value": "#ccc7f6"
+              }
+            },
+            "ai": {
+              "high": {
+                "$scopes": [
+                  "SHAPE_FILL",
+                  "TEXT_FILL"
+                ],
+                "$type": "color",
+                "$value": "#321fdb"
+              },
+              "medium": {
+                "$scopes": [
+                  "SHAPE_FILL",
+                  "TEXT_FILL"
+                ],
+                "$type": "color",
+                "$value": "#5d4bff"
+              },
+              "on-accent": {
+                "$scopes": [
+                  "SHAPE_FILL",
+                  "TEXT_FILL"
+                ],
+                "$type": "color",
+                "$value": "#d8d3ff"
+              }
+            },
+            "success": {
+              "high": {
+                "$scopes": [
+                  "SHAPE_FILL",
+                  "TEXT_FILL"
+                ],
+                "$type": "color",
+                "$value": "#1b9e3e"
+              },
+              "medium*": {
+                "$scopes": [
+                  "SHAPE_FILL",
+                  "TEXT_FILL"
+                ],
+                "$type": "color",
+                "$value": "#2eb85c"
+              },
+              "on-accent": {
+                "$scopes": [
+                  "SHAPE_FILL",
+                  "TEXT_FILL"
+                ],
+                "$type": "color",
+                "$value": "#cbedd6"
+              }
+            },
+            "danger": {
+              "high": {
+                "$scopes": [
+                  "SHAPE_FILL",
+                  "TEXT_FILL"
+                ],
+                "$type": "color",
+                "$value": "#c43131"
+              },
+              "medium*": {
+                "$scopes": [
+                  "SHAPE_FILL",
+                  "TEXT_FILL"
+                ],
+                "$type": "color",
+                "$value": "#e55353"
+              },
+              "on-accent": {
+                "$scopes": [
+                  "SHAPE_FILL",
+                  "TEXT_FILL"
+                ],
+                "$type": "color",
+                "$value": "#f9d4d4"
+              }
+            },
+            "warning": {
+              "high": {
+                "$scopes": [
+                  "SHAPE_FILL",
+                  "TEXT_FILL"
+                ],
+                "$type": "color",
+                "$value": "#c57707"
+              },
+              "medium*": {
+                "$scopes": [
+                  "SHAPE_FILL",
+                  "TEXT_FILL"
+                ],
+                "$type": "color",
+                "$value": "#f7a402"
+              },
+              "on-accent": {
+                "$scopes": [
+                  "SHAPE_FILL",
+                  "TEXT_FILL"
+                ],
+                "$type": "color",
+                "$value": "#feecc5"
+              }
+            },
+            "info": {
+              "high": {
+                "$scopes": [
+                  "SHAPE_FILL",
+                  "TEXT_FILL"
+                ],
+                "$type": "color",
+                "$value": "#1469b8"
+              },
+              "medium*": {
+                "$scopes": [
+                  "SHAPE_FILL",
+                  "TEXT_FILL"
+                ],
+                "$type": "color",
+                "$value": "#498bff"
+              },
+              "on-accent": {
+                "$scopes": [
+                  "SHAPE_FILL",
+                  "TEXT_FILL"
+                ],
+                "$type": "color",
+                "$value": "#c0e6ff"
+              }
+            }
+          },
+          "border": {
+            "neutral": {
+              "solid": {
+                "$scopes": [
+                  "STROKE_COLOR"
+                ],
+                "$type": "color",
+                "$value": "#4f5d73"
+              },
+              "high": {
+                "$scopes": [
+                  "STROKE_COLOR"
+                ],
+                "$type": "color",
+                "$value": "#b0b6c0"
+              },
+              "medium*": {
+                "$scopes": [
+                  "STROKE_COLOR"
+                ],
+                "$type": "color",
+                "$value": "#d8dbe0"
+              },
+              "low": {
+                "$scopes": [
+                  "STROKE_COLOR"
+                ],
+                "$type": "color",
+                "$value": "#ebedef"
+              }
+            },
+            "primary": {
+              "solid": {
+                "$scopes": [
+                  "STROKE_COLOR"
+                ],
+                "$type": "color",
+                "$value": "#321fdb"
+              },
+              "medium*": {
+                "$scopes": [
+                  "STROKE_COLOR"
+                ],
+                "$type": "color",
+                "$value": "#988fed"
+              },
+              "low": {
+                "$scopes": [
+                  "STROKE_COLOR"
+                ],
+                "$type": "color",
+                "$value": "#ccc7f6"
+              }
+            },
+            "ai": {
+              "solid": {
+                "$scopes": [
+                  "STROKE_COLOR"
+                ],
+                "$type": "color",
+                "$value": "#5d4bff"
+              },
+              "medium*": {
+                "$scopes": [
+                  "STROKE_COLOR"
+                ],
+                "$type": "color",
+                "$value": "#9e93ff"
+              },
+              "low": {
+                "$scopes": [
+                  "STROKE_COLOR"
+                ],
+                "$type": "color",
+                "$value": "#c4beff"
+              }
+            },
+            "success": {
+              "solid": {
+                "$scopes": [
+                  "STROKE_COLOR"
+                ],
+                "$type": "color",
+                "$value": "#2eb85c"
+              },
+              "medium*": {
+                "$scopes": [
+                  "STROKE_COLOR"
+                ],
+                "$type": "color",
+                "$value": "#96dbad"
+              },
+              "low": {
+                "$scopes": [
+                  "STROKE_COLOR"
+                ],
+                "$type": "color",
+                "$value": "#cbedd6"
+              }
+            },
+            "danger": {
+              "solid": {
+                "$scopes": [
+                  "STROKE_COLOR"
+                ],
+                "$type": "color",
+                "$value": "#e55353"
+              },
+              "medium*": {
+                "$scopes": [
+                  "STROKE_COLOR"
+                ],
+                "$type": "color",
+                "$value": "#f2a9a9"
+              },
+              "low": {
+                "$scopes": [
+                  "STROKE_COLOR"
+                ],
+                "$type": "color",
+                "$value": "#f9d4d4"
+              }
+            },
+            "warning": {
+              "solid": {
+                "$scopes": [
+                  "STROKE_COLOR"
+                ],
+                "$type": "color",
+                "$value": "#f7a402"
+              },
+              "medium*": {
+                "$scopes": [
+                  "STROKE_COLOR"
+                ],
+                "$type": "color",
+                "$value": "#fcd88a"
+              },
+              "low": {
+                "$scopes": [
+                  "STROKE_COLOR"
+                ],
+                "$type": "color",
+                "$value": "#feecc5"
+              }
+            },
+            "info": {
+              "solid": {
+                "$scopes": [
+                  "STROKE_COLOR"
+                ],
+                "$type": "color",
+                "$value": "#498bff"
+              },
+              "medium*": {
+                "$scopes": [
+                  "STROKE_COLOR"
+                ],
+                "$type": "color",
+                "$value": "#83c6fc"
+              },
+              "low": {
+                "$scopes": [
+                  "STROKE_COLOR"
+                ],
+                "$type": "color",
+                "$value": "#c0e6ff"
+              }
+            }
+          },
+          "gradient": {
+            "ai": {
+              "start": {
+                "$codeSyntax": {
+                  "WEB": "accent/primary"
+                },
+                "$scopes": [
+                  "FRAME_FILL"
+                ],
+                "$type": "color",
+                "$value": "#7565ff"
+              },
+              "end": {
+                "$codeSyntax": {
+                  "WEB": "accent/primary"
+                },
+                "$scopes": [
+                  "FRAME_FILL"
+                ],
+                "$type": "color",
+                "$value": "#5d4bff"
+              }
+            }
+          },
+          "components": {
+            "input": {
+              "background": {
+                "$scopes": [
+                  "FRAME_FILL"
+                ],
+                "$hiddenFromPublishing": true,
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Colors",
+                "$value": "{background.main}"
+              }
+            },
+            "scroll": {
+              "pin": {
+                "$scopes": [
+                  "SHAPE_FILL"
+                ],
+                "$hiddenFromPublishing": true,
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Colors",
+                "$value": "{border.neutral.low}"
+              }
+            },
+            "toolbar": {
+              "background": {
+                "$scopes": [
+                  "FRAME_FILL"
+                ],
+                "$hiddenFromPublishing": true,
+                "$type": "color",
+                "$value": "#3c4b64"
+              }
+            },
+            "tooltip": {
+              "background": {
+                "$scopes": [
+                  "SHAPE_FILL"
+                ],
+                "$hiddenFromPublishing": true,
+                "$type": "color",
+                "$value": "#2a2b36"
+              },
+              "text": {
+                "$scopes": [
+                  "TEXT_FILL"
+                ],
+                "$hiddenFromPublishing": true,
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Colors",
+                "$value": "{text+icons.neutral.on-accent}"
+              }
+            }
+          },
+          "container": {
+            "header": {
+              "$scopes": [
+                "FRAME_FILL"
+              ],
+              "$type": "color",
+              "$libraryName": "",
+              "$collectionName": "Colors",
+              "$value": "{background.main}"
+            },
+            "content": {
+              "$scopes": [
+                "FRAME_FILL"
+              ],
+              "$type": "color",
+              "$libraryName": "",
+              "$collectionName": "Colors",
+              "$value": "{background.main}"
+            }
+          },
+          "alt": {
+            "bg-table-row": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "#f5f6f7"
+            }
+          }
+        },
+        "Dark": {
+          "accent": {
+            "ai": {
+              "$codeSyntax": {
+                "WEB": "accent/primary"
+              },
+              "$scopes": [
+                "FRAME_FILL"
+              ],
+              "$type": "color",
+              "$value": "#5d4bff"
+            },
+            "primary": {
+              "$codeSyntax": {
+                "WEB": "accent/primary"
+              },
+              "$scopes": [
+                "FRAME_FILL"
+              ],
+              "$type": "color",
+              "$value": "#321fdb"
+            },
+            "success": {
+              "$scopes": [
+                "FRAME_FILL"
+              ],
+              "$type": "color",
+              "$value": "#2eb85c"
+            },
+            "danger": {
+              "$scopes": [
+                "FRAME_FILL"
+              ],
+              "$type": "color",
+              "$value": "#e55353"
+            },
+            "warning": {
+              "$scopes": [
+                "FRAME_FILL"
+              ],
+              "$type": "color",
+              "$value": "#f7a402"
+            },
+            "info": {
+              "$codeSyntax": {
+                "WEB": "accent/info"
+              },
+              "$scopes": [
+                "FRAME_FILL"
+              ],
+              "$type": "color",
+              "$value": "#498bff"
+            },
+            "neutral-dark": {
+              "$scopes": [
+                "FRAME_FILL"
+              ],
+              "$description": "invertible",
+              "$type": "color",
+              "$value": "#4f5d73"
+            },
+            "neutral-light": {
+              "$scopes": [
+                "FRAME_FILL"
+              ],
+              "$description": "invertible",
+              "$type": "color",
+              "$value": "#c4c9d0"
+            }
+          },
+          "background": {
+            "main": {
+              "$codeSyntax": {
+                "WEB": "background/main"
+              },
+              "$scopes": [
+                "FRAME_FILL"
+              ],
+              "$type": "color",
+              "$value": "#21222b"
+            },
+            "secondary": {
+              "$scopes": [
+                "FRAME_FILL"
+              ],
+              "$type": "color",
+              "$value": "#0e0e15"
+            },
+            "tertiary": {
+              "$scopes": [
+                "FRAME_FILL"
+              ],
+              "$type": "color",
+              "$value": "#636f83"
+            },
+            "ai-subtle": {
+              "$scopes": [
+                "FRAME_FILL"
+              ],
+              "$type": "color",
+              "$value": "#ccc7f6"
+            },
+            "ai-subtle-alt": {
+              "$scopes": [
+                "FRAME_FILL"
+              ],
+              "$type": "color",
+              "$value": "#f2f1ff"
+            },
+            "primary-subtle": {
+              "$scopes": [
+                "FRAME_FILL"
+              ],
+              "$type": "color",
+              "$value": "#ccc7f6"
+            },
+            "success-subtle": {
+              "$scopes": [
+                "FRAME_FILL"
+              ],
+              "$type": "color",
+              "$value": "#cbedd6"
+            },
+            "danger-subtle": {
+              "$scopes": [
+                "FRAME_FILL"
+              ],
+              "$type": "color",
+              "$value": "#f9d4d4"
+            },
+            "warning-subtle": {
+              "$scopes": [
+                "FRAME_FILL"
+              ],
+              "$type": "color",
+              "$value": "#feecc5"
+            },
+            "info-subtle": {
+              "$scopes": [
+                "FRAME_FILL"
+              ],
+              "$type": "color",
+              "$value": "#c0e6ff"
+            }
+          },
+          "text+icons": {
+            "neutral": {
+              "high": {
+                "$scopes": [
+                  "SHAPE_FILL",
+                  "TEXT_FILL"
+                ],
+                "$type": "color",
+                "$value": "#ffffff"
+              },
+              "medium*": {
+                "$scopes": [
+                  "SHAPE_FILL",
+                  "TEXT_FILL"
+                ],
+                "$type": "color",
+                "$value": "#ebedef"
+              },
+              "low": {
+                "$scopes": [
+                  "SHAPE_FILL",
+                  "TEXT_FILL"
+                ],
+                "$type": "color",
+                "$value": "#c4c9d0"
+              },
+              "on-accent": {
+                "$scopes": [
+                  "SHAPE_FILL",
+                  "TEXT_FILL"
+                ],
+                "$type": "color",
+                "$value": "#ffffff"
+              }
+            },
+            "primary": {
+              "high": {
+                "$scopes": [
+                  "SHAPE_FILL",
+                  "TEXT_FILL"
+                ],
+                "$type": "color",
+                "$value": "#20159e"
+              },
+              "medium*": {
+                "$scopes": [
+                  "SHAPE_FILL",
+                  "TEXT_FILL"
+                ],
+                "$type": "color",
+                "$value": "#321fdb"
+              },
+              "on-accent": {
+                "$scopes": [
+                  "SHAPE_FILL",
+                  "TEXT_FILL"
+                ],
+                "$type": "color",
+                "$value": "#ccc7f6"
+              }
+            },
+            "ai": {
+              "high": {
+                "$scopes": [
+                  "SHAPE_FILL",
+                  "TEXT_FILL"
+                ],
+                "$type": "color",
+                "$value": "#321fdb"
+              },
+              "medium": {
+                "$scopes": [
+                  "SHAPE_FILL",
+                  "TEXT_FILL"
+                ],
+                "$type": "color",
+                "$value": "#5d4bff"
+              },
+              "on-accent": {
+                "$scopes": [
+                  "SHAPE_FILL",
+                  "TEXT_FILL"
+                ],
+                "$type": "color",
+                "$value": "#d8d3ff"
+              }
+            },
+            "success": {
+              "high": {
+                "$scopes": [
+                  "SHAPE_FILL",
+                  "TEXT_FILL"
+                ],
+                "$type": "color",
+                "$value": "#1b9e3e"
+              },
+              "medium*": {
+                "$scopes": [
+                  "SHAPE_FILL",
+                  "TEXT_FILL"
+                ],
+                "$type": "color",
+                "$value": "#2eb85c"
+              },
+              "on-accent": {
+                "$scopes": [
+                  "SHAPE_FILL",
+                  "TEXT_FILL"
+                ],
+                "$type": "color",
+                "$value": "#cbedd6"
+              }
+            },
+            "danger": {
+              "high": {
+                "$scopes": [
+                  "SHAPE_FILL",
+                  "TEXT_FILL"
+                ],
+                "$type": "color",
+                "$value": "#c43131"
+              },
+              "medium*": {
+                "$scopes": [
+                  "SHAPE_FILL",
+                  "TEXT_FILL"
+                ],
+                "$type": "color",
+                "$value": "#e55353"
+              },
+              "on-accent": {
+                "$scopes": [
+                  "SHAPE_FILL",
+                  "TEXT_FILL"
+                ],
+                "$type": "color",
+                "$value": "#f9d4d4"
+              }
+            },
+            "warning": {
+              "high": {
+                "$scopes": [
+                  "SHAPE_FILL",
+                  "TEXT_FILL"
+                ],
+                "$type": "color",
+                "$value": "#c57707"
+              },
+              "medium*": {
+                "$scopes": [
+                  "SHAPE_FILL",
+                  "TEXT_FILL"
+                ],
+                "$type": "color",
+                "$value": "#f7a402"
+              },
+              "on-accent": {
+                "$scopes": [
+                  "SHAPE_FILL",
+                  "TEXT_FILL"
+                ],
+                "$type": "color",
+                "$value": "#feecc5"
+              }
+            },
+            "info": {
+              "high": {
+                "$scopes": [
+                  "SHAPE_FILL",
+                  "TEXT_FILL"
+                ],
+                "$type": "color",
+                "$value": "#1469b8"
+              },
+              "medium*": {
+                "$scopes": [
+                  "SHAPE_FILL",
+                  "TEXT_FILL"
+                ],
+                "$type": "color",
+                "$value": "#498bff"
+              },
+              "on-accent": {
+                "$scopes": [
+                  "SHAPE_FILL",
+                  "TEXT_FILL"
+                ],
+                "$type": "color",
+                "$value": "#c0e6ff"
+              }
+            }
+          },
+          "border": {
+            "neutral": {
+              "solid": {
+                "$scopes": [
+                  "STROKE_COLOR"
+                ],
+                "$type": "color",
+                "$value": "#f5f6f7"
+              },
+              "high": {
+                "$scopes": [
+                  "STROKE_COLOR"
+                ],
+                "$type": "color",
+                "$value": "#8a93a2"
+              },
+              "medium*": {
+                "$scopes": [
+                  "STROKE_COLOR"
+                ],
+                "$type": "color",
+                "$value": "#768192"
+              },
+              "low": {
+                "$scopes": [
+                  "STROKE_COLOR"
+                ],
+                "$type": "color",
+                "$value": "#636f83"
+              }
+            },
+            "primary": {
+              "solid": {
+                "$scopes": [
+                  "STROKE_COLOR"
+                ],
+                "$type": "color",
+                "$value": "#321fdb"
+              },
+              "medium*": {
+                "$scopes": [
+                  "STROKE_COLOR"
+                ],
+                "$type": "color",
+                "$value": "#988fed"
+              },
+              "low": {
+                "$scopes": [
+                  "STROKE_COLOR"
+                ],
+                "$type": "color",
+                "$value": "#ccc7f6"
+              }
+            },
+            "ai": {
+              "solid": {
+                "$scopes": [
+                  "STROKE_COLOR"
+                ],
+                "$type": "color",
+                "$value": "#5d4bff"
+              },
+              "medium*": {
+                "$scopes": [
+                  "STROKE_COLOR"
+                ],
+                "$type": "color",
+                "$value": "#9e93ff"
+              },
+              "low": {
+                "$scopes": [
+                  "STROKE_COLOR"
+                ],
+                "$type": "color",
+                "$value": "#c4beff"
+              }
+            },
+            "success": {
+              "solid": {
+                "$scopes": [
+                  "STROKE_COLOR"
+                ],
+                "$type": "color",
+                "$value": "#2eb85c"
+              },
+              "medium*": {
+                "$scopes": [
+                  "STROKE_COLOR"
+                ],
+                "$type": "color",
+                "$value": "#96dbad"
+              },
+              "low": {
+                "$scopes": [
+                  "STROKE_COLOR"
+                ],
+                "$type": "color",
+                "$value": "#cbedd6"
+              }
+            },
+            "danger": {
+              "solid": {
+                "$scopes": [
+                  "STROKE_COLOR"
+                ],
+                "$type": "color",
+                "$value": "#e55353"
+              },
+              "medium*": {
+                "$scopes": [
+                  "STROKE_COLOR"
+                ],
+                "$type": "color",
+                "$value": "#f2a9a9"
+              },
+              "low": {
+                "$scopes": [
+                  "STROKE_COLOR"
+                ],
+                "$type": "color",
+                "$value": "#f9d4d4"
+              }
+            },
+            "warning": {
+              "solid": {
+                "$scopes": [
+                  "STROKE_COLOR"
+                ],
+                "$type": "color",
+                "$value": "#f7a402"
+              },
+              "medium*": {
+                "$scopes": [
+                  "STROKE_COLOR"
+                ],
+                "$type": "color",
+                "$value": "#fcd88a"
+              },
+              "low": {
+                "$scopes": [
+                  "STROKE_COLOR"
+                ],
+                "$type": "color",
+                "$value": "#feecc5"
+              }
+            },
+            "info": {
+              "solid": {
+                "$scopes": [
+                  "STROKE_COLOR"
+                ],
+                "$type": "color",
+                "$value": "#498bff"
+              },
+              "medium*": {
+                "$scopes": [
+                  "STROKE_COLOR"
+                ],
+                "$type": "color",
+                "$value": "#83c6fc"
+              },
+              "low": {
+                "$scopes": [
+                  "STROKE_COLOR"
+                ],
+                "$type": "color",
+                "$value": "#c0e6ff"
+              }
+            }
+          },
+          "gradient": {
+            "ai": {
+              "start": {
+                "$codeSyntax": {
+                  "WEB": "accent/primary"
+                },
+                "$scopes": [
+                  "FRAME_FILL"
+                ],
+                "$type": "color",
+                "$value": "#7565ff"
+              },
+              "end": {
+                "$codeSyntax": {
+                  "WEB": "accent/primary"
+                },
+                "$scopes": [
+                  "FRAME_FILL"
+                ],
+                "$type": "color",
+                "$value": "#5d4bff"
+              }
+            }
+          },
+          "components": {
+            "input": {
+              "background": {
+                "$scopes": [
+                  "FRAME_FILL"
+                ],
+                "$hiddenFromPublishing": true,
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Colors",
+                "$value": "{background.secondary}"
+              }
+            },
+            "scroll": {
+              "pin": {
+                "$scopes": [
+                  "SHAPE_FILL"
+                ],
+                "$hiddenFromPublishing": true,
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Colors",
+                "$value": "{border.neutral.solid}"
+              }
+            },
+            "toolbar": {
+              "background": {
+                "$scopes": [
+                  "FRAME_FILL"
+                ],
+                "$hiddenFromPublishing": true,
+                "$type": "color",
+                "$value": "#2a2b36"
+              }
+            },
+            "tooltip": {
+              "background": {
+                "$scopes": [
+                  "SHAPE_FILL"
+                ],
+                "$hiddenFromPublishing": true,
+                "$type": "color",
+                "$value": "#17171f"
+              },
+              "text": {
+                "$scopes": [
+                  "TEXT_FILL"
+                ],
+                "$hiddenFromPublishing": true,
+                "$type": "color",
+                "$value": "#17171f"
+              }
+            }
+          },
+          "container": {
+            "header": {
+              "$scopes": [
+                "FRAME_FILL"
+              ],
+              "$type": "color",
+              "$value": "#282933"
+            },
+            "content": {
+              "$scopes": [
+                "FRAME_FILL"
+              ],
+              "$type": "color",
+              "$value": "#24252f"
+            }
+          },
+          "alt": {
+            "bg-table-row": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "#21222b"
+            }
+          }
+        },
+        "Dark 2": {
+          "accent": {
+            "ai": {
+              "$codeSyntax": {
+                "WEB": "accent/primary"
+              },
+              "$scopes": [
+                "FRAME_FILL"
+              ],
+              "$type": "color",
+              "$value": "#5d4bff"
+            },
+            "primary": {
+              "$codeSyntax": {
+                "WEB": "accent/primary"
+              },
+              "$scopes": [
+                "FRAME_FILL"
+              ],
+              "$type": "color",
+              "$value": "#321fdb"
+            },
+            "success": {
+              "$scopes": [
+                "FRAME_FILL"
+              ],
+              "$type": "color",
+              "$value": "#2eb85c"
+            },
+            "danger": {
+              "$scopes": [
+                "FRAME_FILL"
+              ],
+              "$type": "color",
+              "$value": "#e55353"
+            },
+            "warning": {
+              "$scopes": [
+                "FRAME_FILL"
+              ],
+              "$type": "color",
+              "$value": "#f7a402"
+            },
+            "info": {
+              "$codeSyntax": {
+                "WEB": "accent/info"
+              },
+              "$scopes": [
+                "FRAME_FILL"
+              ],
+              "$type": "color",
+              "$value": "#498bff"
+            },
+            "neutral-dark": {
+              "$scopes": [
+                "FRAME_FILL"
+              ],
+              "$description": "invertible",
+              "$type": "color",
+              "$value": "#4f5d73"
+            },
+            "neutral-light": {
+              "$scopes": [
+                "FRAME_FILL"
+              ],
+              "$description": "invertible",
+              "$type": "color",
+              "$value": "#c4c9d0"
+            }
+          },
+          "background": {
+            "main": {
+              "$codeSyntax": {
+                "WEB": "background/main"
+              },
+              "$scopes": [
+                "FRAME_FILL"
+              ],
+              "$type": "color",
+              "$value": "#21222b"
+            },
+            "secondary": {
+              "$scopes": [
+                "FRAME_FILL"
+              ],
+              "$type": "color",
+              "$value": "#0e0e15"
+            },
+            "tertiary": {
+              "$scopes": [
+                "FRAME_FILL"
+              ],
+              "$type": "color",
+              "$value": "#636f83"
+            },
+            "ai-subtle": {
+              "$scopes": [
+                "FRAME_FILL"
+              ],
+              "$type": "color",
+              "$value": "#d8d3ff"
+            },
+            "ai-subtle-alt": {
+              "$scopes": [
+                "FRAME_FILL"
+              ],
+              "$type": "color",
+              "$value": "#f2f1ff"
+            },
+            "primary-subtle": {
+              "$scopes": [
+                "FRAME_FILL"
+              ],
+              "$type": "color",
+              "$value": "#ccc7f6"
+            },
+            "success-subtle": {
+              "$scopes": [
+                "FRAME_FILL"
+              ],
+              "$type": "color",
+              "$value": "#cbedd6"
+            },
+            "danger-subtle": {
+              "$scopes": [
+                "FRAME_FILL"
+              ],
+              "$type": "color",
+              "$value": "#f9d4d4"
+            },
+            "warning-subtle": {
+              "$scopes": [
+                "FRAME_FILL"
+              ],
+              "$type": "color",
+              "$value": "#feecc5"
+            },
+            "info-subtle": {
+              "$scopes": [
+                "FRAME_FILL"
+              ],
+              "$type": "color",
+              "$value": "#c0e6ff"
+            }
+          },
+          "text+icons": {
+            "neutral": {
+              "high": {
+                "$scopes": [
+                  "SHAPE_FILL",
+                  "TEXT_FILL"
+                ],
+                "$type": "color",
+                "$value": "#ffffff"
+              },
+              "medium*": {
+                "$scopes": [
+                  "SHAPE_FILL",
+                  "TEXT_FILL"
+                ],
+                "$type": "color",
+                "$value": "#ebedef"
+              },
+              "low": {
+                "$scopes": [
+                  "SHAPE_FILL",
+                  "TEXT_FILL"
+                ],
+                "$type": "color",
+                "$value": "#9ea7b2"
+              },
+              "on-accent": {
+                "$scopes": [
+                  "SHAPE_FILL",
+                  "TEXT_FILL"
+                ],
+                "$type": "color",
+                "$value": "#ffffff"
+              }
+            },
+            "primary": {
+              "high": {
+                "$scopes": [
+                  "SHAPE_FILL",
+                  "TEXT_FILL"
+                ],
+                "$type": "color",
+                "$value": "#20159e"
+              },
+              "medium*": {
+                "$scopes": [
+                  "SHAPE_FILL",
+                  "TEXT_FILL"
+                ],
+                "$type": "color",
+                "$value": "#321fdb"
+              },
+              "on-accent": {
+                "$scopes": [
+                  "SHAPE_FILL",
+                  "TEXT_FILL"
+                ],
+                "$type": "color",
+                "$value": "#ccc7f6"
+              }
+            },
+            "ai": {
+              "high": {
+                "$scopes": [
+                  "SHAPE_FILL",
+                  "TEXT_FILL"
+                ],
+                "$type": "color",
+                "$value": "#321fdb"
+              },
+              "medium": {
+                "$scopes": [
+                  "SHAPE_FILL",
+                  "TEXT_FILL"
+                ],
+                "$type": "color",
+                "$value": "#5d4bff"
+              },
+              "on-accent": {
+                "$scopes": [
+                  "SHAPE_FILL",
+                  "TEXT_FILL"
+                ],
+                "$type": "color",
+                "$value": "#d8d3ff"
+              }
+            },
+            "success": {
+              "high": {
+                "$scopes": [
+                  "SHAPE_FILL",
+                  "TEXT_FILL"
+                ],
+                "$type": "color",
+                "$value": "#1b9e3e"
+              },
+              "medium*": {
+                "$scopes": [
+                  "SHAPE_FILL",
+                  "TEXT_FILL"
+                ],
+                "$type": "color",
+                "$value": "#2eb85c"
+              },
+              "on-accent": {
+                "$scopes": [
+                  "SHAPE_FILL",
+                  "TEXT_FILL"
+                ],
+                "$type": "color",
+                "$value": "#cbedd6"
+              }
+            },
+            "danger": {
+              "high": {
+                "$scopes": [
+                  "SHAPE_FILL",
+                  "TEXT_FILL"
+                ],
+                "$type": "color",
+                "$value": "#c43131"
+              },
+              "medium*": {
+                "$scopes": [
+                  "SHAPE_FILL",
+                  "TEXT_FILL"
+                ],
+                "$type": "color",
+                "$value": "#e55353"
+              },
+              "on-accent": {
+                "$scopes": [
+                  "SHAPE_FILL",
+                  "TEXT_FILL"
+                ],
+                "$type": "color",
+                "$value": "#f9d4d4"
+              }
+            },
+            "warning": {
+              "high": {
+                "$scopes": [
+                  "SHAPE_FILL",
+                  "TEXT_FILL"
+                ],
+                "$type": "color",
+                "$value": "#c57707"
+              },
+              "medium*": {
+                "$scopes": [
+                  "SHAPE_FILL",
+                  "TEXT_FILL"
+                ],
+                "$type": "color",
+                "$value": "#f7a402"
+              },
+              "on-accent": {
+                "$scopes": [
+                  "SHAPE_FILL",
+                  "TEXT_FILL"
+                ],
+                "$type": "color",
+                "$value": "#feecc5"
+              }
+            },
+            "info": {
+              "high": {
+                "$scopes": [
+                  "SHAPE_FILL",
+                  "TEXT_FILL"
+                ],
+                "$type": "color",
+                "$value": "#1469b8"
+              },
+              "medium*": {
+                "$scopes": [
+                  "SHAPE_FILL",
+                  "TEXT_FILL"
+                ],
+                "$type": "color",
+                "$value": "#498bff"
+              },
+              "on-accent": {
+                "$scopes": [
+                  "SHAPE_FILL",
+                  "TEXT_FILL"
+                ],
+                "$type": "color",
+                "$value": "#c0e6ff"
+              }
+            }
+          },
+          "border": {
+            "neutral": {
+              "solid": {
+                "$scopes": [
+                  "STROKE_COLOR"
+                ],
+                "$type": "color",
+                "$value": "#f5f6f7"
+              },
+              "high": {
+                "$scopes": [
+                  "STROKE_COLOR"
+                ],
+                "$type": "color",
+                "$value": "#8a93a2"
+              },
+              "medium*": {
+                "$scopes": [
+                  "STROKE_COLOR"
+                ],
+                "$type": "color",
+                "$value": "#42434d"
+              },
+              "low": {
+                "$scopes": [
+                  "STROKE_COLOR"
+                ],
+                "$type": "color",
+                "$value": "#353640"
+              }
+            },
+            "primary": {
+              "solid": {
+                "$scopes": [
+                  "STROKE_COLOR"
+                ],
+                "$type": "color",
+                "$value": "#321fdb"
+              },
+              "medium*": {
+                "$scopes": [
+                  "STROKE_COLOR"
+                ],
+                "$type": "color",
+                "$value": "#988fed"
+              },
+              "low": {
+                "$scopes": [
+                  "STROKE_COLOR"
+                ],
+                "$type": "color",
+                "$value": "#ccc7f6"
+              }
+            },
+            "ai": {
+              "solid": {
+                "$scopes": [
+                  "STROKE_COLOR"
+                ],
+                "$type": "color",
+                "$value": "#5d4bff"
+              },
+              "medium*": {
+                "$scopes": [
+                  "STROKE_COLOR"
+                ],
+                "$type": "color",
+                "$value": "#988fed"
+              },
+              "low": {
+                "$scopes": [
+                  "STROKE_COLOR"
+                ],
+                "$type": "color",
+                "$value": "#c4beff"
+              }
+            },
+            "success": {
+              "solid": {
+                "$scopes": [
+                  "STROKE_COLOR"
+                ],
+                "$type": "color",
+                "$value": "#2eb85c"
+              },
+              "medium*": {
+                "$scopes": [
+                  "STROKE_COLOR"
+                ],
+                "$type": "color",
+                "$value": "#96dbad"
+              },
+              "low": {
+                "$scopes": [
+                  "STROKE_COLOR"
+                ],
+                "$type": "color",
+                "$value": "#cbedd6"
+              }
+            },
+            "danger": {
+              "solid": {
+                "$scopes": [
+                  "STROKE_COLOR"
+                ],
+                "$type": "color",
+                "$value": "#e55353"
+              },
+              "medium*": {
+                "$scopes": [
+                  "STROKE_COLOR"
+                ],
+                "$type": "color",
+                "$value": "#f2a9a9"
+              },
+              "low": {
+                "$scopes": [
+                  "STROKE_COLOR"
+                ],
+                "$type": "color",
+                "$value": "#f9d4d4"
+              }
+            },
+            "warning": {
+              "solid": {
+                "$scopes": [
+                  "STROKE_COLOR"
+                ],
+                "$type": "color",
+                "$value": "#f7a402"
+              },
+              "medium*": {
+                "$scopes": [
+                  "STROKE_COLOR"
+                ],
+                "$type": "color",
+                "$value": "#fcd88a"
+              },
+              "low": {
+                "$scopes": [
+                  "STROKE_COLOR"
+                ],
+                "$type": "color",
+                "$value": "#feecc5"
+              }
+            },
+            "info": {
+              "solid": {
+                "$scopes": [
+                  "STROKE_COLOR"
+                ],
+                "$type": "color",
+                "$value": "#498bff"
+              },
+              "medium*": {
+                "$scopes": [
+                  "STROKE_COLOR"
+                ],
+                "$type": "color",
+                "$value": "#83c6fc"
+              },
+              "low": {
+                "$scopes": [
+                  "STROKE_COLOR"
+                ],
+                "$type": "color",
+                "$value": "#c0e6ff"
+              }
+            }
+          },
+          "gradient": {
+            "ai": {
+              "start": {
+                "$codeSyntax": {
+                  "WEB": "accent/primary"
+                },
+                "$scopes": [
+                  "FRAME_FILL"
+                ],
+                "$type": "color",
+                "$value": "#7565ff"
+              },
+              "end": {
+                "$codeSyntax": {
+                  "WEB": "accent/primary"
+                },
+                "$scopes": [
+                  "FRAME_FILL"
+                ],
+                "$type": "color",
+                "$value": "#5d4bff"
+              }
+            }
+          },
+          "components": {
+            "input": {
+              "background": {
+                "$scopes": [
+                  "FRAME_FILL"
+                ],
+                "$hiddenFromPublishing": true,
+                "$type": "color",
+                "$value": "#17171f"
+              }
+            },
+            "scroll": {
+              "pin": {
+                "$scopes": [
+                  "SHAPE_FILL"
+                ],
+                "$hiddenFromPublishing": true,
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Colors",
+                "$value": "{border.neutral.solid}"
+              }
+            },
+            "toolbar": {
+              "background": {
+                "$scopes": [
+                  "FRAME_FILL"
+                ],
+                "$hiddenFromPublishing": true,
+                "$type": "color",
+                "$value": "#2a2b36"
+              }
+            },
+            "tooltip": {
+              "background": {
+                "$scopes": [
+                  "SHAPE_FILL"
+                ],
+                "$hiddenFromPublishing": true,
+                "$type": "color",
+                "$value": "#17171f"
+              },
+              "text": {
+                "$scopes": [
+                  "TEXT_FILL"
+                ],
+                "$hiddenFromPublishing": true,
+                "$type": "color",
+                "$value": "#17171f"
+              }
+            }
+          },
+          "container": {
+            "header": {
+              "$scopes": [
+                "FRAME_FILL"
+              ],
+              "$type": "color",
+              "$value": "#282933"
+            },
+            "content": {
+              "$scopes": [
+                "FRAME_FILL"
+              ],
+              "$type": "color",
+              "$value": "#24252f"
+            }
+          },
+          "alt": {
+            "bg-table-row": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "#21222b"
+            }
+          }
+        },
+        "Mode": {
+          "accent": {
+            "ai": {
+              "$codeSyntax": {
+                "WEB": "accent/primary"
+              },
+              "$scopes": [
+                "FRAME_FILL"
+              ],
+              "$type": "color",
+              "$value": "#5d4bff"
+            },
+            "primary": {
+              "$codeSyntax": {
+                "WEB": "accent/primary"
+              },
+              "$scopes": [
+                "FRAME_FILL"
+              ],
+              "$type": "color",
+              "$value": "#321fdb"
+            },
+            "success": {
+              "$scopes": [
+                "FRAME_FILL"
+              ],
+              "$type": "color",
+              "$value": "#2eb85c"
+            },
+            "danger": {
+              "$scopes": [
+                "FRAME_FILL"
+              ],
+              "$type": "color",
+              "$value": "#e55353"
+            },
+            "warning": {
+              "$scopes": [
+                "FRAME_FILL"
+              ],
+              "$type": "color",
+              "$value": "#f7a402"
+            },
+            "info": {
+              "$codeSyntax": {
+                "WEB": "accent/info"
+              },
+              "$scopes": [
+                "FRAME_FILL"
+              ],
+              "$type": "color",
+              "$value": "#498bff"
+            },
+            "neutral-dark": {
+              "$scopes": [
+                "FRAME_FILL"
+              ],
+              "$description": "invertible",
+              "$type": "color",
+              "$value": "#4f5d73"
+            },
+            "neutral-light": {
+              "$scopes": [
+                "FRAME_FILL"
+              ],
+              "$description": "invertible",
+              "$type": "color",
+              "$value": "#c4c9d0"
+            }
+          },
+          "background": {
+            "main": {
+              "$codeSyntax": {
+                "WEB": "background/main"
+              },
+              "$scopes": [
+                "FRAME_FILL"
+              ],
+              "$type": "color",
+              "$value": "#21222b"
+            },
+            "secondary": {
+              "$scopes": [
+                "FRAME_FILL"
+              ],
+              "$type": "color",
+              "$value": "#0e0e15"
+            },
+            "tertiary": {
+              "$scopes": [
+                "FRAME_FILL"
+              ],
+              "$type": "color",
+              "$value": "#636f83"
+            },
+            "ai-subtle": {
+              "$scopes": [
+                "FRAME_FILL"
+              ],
+              "$type": "color",
+              "$value": "#d8d3ff"
+            },
+            "ai-subtle-alt": {
+              "$scopes": [
+                "FRAME_FILL"
+              ],
+              "$type": "color",
+              "$value": "#f2f1ff"
+            },
+            "primary-subtle": {
+              "$scopes": [
+                "FRAME_FILL"
+              ],
+              "$type": "color",
+              "$value": "#ccc7f6"
+            },
+            "success-subtle": {
+              "$scopes": [
+                "FRAME_FILL"
+              ],
+              "$type": "color",
+              "$value": "#cbedd6"
+            },
+            "danger-subtle": {
+              "$scopes": [
+                "FRAME_FILL"
+              ],
+              "$type": "color",
+              "$value": "#f9d4d4"
+            },
+            "warning-subtle": {
+              "$scopes": [
+                "FRAME_FILL"
+              ],
+              "$type": "color",
+              "$value": "#feecc5"
+            },
+            "info-subtle": {
+              "$scopes": [
+                "FRAME_FILL"
+              ],
+              "$type": "color",
+              "$value": "#c0e6ff"
+            }
+          },
+          "text+icons": {
+            "neutral": {
+              "high": {
+                "$scopes": [
+                  "SHAPE_FILL",
+                  "TEXT_FILL"
+                ],
+                "$type": "color",
+                "$value": "#ffffff"
+              },
+              "medium*": {
+                "$scopes": [
+                  "SHAPE_FILL",
+                  "TEXT_FILL"
+                ],
+                "$type": "color",
+                "$value": "#ebedef"
+              },
+              "low": {
+                "$scopes": [
+                  "SHAPE_FILL",
+                  "TEXT_FILL"
+                ],
+                "$type": "color",
+                "$value": "#9ea7b2"
+              },
+              "on-accent": {
+                "$scopes": [
+                  "SHAPE_FILL",
+                  "TEXT_FILL"
+                ],
+                "$type": "color",
+                "$value": "#ffffff"
+              }
+            },
+            "primary": {
+              "high": {
+                "$scopes": [
+                  "SHAPE_FILL",
+                  "TEXT_FILL"
+                ],
+                "$type": "color",
+                "$value": "#20159e"
+              },
+              "medium*": {
+                "$scopes": [
+                  "SHAPE_FILL",
+                  "TEXT_FILL"
+                ],
+                "$type": "color",
+                "$value": "#321fdb"
+              },
+              "on-accent": {
+                "$scopes": [
+                  "SHAPE_FILL",
+                  "TEXT_FILL"
+                ],
+                "$type": "color",
+                "$value": "#ccc7f6"
+              }
+            },
+            "ai": {
+              "high": {
+                "$scopes": [
+                  "SHAPE_FILL",
+                  "TEXT_FILL"
+                ],
+                "$type": "color",
+                "$value": "#321fdb"
+              },
+              "medium": {
+                "$scopes": [
+                  "SHAPE_FILL",
+                  "TEXT_FILL"
+                ],
+                "$type": "color",
+                "$value": "#5d4bff"
+              },
+              "on-accent": {
+                "$scopes": [
+                  "SHAPE_FILL",
+                  "TEXT_FILL"
+                ],
+                "$type": "color",
+                "$value": "#d8d3ff"
+              }
+            },
+            "success": {
+              "high": {
+                "$scopes": [
+                  "SHAPE_FILL",
+                  "TEXT_FILL"
+                ],
+                "$type": "color",
+                "$value": "#1b9e3e"
+              },
+              "medium*": {
+                "$scopes": [
+                  "SHAPE_FILL",
+                  "TEXT_FILL"
+                ],
+                "$type": "color",
+                "$value": "#2eb85c"
+              },
+              "on-accent": {
+                "$scopes": [
+                  "SHAPE_FILL",
+                  "TEXT_FILL"
+                ],
+                "$type": "color",
+                "$value": "#cbedd6"
+              }
+            },
+            "danger": {
+              "high": {
+                "$scopes": [
+                  "SHAPE_FILL",
+                  "TEXT_FILL"
+                ],
+                "$type": "color",
+                "$value": "#c43131"
+              },
+              "medium*": {
+                "$scopes": [
+                  "SHAPE_FILL",
+                  "TEXT_FILL"
+                ],
+                "$type": "color",
+                "$value": "#e55353"
+              },
+              "on-accent": {
+                "$scopes": [
+                  "SHAPE_FILL",
+                  "TEXT_FILL"
+                ],
+                "$type": "color",
+                "$value": "#f9d4d4"
+              }
+            },
+            "warning": {
+              "high": {
+                "$scopes": [
+                  "SHAPE_FILL",
+                  "TEXT_FILL"
+                ],
+                "$type": "color",
+                "$value": "#c57707"
+              },
+              "medium*": {
+                "$scopes": [
+                  "SHAPE_FILL",
+                  "TEXT_FILL"
+                ],
+                "$type": "color",
+                "$value": "#f7a402"
+              },
+              "on-accent": {
+                "$scopes": [
+                  "SHAPE_FILL",
+                  "TEXT_FILL"
+                ],
+                "$type": "color",
+                "$value": "#feecc5"
+              }
+            },
+            "info": {
+              "high": {
+                "$scopes": [
+                  "SHAPE_FILL",
+                  "TEXT_FILL"
+                ],
+                "$type": "color",
+                "$value": "#1469b8"
+              },
+              "medium*": {
+                "$scopes": [
+                  "SHAPE_FILL",
+                  "TEXT_FILL"
+                ],
+                "$type": "color",
+                "$value": "#498bff"
+              },
+              "on-accent": {
+                "$scopes": [
+                  "SHAPE_FILL",
+                  "TEXT_FILL"
+                ],
+                "$type": "color",
+                "$value": "#c0e6ff"
+              }
+            }
+          },
+          "border": {
+            "neutral": {
+              "solid": {
+                "$scopes": [
+                  "STROKE_COLOR"
+                ],
+                "$type": "color",
+                "$value": "#f5f6f7"
+              },
+              "high": {
+                "$scopes": [
+                  "STROKE_COLOR"
+                ],
+                "$type": "color",
+                "$value": "#8a93a2"
+              },
+              "medium*": {
+                "$scopes": [
+                  "STROKE_COLOR"
+                ],
+                "$type": "color",
+                "$value": "#42434d"
+              },
+              "low": {
+                "$scopes": [
+                  "STROKE_COLOR"
+                ],
+                "$type": "color",
+                "$value": "#353640"
+              }
+            },
+            "primary": {
+              "solid": {
+                "$scopes": [
+                  "STROKE_COLOR"
+                ],
+                "$type": "color",
+                "$value": "#321fdb"
+              },
+              "medium*": {
+                "$scopes": [
+                  "STROKE_COLOR"
+                ],
+                "$type": "color",
+                "$value": "#988fed"
+              },
+              "low": {
+                "$scopes": [
+                  "STROKE_COLOR"
+                ],
+                "$type": "color",
+                "$value": "#ccc7f6"
+              }
+            },
+            "ai": {
+              "solid": {
+                "$scopes": [
+                  "STROKE_COLOR"
+                ],
+                "$type": "color",
+                "$value": "#5d4bff"
+              },
+              "medium*": {
+                "$scopes": [
+                  "STROKE_COLOR"
+                ],
+                "$type": "color",
+                "$value": "#988fed"
+              },
+              "low": {
+                "$scopes": [
+                  "STROKE_COLOR"
+                ],
+                "$type": "color",
+                "$value": "#c4beff"
+              }
+            },
+            "success": {
+              "solid": {
+                "$scopes": [
+                  "STROKE_COLOR"
+                ],
+                "$type": "color",
+                "$value": "#2eb85c"
+              },
+              "medium*": {
+                "$scopes": [
+                  "STROKE_COLOR"
+                ],
+                "$type": "color",
+                "$value": "#96dbad"
+              },
+              "low": {
+                "$scopes": [
+                  "STROKE_COLOR"
+                ],
+                "$type": "color",
+                "$value": "#cbedd6"
+              }
+            },
+            "danger": {
+              "solid": {
+                "$scopes": [
+                  "STROKE_COLOR"
+                ],
+                "$type": "color",
+                "$value": "#e55353"
+              },
+              "medium*": {
+                "$scopes": [
+                  "STROKE_COLOR"
+                ],
+                "$type": "color",
+                "$value": "#f2a9a9"
+              },
+              "low": {
+                "$scopes": [
+                  "STROKE_COLOR"
+                ],
+                "$type": "color",
+                "$value": "#f9d4d4"
+              }
+            },
+            "warning": {
+              "solid": {
+                "$scopes": [
+                  "STROKE_COLOR"
+                ],
+                "$type": "color",
+                "$value": "#f7a402"
+              },
+              "medium*": {
+                "$scopes": [
+                  "STROKE_COLOR"
+                ],
+                "$type": "color",
+                "$value": "#fcd88a"
+              },
+              "low": {
+                "$scopes": [
+                  "STROKE_COLOR"
+                ],
+                "$type": "color",
+                "$value": "#feecc5"
+              }
+            },
+            "info": {
+              "solid": {
+                "$scopes": [
+                  "STROKE_COLOR"
+                ],
+                "$type": "color",
+                "$value": "#498bff"
+              },
+              "medium*": {
+                "$scopes": [
+                  "STROKE_COLOR"
+                ],
+                "$type": "color",
+                "$value": "#83c6fc"
+              },
+              "low": {
+                "$scopes": [
+                  "STROKE_COLOR"
+                ],
+                "$type": "color",
+                "$value": "#c0e6ff"
+              }
+            }
+          },
+          "gradient": {
+            "ai": {
+              "start": {
+                "$codeSyntax": {
+                  "WEB": "accent/primary"
+                },
+                "$scopes": [
+                  "FRAME_FILL"
+                ],
+                "$type": "color",
+                "$value": "#7565ff"
+              },
+              "end": {
+                "$codeSyntax": {
+                  "WEB": "accent/primary"
+                },
+                "$scopes": [
+                  "FRAME_FILL"
+                ],
+                "$type": "color",
+                "$value": "#5d4bff"
+              }
+            }
+          },
+          "components": {
+            "input": {
+              "background": {
+                "$scopes": [
+                  "FRAME_FILL"
+                ],
+                "$hiddenFromPublishing": true,
+                "$type": "color",
+                "$value": "#17171f"
+              }
+            },
+            "scroll": {
+              "pin": {
+                "$scopes": [
+                  "SHAPE_FILL"
+                ],
+                "$hiddenFromPublishing": true,
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Colors",
+                "$value": "{border.neutral.solid}"
+              }
+            },
+            "toolbar": {
+              "background": {
+                "$scopes": [
+                  "FRAME_FILL"
+                ],
+                "$hiddenFromPublishing": true,
+                "$type": "color",
+                "$value": "#2a2b36"
+              }
+            },
+            "tooltip": {
+              "background": {
+                "$scopes": [
+                  "SHAPE_FILL"
+                ],
+                "$hiddenFromPublishing": true,
+                "$type": "color",
+                "$value": "#17171f"
+              },
+              "text": {
+                "$scopes": [
+                  "TEXT_FILL"
+                ],
+                "$hiddenFromPublishing": true,
+                "$type": "color",
+                "$value": "#17171f"
+              }
+            }
+          },
+          "container": {
+            "header": {
+              "$scopes": [
+                "FRAME_FILL"
+              ],
+              "$type": "color",
+              "$value": "#282933"
+            },
+            "content": {
+              "$scopes": [
+                "FRAME_FILL"
+              ],
+              "$type": "color",
+              "$value": "#24252f"
+            }
+          },
+          "alt": {
+            "bg-table-row": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "#21222b"
+            }
+          }
+        }
+      }
+    }
+  }
+]

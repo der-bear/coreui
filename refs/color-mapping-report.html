@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Figma Token → Codebase Colors</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif;background:#fff;color:#1a1a2e;font-size:13px;line-height:1.5}
+.hdr{padding:20px 32px 14px;border-bottom:1px solid #e4e4ec;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.hdr h1{font-size:18px;font-weight:700;letter-spacing:-.02em}
+.hdr p{font-size:11px;color:#888}
+.mode-sw{display:flex;border:1px solid #d0d0dc;border-radius:6px;overflow:hidden}
+.mode-btn{padding:5px 14px;font-size:11px;font-weight:600;cursor:pointer;background:#fff;color:#888;border:none}
+.mode-btn.on{background:#5856d6;color:#fff}
+.mode-btn:hover:not(.on){background:#f4f4f8}
+
+.summary{padding:10px 32px;border-bottom:1px solid #e4e4ec;font-size:11px;color:#888;display:flex;gap:20px;flex-wrap:wrap}
+.summary b{color:#1a1a2e;font-size:14px}
+
+.main{padding:16px 32px}
+
+/* Token row */
+.ctx-section{margin-bottom:24px}
+.ctx-title{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#5856d6;margin-bottom:8px;padding-bottom:4px;border-bottom:1px solid #ececf2}
+
+.trow{display:flex;align-items:center;gap:12px;padding:6px 0;border-bottom:1px solid #f4f4f8}
+.trow:last-child{border-bottom:none}
+
+.token-side{display:flex;align-items:center;gap:8px;min-width:260px;flex-shrink:0}
+.token-sw{width:28px;height:28px;border-radius:6px;flex-shrink:0}
+.token-info{min-width:0}
+.token-name{font-family:'SF Mono','Fira Code','Menlo',monospace;font-size:12px;font-weight:600;color:#5856d6;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.token-hex{font-family:'SF Mono','Fira Code','Menlo',monospace;font-size:10px;color:#aaa}
+
+.arrow{color:#ccc;font-size:11px;flex-shrink:0;margin:0 4px}
+
+.swatches{display:flex;flex-wrap:wrap;gap:6px;flex:1;align-items:center}
+
+/* Individual color swatch */
+.sw{width:22px;height:22px;border-radius:4px;cursor:default;position:relative;flex-shrink:0;transition:transform .1s;outline:1px solid transparent;outline-offset:1px}
+.sw:hover{transform:scale(1.3);z-index:10}
+
+
+/* Checkerboard for dark colors */
+.chk{background-image:linear-gradient(45deg,#eee 25%,transparent 25%),linear-gradient(-45deg,#eee 25%,transparent 25%),linear-gradient(45deg,transparent 75%,#eee 75%),linear-gradient(-45deg,transparent 75%,#eee 75%);background-size:6px 6px;background-position:0 0,0 3px,3px -3px,-3px 0}
+
+.count{font-size:10px;color:#bbb;flex-shrink:0;min-width:32px;text-align:right;font-variant-numeric:tabular-nums}
+
+/* Tooltip */
+.tip{display:none;position:fixed;background:#1a1a2e;color:#e8e8f0;padding:8px 12px;border-radius:7px;font-size:11px;line-height:1.5;pointer-events:none;z-index:1000;white-space:nowrap;box-shadow:0 4px 16px rgba(0,0,0,.2)}
+.tip .th{font-family:'SF Mono','Fira Code','Menlo',monospace;font-weight:600;font-size:12px}
+.tip .td{color:#a0a0b8;font-size:10px}
+.tip .de{font-weight:600}
+.tip .de-exact{color:#34d399}.tip .de-close{color:#60a5fa}.tip .de-moderate{color:#fbbf24}.tip .de-far{color:#f87171}
+
+/* Responsive */
+@media(max-width:768px){.hdr,.summary,.main{padding-left:14px;padding-right:14px}.token-side{min-width:160px}}
+.loading{text-align:center;padding:60px;color:#aaa}
+
+/* Separate section */
+.sep-section{margin-top:32px;border-top:2px solid #e4e4ec;padding-top:16px}
+.sep-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:4px}
+.sep-desc{font-size:11px;color:#888;margin-bottom:12px}
+.sep-table{width:100%;border-collapse:collapse;font-size:12px}
+.sep-table th{text-align:left;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#888;padding:6px 8px;border-bottom:2px solid #e4e4ec}
+.sep-table td{padding:5px 8px;border-bottom:1px solid #f4f4f8;vertical-align:top}
+.sep-color{font-family:'SF Mono','Fira Code','Menlo',monospace;font-size:11px;font-weight:600;display:flex;align-items:center;gap:6px}
+.sep-sw{width:18px;height:18px;border-radius:3px;flex-shrink:0;display:inline-block}
+.sep-props{display:flex;flex-wrap:wrap;gap:3px}
+.sep-prop{background:#f0f0f6;padding:1px 6px;border-radius:3px;font-family:'SF Mono','Fira Code','Menlo',monospace;font-size:10px;color:#555}
+.sep-ctx{font-size:10px;color:#888}
+.sep-grp{font-size:10px;color:#aaa}
+.sep-toggle{background:none;border:1px solid #d0d0dc;border-radius:6px;padding:4px 12px;font-size:11px;font-weight:600;cursor:pointer;color:#5856d6}
+.sep-toggle:hover{background:#f4f4f8}
+</style>
+</head>
+<body>
+
+<div class="hdr">
+  <div>
+    <h1>Figma Token &rarr; Codebase Colors</h1>
+    <p>Each design token and all hex/named colors it replaces. Strict context: text&rarr;text, fill&rarr;fill, stroke&rarr;stroke.</p>
+  </div>
+  <div class="mode-sw" id="modeSw">
+    <button class="mode-btn on" data-m="light">Light</button>
+    <button class="mode-btn" data-m="dark">Dark</button>
+  </div>
+</div>
+<div class="summary" id="summary"></div>
+<div class="main" id="main"><div class="loading">Loading...</div></div>
+<div class="tip" id="tip"></div>
+
+<script>
+let D=null, mode='light';
+
+function esc(s){const d=document.createElement('div');d.textContent=s;return d.innerHTML}
+function isDark(h){if(!h||h.length<7)return false;const r=parseInt(h.slice(1,3),16),g=parseInt(h.slice(3,5),16),b=parseInt(h.slice(5,7),16);return(r*.299+g*.587+b*.114)<128}
+function deB(d){return d===0?'exact':d<5?'close':d<=15?'moderate':'far'}
+
+// Mode
+document.getElementById('modeSw').onclick=e=>{
+  const b=e.target.closest('.mode-btn');if(!b||b.classList.contains('on'))return;
+  document.querySelectorAll('.mode-btn').forEach(x=>x.classList.remove('on'));
+  b.classList.add('on');mode=b.dataset.m;rebuild();
+};
+
+// Tooltip
+const tip=document.getElementById('tip');
+let tipTarget=null;
+document.addEventListener('mouseover',e=>{
+  const sw=e.target.closest('.sw');
+  if(!sw){tip.style.display='none';tipTarget=null;return}
+  if(sw===tipTarget)return;
+  tipTarget=sw;
+  const d=sw.dataset;
+  const deClass='de-'+deB(parseFloat(d.de));
+  tip.innerHTML=`<div class="th">${esc(d.color)}</div>`
+    +`<div class="td">${d.hex} &middot; <span class="de ${deClass}">dE ${d.de}</span> &middot; ${d.occ} occ</div>`
+    +`<div class="td">${d.groups}</div>`;
+  tip.style.display='block';
+  const r=sw.getBoundingClientRect();
+  tip.style.left=Math.min(r.left, window.innerWidth-tip.offsetWidth-8)+'px';
+  tip.style.top=(r.top-tip.offsetHeight-6)+'px';
+});
+document.addEventListener('mouseout',e=>{
+  if(e.target.closest('.sw'))return;
+  tip.style.display='none';tipTarget=null;
+});
+
+function rebuild(){
+  const clusters=mode==='light'?D.light:D.dark;
+  const s=D.summary;
+  const totalColors=clusters.reduce((a,t)=>a+t.unique_colors,0);
+  const totalOcc=clusters.reduce((a,t)=>a+t.total_occurrences,0);
+  document.getElementById('summary').innerHTML=
+    `<div><b>${clusters.length}</b> tokens</div>`
+    +`<div><b>${totalColors}</b> unique colors</div>`
+    +`<div><b>${totalOcc.toLocaleString()}</b> total occurrences</div>`
+    +`<div><b>${s.mapped_colors}</b> audit colors (hex/named)</div>`
+    +`<div><b>${s.separate_colors||0}</b> shadow/other/rgba</div>`;
+
+  // Group tokens by their context role
+  const groups = {
+    'Background (FRAME_FILL)': [],
+    'Text & Icons (TEXT_FILL)': [],
+    'Border / Stroke (STROKE_COLOR)': [],
+    'All Scopes': [],
+  };
+
+  for(const t of clusters){
+    const scopes=t.scopes||[];
+    if(scopes.includes('TEXT_FILL') || scopes.includes('SHAPE_FILL') && t.token.startsWith('text'))
+      groups['Text & Icons (TEXT_FILL)'].push(t);
+    else if(scopes.includes('STROKE_COLOR'))
+      groups['Border / Stroke (STROKE_COLOR)'].push(t);
+    else if(scopes.includes('FRAME_FILL') || scopes.includes('SHAPE_FILL'))
+      groups['Background (FRAME_FILL)'].push(t);
+    else
+      groups['All Scopes'].push(t);
+  }
+
+  let h='';
+  for(const[label, tokens] of Object.entries(groups)){
+    if(!tokens.length) continue;
+    h+=`<div class="ctx-section"><div class="ctx-title">${esc(label)}</div>`;
+    for(const t of tokens){
+      // Flatten all colors from all sub-contexts, dedupe by hex, sort by dE
+      const seen=new Map();
+      for(const items of Object.values(t.by_context)){
+        for(const it of items){
+          if(!seen.has(it.hex)||it.de<seen.get(it.hex).de) seen.set(it.hex, it);
+        }
+      }
+      const colors=[...seen.values()].sort((a,b)=>a.de-b.de);
+
+      h+=`<div class="trow">`;
+      h+=`<div class="token-side">`;
+      h+=`<div class="token-sw${isDark(t.hex)?' chk':''}" style="background:${t.hex}"></div>`;
+      h+=`<div class="token-info"><div class="token-name">${esc(t.token)}</div><div class="token-hex">${t.hex}</div></div>`;
+      h+=`</div>`;
+      h+=`<span class="arrow">&rarr;</span>`;
+      h+=`<div class="swatches">`;
+      for(const c of colors){
+        const cls=isDark(c.hex)?'':'chk';
+        const grpStr=Object.entries(c.groups).map(([g,n])=>g+':'+n).join(', ');
+        h+=`<div class="sw ${cls}" style="background:${c.hex}" `
+          +`data-color="${esc(c.color)}" data-hex="${c.hex}" data-de="${c.de}" `
+          +`data-occ="${c.occurrences}" data-groups="${esc(grpStr)}"></div>`;
+      }
+      h+=`</div>`;
+      h+=`<div class="count">${colors.length}</div>`;
+      h+=`</div>`;
+    }
+    h+=`</div>`;
+  }
+  // Separate section: shadow, other, rgba
+  const sep=D.separate||[];
+  if(sep.length){
+    h+=`<div class="sep-section">`;
+    h+=`<div style="display:flex;align-items:center;gap:12px;margin-bottom:8px">`;
+    h+=`<div class="sep-title">Shadow, Other &amp; Functional Colors</div>`;
+    h+=`<span class="sep-desc">${sep.length} colors not mapped to tokens — listed with CSS properties</span>`;
+    h+=`<button class="sep-toggle" onclick="document.getElementById('sepTable').style.display=document.getElementById('sepTable').style.display==='none'?'':'none'">Toggle</button>`;
+    h+=`</div>`;
+    h+=`<table class="sep-table" id="sepTable">`;
+    h+=`<thead><tr><th>Color</th><th>Type</th><th>Occ</th><th>Context</th><th>CSS Properties</th><th>Groups</th></tr></thead><tbody>`;
+    for(const c of sep){
+      const ctxStr=Object.entries(c.contexts).map(([k,v])=>k+':'+v).join(', ');
+      const grpStr=Object.entries(c.groups).map(([k,v])=>k+':'+v).join(', ');
+      const propsArr=Object.entries(c.properties||{}).sort((a,b)=>b[1]-a[1]);
+      // Try to display a swatch — functional colors as-is, hex colors have a hex field
+      const swBg=c.hex||c.color;
+      h+=`<tr>`;
+      h+=`<td><div class="sep-color"><span class="sep-sw" style="background:${esc(swBg)}"></span>${esc(c.color)}</div></td>`;
+      h+=`<td>${c.type}</td>`;
+      h+=`<td>${c.occurrences}</td>`;
+      h+=`<td class="sep-ctx">${esc(ctxStr)}</td>`;
+      h+=`<td><div class="sep-props">`;
+      for(const[prop,cnt] of propsArr){
+        h+=`<span class="sep-prop">${esc(prop)} (${cnt})</span>`;
+      }
+      h+=`</div></td>`;
+      h+=`<td class="sep-grp">${esc(grpStr)}</td>`;
+      h+=`</tr>`;
+    }
+    h+=`</tbody></table></div>`;
+  }
+
+  document.getElementById('main').innerHTML=h;
+}
+
+fetch('color-mapping-report.json').then(r=>r.json()).then(d=>{D=d;rebuild()})
+  .catch(e=>{document.getElementById('main').innerHTML=`<div class="loading">${e.message}</div>`});
+</script>
+</body>
+</html>

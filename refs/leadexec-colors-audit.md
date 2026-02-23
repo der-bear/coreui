@@ -1,0 +1,778 @@
+# Color Audit (with Usage Context)
+
+Contexts used: **background**, **text**, **border**, **shadow**, **icon**, **other**.
+
+## 1) Variable Definitions (tokens with literal colors)
+- `--cui-btn-hover-border-color` — 436 defs | values: `transparent`(30), `#565f6a`(24) | contexts: border:436
+- `--cui-btn-active-border-color` — 424 defs | values: `#505964`(36), `#e86464`(24) | contexts: border:424
+- `--cui-btn-disabled-color` — 408 defs | values: `#fff`(60), `#080a0c`(54) | contexts: other:408
+- `--cui-btn-hover-bg` — 406 defs | values: `#5b6571`(24), `#e96d6d`(18) | contexts: other:406
+- `--cui-btn-active-bg` — 406 defs | values: `#565f6a`(36), `#ea7575`(24) | contexts: other:406
+- `--cui-btn-color` — 403 defs | values: `#fff`(63), `#080a0c`(54) | contexts: other:403
+- `--cui-btn-hover-color` — 403 defs | values: `#080a0c`(162), `#fff`(159) | contexts: other:403
+- `--cui-btn-active-color` — 400 defs | values: `#080a0c`(162), `#fff`(159) | contexts: other:400
+- `--cui-btn-border-color` — 327 defs | values: `transparent`(24), `#6b7785`(24) | contexts: border:327
+- `--cui-btn-disabled-bg` — 280 defs | values: `transparent`(132), `#6b7785`(12) | contexts: other:280
+- `--cui-btn-active-shadow` — 264 defs | values: `inset 0 3px 5px rgba(8, 10, 12, 0.125)`(168), `inset 0 3px 5px rgba(0, 0, 0, 0.125)`(96) | contexts: shadow:264
+- `--cui-btn-disabled-border-color` — 214 defs | values: `transparent`(18), `#6b7785`(12) | contexts: border:214
+- `--cui-btn-bg` — 179 defs | values: `transparent`(24), `#6b7785`(12) | contexts: other:179
+- `--cui-focus-ring-color` — 168 defs | values: `rgba(88, 86, 214, 0.25)`(18), `rgba(var(--cui-primary-rgb), var(--cui-focus-ring-opacity))`(18) | contexts: other:168
+- `--cui-btn-shadow` — 132 defs | values: `rgba(107, 119, 133, 0.5)`(12), `rgba(229, 83, 83, 0.5)`(12) | contexts: shadow:132
+- `--cui-table-striped-bg` — 126 defs | values: `rgba(var(--cui-emphasis-color-rgb), 0.05)`(12), `#d3d2eb`(6) | contexts: other:126
+- `--cui-table-active-bg` — 126 defs | values: `rgba(var(--cui-emphasis-color-rgb), 0.1)`(12), `#c9c8e0`(6) | contexts: other:126
+- `--cui-table-hover-bg` — 126 defs | values: `rgba(var(--cui-emphasis-color-rgb), 0.075)`(12), `#cecde5`(6) | contexts: other:126
+- `--cui-table-color` — 114 defs | values: `#080a0c`(42), `#000`(42) | contexts: other:114
+- `--cui-table-bg` — 114 defs | values: `#d6ebff`(8), `#feefd0`(8) | contexts: other:114
+- `--cui-table-border-color` — 114 defs | values: `#b3b3c8`(6), `#b6b8bb`(6) | contexts: border:114
+- `--cui-table-striped-color` — 114 defs | values: `#080a0c`(42), `#000`(42) | contexts: other:114
+- `--cui-table-active-color` — 114 defs | values: `#080a0c`(42), `#000`(42) | contexts: other:114
+- `--cui-table-hover-color` — 114 defs | values: `#080a0c`(42), `#000`(42) | contexts: other:114
+- `--bs-btn-border-color` — 108 defs | values: `transparent`(12), `#198754`(12) | contexts: border:108
+- `--bs-btn-hover-border-color` — 108 defs | values: `transparent`(12), `#146c43`(6) | contexts: border:108
+- `--bs-btn-color` — 102 defs | values: `#fff`(27), `#000`(21) | contexts: other:102
+- `--bs-btn-active-border-color` — 102 defs | values: `#13653f`(6), `#25cff2`(6) | contexts: border:102
+- `--bs-btn-disabled-color` — 102 defs | values: `#fff`(27), `#000`(21) | contexts: other:102
+- `--bs-btn-disabled-border-color` — 102 defs | values: `#198754`(12), `#0dcaf0`(12) | contexts: border:102
+- `--cui-callout-border-left-color` — 96 defs | values: `#5856d6`(6), `#6b7785`(6) | contexts: border:96
+- `--bs-btn-hover-color` — 96 defs | values: `#fff`(54), `#000`(42) | contexts: other:96
+- `--bs-btn-hover-bg` — 96 defs | values: `#157347`(6), `#31d2f2`(6) | contexts: other:96
+- `--bs-btn-active-color` — 96 defs | values: `#fff`(54), `#000`(42) | contexts: other:96
+- `--bs-btn-active-bg` — 96 defs | values: `#146c43`(6), `#3dd5f3`(6) | contexts: other:96
+- `--bs-btn-active-shadow` — 96 defs | values: `inset 0 3px 5px rgba(0, 0, 0, 0.125)`(96) | contexts: shadow:96
+- `--bs-btn-disabled-bg` — 96 defs | values: `transparent`(48), `#198754`(6) | contexts: other:96
+- `--cui-body-color` — 65 defs | values: `rgba(255, 255, 255, 0.87)`(24), `rgba(37, 43, 54, 0.95)`(18) | contexts: other:65
+- `--cui-body-bg` — 65 defs | values: `#fff`(26), `#212631`(24) | contexts: other:65
+- `--cui-tertiary-bg` — 63 defs | values: `#2a303d`(24), `#f3f4f7`(18) | contexts: other:63
+- `--cui-emphasis-color` — 60 defs | values: `#fff`(36), `#080a0c`(18) | contexts: other:60
+- `--cui-secondary-color` — 60 defs | values: `rgba(255, 255, 255, 0.6)`(24), `rgba(37, 43, 54, 0.681)`(18) | contexts: other:60
+- `--cui-secondary-bg` — 60 defs | values: `#323a49`(24), `#e7eaee`(18) | contexts: other:60
+- `--cui-tertiary-color` — 60 defs | values: `rgba(255, 255, 255, 0.38)`(24), `rgba(37, 43, 54, 0.38)`(18) | contexts: other:60
+- `--cui-border-color` — 60 defs | values: `#323a49`(24), `#dbdfe6`(18) | contexts: border:60
+- `--bs-btn-bg` — 60 defs | values: `transparent`(12), `#198754`(6) | contexts: other:60
+- `--bs-table-bg` — 54 defs | values: `transparent`(6), `#d1e7dd`(6) | contexts: other:54
+- `--bs-table-striped-bg` — 54 defs | values: `rgba(0, 0, 0, 0.05)`(6), `#c7dbd2`(6) | contexts: other:54
+- `--bs-table-active-bg` — 54 defs | values: `rgba(0, 0, 0, 0.1)`(6), `#bcd0c7`(6) | contexts: other:54
+- `--bs-table-hover-bg` — 54 defs | values: `rgba(0, 0, 0, 0.075)`(6), `#c1d6cc`(6) | contexts: other:54
+- `--bs-alert-bg` — 54 defs | values: `transparent`(6), `#d1e7dd`(6) | contexts: other:54
+- `--bs-alert-border-color` — 54 defs | values: `transparent`(6), `#badbcc`(6) | contexts: border:54
+- `--cui-primary-text-emphasis` — 48 defs | values: `#3634a3`(18), `#403f98`(18) | contexts: text:48
+- `--cui-secondary-text-emphasis` — 48 defs | values: `#212233`(36), `#2b2f32`(6) | contexts: text:48
+- `--cui-success-text-emphasis` — 48 defs | values: `#0f5722`(18), `#145224`(18) | contexts: text:48
+- `--cui-info-text-emphasis` — 48 defs | values: `#184c77`(18), `#1f4b70`(18) | contexts: text:48
+- `--cui-warning-text-emphasis` — 48 defs | values: `#764705`(18), `#70460b`(18) | contexts: text:48
+- `--cui-danger-text-emphasis` — 48 defs | values: `#671414`(18), `#611a1a`(18) | contexts: text:48
+- `--cui-light-text-emphasis` — 48 defs | values: `#4a566d`(18), `#f3f4f7`(18) | contexts: text:48
+- `--cui-dark-text-emphasis` — 48 defs | values: `#323a49`(18), `#dbdfe6`(18) | contexts: text:48
+- `--cui-primary-bg-subtle` — 48 defs | values: `#cfc7f3`(36), `#cfe2ff`(6) | contexts: other:48
+- `--cui-secondary-bg-subtle` — 48 defs | values: `#ced2d8`(36), `#e2e3e5`(6) | contexts: other:48
+- `--cui-success-bg-subtle` — 48 defs | values: `#cbedd6`(36), `#d1e7dd`(6) | contexts: other:48
+- `--cui-info-bg-subtle` — 48 defs | values: `#c0e6ff`(36), `#cff4fc`(6) | contexts: other:48
+- `--cui-warning-bg-subtle` — 48 defs | values: `#feecc5`(36), `#fff3cd`(6) | contexts: other:48
+- `--cui-danger-bg-subtle` — 48 defs | values: `#f9d4d4`(36), `#f8d7da`(6) | contexts: other:48
+- `--cui-light-bg-subtle` — 48 defs | values: `#f9fafb`(18), `#323a49`(18) | contexts: other:48
+- `--cui-dark-bg-subtle` — 48 defs | values: `#cfd4de`(18), `#1d222b`(18) | contexts: other:48
+- `--cui-primary-border-subtle` — 48 defs | values: `#9d92e6`(36), `#9ec5fe`(6) | contexts: border:48
+- `--cui-secondary-border-subtle` — 48 defs | values: `#9da5b1`(36), `#c4c8cb`(6) | contexts: border:48
+- `--cui-success-border-subtle` — 48 defs | values: `#96dbad`(36), `#a3cfbb`(6) | contexts: border:48
+- `--cui-info-border-subtle` — 48 defs | values: `#80c6ff`(36), `#9eeaf9`(6) | contexts: border:48
+- `--cui-warning-border-subtle` — 48 defs | values: `#fcd88a`(36), `#ffe69c`(6) | contexts: border:48
+- `--cui-danger-border-subtle` — 48 defs | values: `#f2a9a9`(36), `#f1aeb5`(6) | contexts: border:48
+- `--cui-light-border-subtle` — 48 defs | values: `#e7eaee`(18), `#4a566d`(18) | contexts: border:48
+- `--cui-dark-border-subtle` — 48 defs | values: `#aab3c5`(18), `#323a49`(18) | contexts: border:48
+- `--cui-link-color` — 48 defs | values: `#5856d6`(18), `#6261cc`(18) | contexts: other:48
+- `--cui-link-hover-color` — 48 defs | values: `#4645ab`(18), `#8181d6`(18) | contexts: other:48
+- `--cui-code-color` — 48 defs | values: `#d63384`(24), `#e685b5`(24) | contexts: other:48
+- `--cui-highlight-color` — 48 defs | values: `rgba(37, 43, 54, 0.95)`(18), `rgba(255, 255, 255, 0.87)`(18) | contexts: other:48
+- `--cui-highlight-bg` — 48 defs | values: `#fff3cd`(24), `#664d03`(24) | contexts: other:48
+- `--cui-border-color-translucent` — 48 defs | values: `rgba(8, 10, 12, 0.175)`(18), `rgba(255, 255, 255, 0.1)`(18) | contexts: border:48
+- `--cui-form-valid-color` — 48 defs | values: `#75b798`(24), `#1b9e3e`(18) | contexts: other:48
+- `--cui-form-valid-border-color` — 48 defs | values: `#75b798`(24), `#1b9e3e`(18) | contexts: border:48
+- `--cui-form-invalid-color` — 48 defs | values: `#ea868f`(24), `#e55353`(18) | contexts: other:48
+- `--cui-form-invalid-border-color` — 48 defs | values: `#ea868f`(24), `#e55353`(18) | contexts: border:48
+- `--bs-table-color` — 48 defs | values: `#000`(42), `#fff`(6) | contexts: other:48
+- `--bs-table-border-color` — 48 defs | values: `#bcd0c7`(6), `#badce3`(6) | contexts: border:48
+- `--bs-table-striped-color` — 48 defs | values: `#000`(42), `#fff`(6) | contexts: other:48
+- `--bs-table-active-color` — 48 defs | values: `#000`(42), `#fff`(6) | contexts: other:48
+- `--bs-table-hover-color` — 48 defs | values: `#000`(42), `#fff`(6) | contexts: other:48
+- `--bs-alert-color` — 48 defs | values: `#0f5132`(6), `#055160`(6) | contexts: other:48
+- `--cui-gray-100` — 44 defs | values: `#f3f4f7`(36), `#f8f9fa`(6) | contexts: other:44
+- `--cui-gray-200` — 44 defs | values: `#e7eaee`(36), `#e9ecef`(6) | contexts: other:44
+- `--cui-gray-300` — 44 defs | values: `#dbdfe6`(36), `#dee2e6`(6) | contexts: other:44
+- `--cui-gray-400` — 44 defs | values: `#cfd4de`(36), `#ced4da`(6) | contexts: other:44
+- `--cui-gray-500` — 44 defs | values: `#aab3c5`(36), `#adb5bd`(6) | contexts: other:44
+- `--cui-gray-600` — 44 defs | values: `#6d7d9c`(36), `#6c757d`(6) | contexts: other:44
+- `--cui-gray-700` — 44 defs | values: `#4a566d`(36), `#495057`(6) | contexts: other:44
+- `--cui-gray-800` — 44 defs | values: `#323a49`(36), `#343a40`(6) | contexts: other:44
+- `--cui-gray-900` — 44 defs | values: `#212631`(36), `#212529`(6) | contexts: other:44
+- `--cui-primary` — 44 defs | values: `#5856d6`(18), `#6261cc`(18) | contexts: other:44
+- `--cui-secondary` — 44 defs | values: `#6b7785`(36), `#6c757d`(6) | contexts: other:44
+- `--cui-success` — 44 defs | values: `#1b9e3e`(18), `#249542`(18) | contexts: other:44
+- `--cui-info` — 44 defs | values: `#39f`(20), `#3d99f5`(18) | contexts: other:44
+- `--cui-warning` — 44 defs | values: `#f9b115`(20), `#edad21`(18) | contexts: other:44
+- `--cui-danger` — 44 defs | values: `#e55353`(20), `#db5d5d`(18) | contexts: other:44
+- `--cui-light` — 44 defs | values: `#f3f4f7`(36), `#f8f9fa`(6) | contexts: other:44
+- `--cui-dark` — 44 defs | values: `#212631`(36), `#212529`(6) | contexts: other:44
+- `--cui-high-emphasis` — 36 defs | values: `rgba(37, 43, 54, 0.95)`(18), `rgba(255, 255, 255, 0.87)`(18) | contexts: other:36
+- `--cui-medium-emphasis` — 36 defs | values: `rgba(37, 43, 54, 0.681)`(18), `rgba(255, 255, 255, 0.6)`(18) | contexts: other:36
+- `--cui-disabled` — 36 defs | values: `rgba(37, 43, 54, 0.38)`(18), `rgba(255, 255, 255, 0.38)`(18) | contexts: other:36
+- `--cui-navbar-color` — 28 defs | values: `rgba(var(--cui-emphasis-color-rgb), 0.65)`(12), `rgba(255, 255, 255, 0.55)`(12) | contexts: other:28
+- `--cui-navbar-hover-color` — 28 defs | values: `rgba(var(--cui-emphasis-color-rgb), 0.8)`(12), `rgba(255, 255, 255, 0.75)`(12) | contexts: other:28
+- `--cui-navbar-disabled-color` — 28 defs | values: `rgba(var(--cui-emphasis-color-rgb), 0.3)`(12), `rgba(255, 255, 255, 0.25)`(12) | contexts: other:28
+- `--cui-navbar-active-color` — 28 defs | values: `rgba(var(--cui-emphasis-color-rgb), 1)`(12), `#fff`(12) | contexts: other:28
+- `--cui-navbar-brand-color` — 28 defs | values: `rgba(var(--cui-emphasis-color-rgb), 1)`(12), `#fff`(12) | contexts: other:28
+- `--cui-navbar-brand-hover-color` — 28 defs | values: `rgba(var(--cui-emphasis-color-rgb), 1)`(12), `#fff`(12) | contexts: other:28
+- `--cui-navbar-toggler-border-color` — 28 defs | values: `rgba(255, 255, 255, 0.1)`(14), `rgba(var(--cui-emphasis-color-rgb), 0.15)`(12) | contexts: border:28
+- `--cui-alert-bg` — 28 defs | values: `transparent`(12), `#d6d2f8`(2) | contexts: other:28
+- `--cui-alert-border-color` — 28 defs | values: `transparent`(12), `#c2bcf4`(2) | contexts: border:28
+- `--cui-blue` — 26 defs | values: `#0d6efd`(26) | contexts: other:26
+- `--cui-indigo` — 26 defs | values: `#6610f2`(26) | contexts: other:26
+- `--cui-purple` — 26 defs | values: `#6f42c1`(26) | contexts: other:26
+- `--cui-pink` — 26 defs | values: `#d63384`(26) | contexts: other:26
+- `--cui-red` — 26 defs | values: `#dc3545`(26) | contexts: other:26
+- `--cui-orange` — 26 defs | values: `#fd7e14`(26) | contexts: other:26
+- `--cui-yellow` — 26 defs | values: `#ffc107`(26) | contexts: other:26
+- `--cui-green` — 26 defs | values: `#198754`(26) | contexts: other:26
+- `--cui-teal` — 26 defs | values: `#20c997`(26) | contexts: other:26
+- `--cui-cyan` — 26 defs | values: `#0dcaf0`(26) | contexts: other:26
+- `--cui-white` — 26 defs | values: `#fff`(26) | contexts: other:26
+- `--cui-gray` — 26 defs | values: `#6d7d9c`(18), `#6c757d`(6) | contexts: other:26
+- `--cui-gray-dark` — 26 defs | values: `#323a49`(18), `#343a40`(6) | contexts: other:26
+- `--cui-gradient` — 26 defs | values: `linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0))`(26) | contexts: other:26
+- `--cui-dropdown-link-active-color` — 26 defs | values: `rgba(255, 255, 255, 0.87)`(14), `#fff`(12) | contexts: other:26
+- `--cui-dropdown-header-color` — 26 defs | values: `#6d7d9c`(6), `#aab3c5`(6) | contexts: other:26
+- `--primary-legacy-theme` — 24 defs | values: `#321fdb`(24) | contexts: other:24
+- `--secondary-legacy-theme` — 24 defs | values: `#ced2d8`(24) | contexts: other:24
+- `--success-legacy-theme` — 24 defs | values: `#2eb85c`(24) | contexts: other:24
+- `--info-legacy-theme` — 24 defs | values: `#39f`(24) | contexts: other:24
+- `--warning-legacy-theme` — 24 defs | values: `#f9b115`(24) | contexts: other:24
+- `--danger-legacy-theme` — 24 defs | values: `#e55353`(24) | contexts: other:24
+- `--light-legacy-theme` — 24 defs | values: `#ebedef`(24) | contexts: other:24
+- `--dark-legacy-theme` — 24 defs | values: `#636f83`(24) | contexts: other:24
+- `--primary-dark-theme` — 24 defs | values: `#4638c2`(24) | contexts: other:24
+- `--secondary-dark-theme` — 24 defs | values: `#4c4f54`(24) | contexts: other:24
+- `--success-dark-theme` — 24 defs | values: `#45a164`(24) | contexts: other:24
+- `--info-dark-theme` — 24 defs | values: `#4799eb`(24) | contexts: other:24
+- `--warning-dark-theme` — 24 defs | values: `#e1a82d`(24) | contexts: other:24
+- `--danger-dark-theme` — 24 defs | values: `#d16767`(24) | contexts: other:24
+- `--light-dark-theme` — 24 defs | values: `#6c6e7e`(24) | contexts: other:24
+- `--dark-dark-theme` — 24 defs | values: `#0e0e15`(24) | contexts: other:24
+- `--cui-black` — 24 defs | values: `#080a0c`(18), `#000`(6) | contexts: other:24
+- `--cui-box-shadow` — 24 defs | values: `0 0.5rem 1rem rgba(8, 10, 12, 0.15)`(18), `0 0.5rem 1rem rgba(0, 0, 0, 0.15)`(6) | contexts: shadow:24
+- `--cui-box-shadow-sm` — 24 defs | values: `0 0.125rem 0.25rem rgba(8, 10, 12, 0.075)`(18), `0 0.125rem 0.25rem rgba(0, 0, 0, 0.075)`(6) | contexts: shadow:24
+- `--cui-box-shadow-lg` — 24 defs | values: `0 1rem 3rem rgba(8, 10, 12, 0.175)`(18), `0 1rem 3rem rgba(0, 0, 0, 0.175)`(6) | contexts: shadow:24
+- `--cui-box-shadow-inset` — 24 defs | values: `inset 0 1px 2px rgba(8, 10, 12, 0.075)`(18), `inset 0 1px 2px rgba(0, 0, 0, 0.075)`(6) | contexts: shadow:24
+- `--cui-backdrop-bg` — 24 defs | values: `#080a0c`(12), `#000`(12) | contexts: other:24
+- `--cui-nav-pills-link-active-color` — 18 defs | values: `rgba(255, 255, 255, 0.87)`(12), `#fff`(6) | contexts: other:18
+- `--cui-body-color-dark` — 18 defs | values: `rgba(255, 255, 255, 0.87)`(18) | contexts: other:18
+- `--cui-body-bg-dark` — 18 defs | values: `#212631`(18) | contexts: other:18
+- `--cui-emphasis-color-dark` — 18 defs | values: `#fff`(18) | contexts: other:18
+- `--cui-secondary-color-dark` — 18 defs | values: `rgba(255, 255, 255, 0.6)`(18) | contexts: other:18
+- `--cui-secondary-bg-dark` — 18 defs | values: `#323a49`(18) | contexts: other:18
+- `--cui-tertiary-color-dark` — 18 defs | values: `rgba(255, 255, 255, 0.38)`(18) | contexts: other:18
+- `--cui-tertiary-bg-dark` — 18 defs | values: `#2a303d`(18) | contexts: other:18
+- `--cui-high-emphasis-inverse` — 18 defs | values: `rgba(255, 255, 255, 0.87)`(18) | contexts: other:18
+- `--cui-medium-emphasis-inverse` — 18 defs | values: `rgba(255, 255, 255, 0.6)`(18) | contexts: other:18
+- `--cui-disabled-inverse` — 18 defs | values: `rgba(255, 255, 255, 0.38)`(18) | contexts: other:18
+- `--cui-btn-box-shadow` — 18 defs | values: `inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px rgba(8, 10, 12, 0.075)`(6), `inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px rgba(0, 0, 0, 0.075)`(6) | contexts: shadow:18
+- `--cui-dropdown-bg` — 17 defs | values: `#323a49`(6), `#343a40`(6) | contexts: other:17
+- `--cui-sidebar-brand-bg` — 17 defs | values: `rgba(8, 10, 12, 0.2)`(6), `rgba(0, 0, 0, 0.2)`(6) | contexts: other:17
+- `--cui-sidebar-nav-group-bg` — 17 defs | values: `transparent`(15), `rgba(0, 0, 0, 0.05)`(2) | contexts: other:17
+- `--cui-form-check-input-checked-bg-color` — 16 defs | values: `#321fdb`(2), `#9da5b1`(2) | contexts: other:16
+- `--cui-form-check-input-checked-border-color` — 16 defs | values: `#321fdb`(2), `#9da5b1`(2) | contexts: border:16
+- `--cui-form-check-input-indeterminate-bg-color` — 16 defs | values: `#321fdb`(2), `#9da5b1`(2) | contexts: other:16
+- `--cui-form-check-input-indeterminate-border-color` — 16 defs | values: `#321fdb`(2), `#9da5b1`(2) | contexts: border:16
+- `--cui-alert-color` — 16 defs | values: `#1e1383`(2), `#5e636a`(2) | contexts: other:16
+- `--cui-alert-link-color` — 16 defs | values: `#180f69`(2), `#4b4f55`(2) | contexts: other:16
+- `--cui-list-group-color` — 16 defs | values: `#1e1383`(2), `#5e636a`(2) | contexts: other:16
+- `--cui-list-group-bg` — 16 defs | values: `#d6d2f8`(2), `#ebedef`(2) | contexts: other:16
+- `--cui-list-group-hover-bg` — 16 defs | values: `#2d1cc5`(2), `#8d959f`(2) | contexts: other:16
+- `--cui-list-group-action-hover-color` — 16 defs | values: `#1e1383`(2), `#5e636a`(2) | contexts: other:16
+- `--cui-list-group-action-active-color` — 16 defs | values: `#fff`(16) | contexts: other:16
+- `--cui-list-group-action-active-bg` — 16 defs | values: `#1e1383`(2), `#5e636a`(2) | contexts: other:16
+- `--cui-list-group-action-active-border-color` — 16 defs | values: `#1e1383`(2), `#5e636a`(2) | contexts: border:16
+- `--cui-btn-focus-box-shadow` — 15 defs | values: `0 0 0 0.25rem rgba(var(--cui-btn-focus-shadow-rgb), .5)`(12), `0 0 0 .25rem rgba(255, 255, 255, .2)`(3) | contexts: shadow:15
+- `--cui-dropdown-link-active-bg` — 15 defs | values: `#0d6efd`(12), `#084298`(3) | contexts: other:15
+- `--cui-table-accent-bg` — 14 defs | values: `transparent`(14) | contexts: other:14
+- `--cui-dropdown-color` — 14 defs | values: `#dbdfe6`(6), `#dee2e6`(6) | contexts: other:14
+- `--cui-dropdown-link-color` — 14 defs | values: `#dbdfe6`(6), `#dee2e6`(6) | contexts: other:14
+- `--cui-dropdown-link-hover-color` — 14 defs | values: `#fff`(12), `rgba(255, 255, 255, 0.87)`(2) | contexts: other:14
+- `--cui-dropdown-link-disabled-color` — 14 defs | values: `#aab3c5`(6), `#adb5bd`(6) | contexts: other:14
+- `--cui-sidebar-toggler-bg` — 14 defs | values: `transparent`(12), `rgba(0, 0, 21, 0.1)`(2) | contexts: other:14
+- `--cui-sidebar-nav-link-bg` — 14 defs | values: `transparent`(14) | contexts: other:14
+- `--cui-dropdown-link-hover-bg` — 12 defs | values: `rgba(255, 255, 255, 0.15)`(12) | contexts: other:12
+- `--cui-card-cap-bg` — 12 defs | values: `rgba(var(--cui-body-color-rgb), 0.03)`(12) | contexts: other:12
+- `--cui-accordion-btn-focus-box-shadow` — 12 defs | values: `0 0 0 0.25rem rgba(88, 86, 214, 0.25)`(6), `0 0 0 0.25rem rgba(13, 110, 253, 0.25)`(6) | contexts: shadow:12
+- `--cui-pagination-focus-box-shadow` — 12 defs | values: `0 0 0 0.25rem rgba(88, 86, 214, 0.25)`(6), `0 0 0 0.25rem rgba(13, 110, 253, 0.25)`(6) | contexts: shadow:12
+
+## 2) Variable Usage by Context (applied to background/text/border/etc)
+- `--cui-border-width` — 841 uses | contexts: border:583, other:258 | props: border:105, min-height:72, border-top:49, border-width:48
+- `--cui-link-underline-opacity` — 810 uses | contexts: text:810 | props: text-decoration-color:486, -webkit-text-decoration-color:324
+- `--cui-border-radius` — 744 uses | contexts: border:744 | props: border-radius:180, border-top-left-radius:78, border-top-right-radius:78, border-bottom-right-radius:75
+- `--cui-bg-opacity` — 496 uses | contexts: background:496 | props: background-color:496
+- `--cui-body-color` — 392 uses | contexts: other:201, text:158, background:21, border:12 | props: color:146, background-color:21, --cui-sidebar-nav-link-color:18, --cui-sidebar-brand-color:15
+- `--cui-border-color` — 385 uses | contexts: border:385 | props: border:95, border-left:24, --cui-nav-tabs-link-active-border-color:24, border-right:23
+- `--cui-emphasis-color` — 384 uses | contexts: other:345, text:27, border:12 | props: --cui-list-group-action-hover-color:108, --cui-list-group-action-active-color:96, color:27, --cui-table-color:12
+- `--cui-link-opacity` — 372 uses | contexts: text:372 | props: color:342, text-decoration-color:18, -webkit-text-decoration-color:12
+- `--cui-body-bg` — 312 uses | contexts: other:186, background:93, text:21, border:12 | props: background-color:93, color:21, --cui-header-bg:15, --cui-sidebar-bg:15
+- `--cui-emphasis-color-rgb` — 288 uses | contexts: other:180, text:96, border:12 | props: color:36, text-decoration-color:36, -webkit-text-decoration-color:24, --cui-table-striped-bg:12
+- `--cui-offcanvas-border-width` — 288 uses | contexts: border:288 | props: border-right:72, border-left:72, border-bottom:72, border-top:72
+- `--cui-offcanvas-border-color` — 288 uses | contexts: border:288 | props: border-right:72, border-left:72, border-bottom:72, border-top:72
+- `--cui-border-radius-lg` — 270 uses | contexts: border:270 | props: border-radius:54, border-top-left-radius:36, border-top-right-radius:36, border-bottom-right-radius:36
+- `--cui-list-group-border-width` — 264 uses | contexts: border:180, other:84 | props: border-top-width:84, margin-left:36, border-left-width:36, margin-right:36
+- `--cui-secondary-color` — 240 uses | contexts: other:108, text:102, background:24, border:6 | props: color:102, background-color:24, --cui-nav-link-disabled-color:12, --cui-breadcrumb-divider-color:12
+- `--cui-border-radius-sm` — 222 uses | contexts: border:222 | props: border-radius:54, border-top-left-radius:36, border-top-right-radius:36, border-bottom-right-radius:36
+- `--cui-text-opacity` — 220 uses | contexts: text:220 | props: color:220
+- `--cui-danger-rgb` — 211 uses | contexts: text:98, background:38, shadow:36, other:21 | props: background-color:38, color:38, text-decoration-color:36, box-shadow:36
+- `--cui-success-rgb` — 208 uses | contexts: text:98, background:38, shadow:36, other:18 | props: background-color:38, color:38, text-decoration-color:36, box-shadow:36
+- `--cui-sidebar-narrow-width` — 192 uses | contexts: other:192 | props: margin-left:72, margin-right:72, flex:24, width:24
+- `--cui-border-radius-xxl` — 186 uses | contexts: border:162, other:24 | props: border-top-left-radius:36, border-top-right-radius:36, border-bottom-right-radius:36, border-bottom-left-radius:36
+- `--cui-border-opacity` — 180 uses | contexts: border:180 | props: border-color:180
+- `--cui-primary-rgb` — 175 uses | contexts: text:98, background:38, other:18, border:18 | props: background-color:38, color:38, text-decoration-color:36, -webkit-text-decoration-color:24
+- `--cui-info-rgb` — 175 uses | contexts: text:98, background:38, other:21, border:18 | props: background-color:38, color:38, text-decoration-color:36, -webkit-text-decoration-color:24
+- `--cui-warning-rgb` — 175 uses | contexts: text:98, background:38, other:21, border:18 | props: background-color:38, color:38, text-decoration-color:36, -webkit-text-decoration-color:24
+- `--cui-secondary-rgb` — 172 uses | contexts: text:98, background:38, other:18, border:18 | props: background-color:38, color:38, text-decoration-color:36, -webkit-text-decoration-color:24
+- `--cui-light-rgb` — 172 uses | contexts: text:98, background:38, other:18, border:18 | props: background-color:38, color:38, text-decoration-color:36, -webkit-text-decoration-color:24
+- `--cui-dark-rgb` — 172 uses | contexts: text:98, background:38, other:18, border:18 | props: background-color:38, color:38, text-decoration-color:36, -webkit-text-decoration-color:24
+- `--cui-secondary-bg` — 165 uses | contexts: background:81, other:60, border:24 | props: background-color:81, --cui-nav-tabs-link-hover-border-color:24, --cui-pagination-focus-bg:12, --cui-pagination-disabled-bg:12
+- `--cui-border-radius-xl` — 162 uses | contexts: border:162 | props: border-top-left-radius:36, border-top-right-radius:36, border-bottom-right-radius:36, border-bottom-left-radius:36
+- `--cui-border-radius-pill` — 162 uses | contexts: border:162 | props: border-top-left-radius:36, border-top-right-radius:36, border-bottom-right-radius:36, border-bottom-left-radius:36
+- `--cui-card-inner-border-radius` — 156 uses | contexts: border:156 | props: border-radius:60, border-top-left-radius:24, border-top-right-radius:24, border-bottom-right-radius:24
+- `--cui-list-group-border-radius` — 156 uses | contexts: border:156 | props: border-bottom-left-radius:36, border-top-right-radius:36, border-bottom-right-radius:36, border-top-left-radius:36
+- `--bs-bg-opacity` — 152 uses | contexts: background:152 | props: background-color:152
+- `--cui-gutter-x` — 144 uses | contexts: other:144 | props: padding-right:49, padding-left:49, margin-right:23, margin-left:23
+- `--cui-focus-ring-opacity` — 144 uses | contexts: other:144 | props: --cui-focus-ring-color:144
+- `--cui-navbar-nav-link-padding-x` — 144 uses | contexts: other:144 | props: padding-right:72, padding-left:72
+- `--cui-offcanvas-width` — 144 uses | contexts: other:144 | props: width:144
+- `--cui-offcanvas-height` — 144 uses | contexts: other:144 | props: height:144
+- `--bs-offcanvas-border-width` — 144 uses | contexts: border:144 | props: border-right:36, border-left:36, border-bottom:36, border-top:36
+- `--bs-offcanvas-border-color` — 144 uses | contexts: border:144 | props: border-right:36, border-left:36, border-bottom:36, border-top:36
+- `--cui-tertiary-color` — 135 uses | contexts: other:84, border:30, text:21 | props: color:21, --cui-dropdown-link-disabled-color:12, --cui-sidebar-toggler-color:12, --cui-sidebar-nav-title-color:12
+- `--cui-tooltip-arrow-height` — 132 uses | contexts: other:84, border:48 | props: border-width:48, width:24, height:12, bottom:12
+- `--cui-popover-border-width` — 132 uses | contexts: other:96, border:36 | props: bottom:24, left:24, top:24, border-bottom:24
+- `--cui-popover-arrow-width` — 132 uses | contexts: border:72, other:60 | props: border-width:72, width:24, height:24, margin-left:9
+- `--cui-popover-arrow-height` — 132 uses | contexts: other:84, border:48 | props: border-width:48, width:24, height:12, bottom:12
+- `--bs-list-group-border-width` — 132 uses | contexts: border:90, other:42 | props: border-top-width:42, margin-left:30, border-left-width:30, border:6
+- `--cui-tertiary-bg` — 129 uses | contexts: other:81, background:48 | props: background-color:48, --cui-footer-bg:15, --cui-dropdown-link-hover-bg:12, --cui-pagination-hover-bg:12
+- `--ci-primary-color` — 129 uses | contexts: other:129 | props: http:129
+- `--cui-table-border-color` — 128 uses | contexts: border:128 | props: border-color:126, border-bottom-color:2
+- `--cui-table-color` — 128 uses | contexts: text:128 | props: color:128
+- `--cui-elevation-base-color` — 126 uses | contexts: shadow:126 | props: box-shadow:126
+- `--cui-border-color-translucent` — 120 uses | contexts: border:96, other:24 | props: --cui-dropdown-border-color:24, --cui-dropdown-divider-bg:24, --cui-card-border-color:12, --cui-toast-border-color:12
+- `--cui-primary` — 119 uses | contexts: other:51, border:36, background:29, text:3 | props: background-color:27, border-color:15, --cui-dropdown-link-active-bg:12, --cui-nav-pills-link-active-bg:6
+- `--secondary` — 118 uses | contexts: border:72, text:40, background:5, other:1 | props: border-top:56, color:39, border-bottom:12, background-color:5
+- `--cui-sidebar-width` — 116 uses | contexts: other:116 | props: margin-left:44, margin-right:44, flex:14, width:14
+- `--info` — 112 uses | contexts: background:73, border:21, other:13, text:5 | props: background-color:72, outline:11, border:8, color:5
+- `--cui-tooltip-arrow-width` — 108 uses | contexts: border:72, other:36 | props: border-width:72, height:24, width:12
+- `--cui-border-style` — 91 uses | contexts: border:91 | props: border-top:19, border:18, border-right:18, border-bottom:18
+- `--cui-primary-text-emphasis` — 90 uses | contexts: other:60, text:18, border:12 | props: color:18, --cui-accordion-active-color:12, --cui-alert-color:12, --cui-alert-link-color:12
+- `--bs-text-opacity` — 88 uses | contexts: text:88 | props: color:88
+- `--cui-info-text-emphasis` — 81 uses | contexts: other:51, text:18, border:12 | props: color:18, --cui-alert-color:12, --cui-alert-link-color:12, --cui-list-group-color:12
+- `--cui-warning-text-emphasis` — 81 uses | contexts: other:51, text:18, border:12 | props: color:18, --cui-alert-color:12, --cui-alert-link-color:12, --cui-list-group-color:12
+- `--cui-danger-text-emphasis` — 81 uses | contexts: other:51, text:18, border:12 | props: color:18, --cui-alert-color:12, --cui-alert-link-color:12, --cui-list-group-color:12
+- `--bs-border-radius` — 80 uses | contexts: border:80 | props: border-radius:16, border-top-left-radius:16, border-top-right-radius:16, border-bottom-right-radius:16
+- `--cui-link-color-rgb` — 78 uses | contexts: text:78 | props: text-decoration-color:36, -webkit-text-decoration-color:24, color:18
+- `--cui-box-shadow` — 78 uses | contexts: shadow:78 | props: box-shadow:18, --cui-dropdown-box-shadow:12, --cui-toast-box-shadow:12, --cui-modal-box-shadow:12
+- `--cui-secondary-text-emphasis` — 78 uses | contexts: other:48, text:18, border:12 | props: color:18, --cui-alert-color:12, --cui-alert-link-color:12, --cui-list-group-color:12
+- `--cui-success-text-emphasis` — 78 uses | contexts: other:48, text:18, border:12 | props: color:18, --cui-alert-color:12, --cui-alert-link-color:12, --cui-list-group-color:12
+- `--cui-light-text-emphasis` — 78 uses | contexts: other:48, text:18, border:12 | props: color:18, --cui-alert-color:12, --cui-alert-link-color:12, --cui-list-group-color:12
+- `--cui-dark-text-emphasis` — 78 uses | contexts: other:48, text:18, border:12 | props: color:18, --cui-alert-color:12, --cui-alert-link-color:12, --cui-list-group-color:12
+- `--bs-card-inner-border-radius` — 78 uses | contexts: border:78 | props: border-radius:30, border-top-left-radius:12, border-top-right-radius:12, border-bottom-right-radius:12
+- `--bs-list-group-border-radius` — 78 uses | contexts: border:78 | props: border-bottom-left-radius:30, border-top-right-radius:30, border-radius:6, border-bottom-right-radius:6
+- `--cui-card-cap-padding-x` — 72 uses | contexts: other:72 | props: padding:24, margin-right:24, margin-left:24
+- `--cui-accordion-border-radius` — 72 uses | contexts: border:72 | props: border-bottom-right-radius:24, border-bottom-left-radius:24, border-top-left-radius:12, border-top-right-radius:12
+- `--cui-offcanvas-zindex` — 72 uses | contexts: other:72 | props: z-index:72
+- `--cui-offcanvas-color` — 72 uses | contexts: text:72 | props: color:72
+- `--cui-offcanvas-bg` — 72 uses | contexts: background:72 | props: background-color:72
+- `--cui-offcanvas-transition` — 72 uses | contexts: other:72 | props: transition:72
+- `--cui-sidebar-padding-y` — 72 uses | contexts: other:72 | props: padding:48, margin-top:12, margin-bottom:12
+- `--bs-navbar-nav-link-padding-x` — 72 uses | contexts: other:72 | props: padding-right:36, padding-left:36
+- `--bs-offcanvas-width` — 72 uses | contexts: other:72 | props: width:72
+- `--bs-offcanvas-height` — 72 uses | contexts: other:72 | props: height:72
+- `--bs-border-opacity` — 72 uses | contexts: border:72 | props: border-color:72
+- `--bs-border-color` — 70 uses | contexts: border:70 | props: border:14, border-top:8, border-right:8, border-bottom:8
+- `--cui-primary-border-subtle` — 66 uses | contexts: border:42, other:24 | props: border-color:18, --cui-alert-border-color:12, --cui-list-group-border-color:12, --cui-list-group-action-hover-bg:12
+- `--cui-secondary-border-subtle` — 66 uses | contexts: border:42, other:24 | props: border-color:18, --cui-alert-border-color:12, --cui-list-group-border-color:12, --cui-list-group-action-hover-bg:12
+- `--cui-success-border-subtle` — 66 uses | contexts: border:42, other:24 | props: border-color:18, --cui-alert-border-color:12, --cui-list-group-border-color:12, --cui-list-group-action-hover-bg:12
+- `--cui-info-border-subtle` — 66 uses | contexts: border:42, other:24 | props: border-color:18, --cui-alert-border-color:12, --cui-list-group-border-color:12, --cui-list-group-action-hover-bg:12
+- `--cui-warning-border-subtle` — 66 uses | contexts: border:42, other:24 | props: border-color:18, --cui-alert-border-color:12, --cui-list-group-border-color:12, --cui-list-group-action-hover-bg:12
+- `--cui-danger-border-subtle` — 66 uses | contexts: border:42, other:24 | props: border-color:18, --cui-alert-border-color:12, --cui-list-group-border-color:12, --cui-list-group-action-hover-bg:12
+- `--cui-light-border-subtle` — 66 uses | contexts: border:42, other:24 | props: border-color:18, --cui-alert-border-color:12, --cui-list-group-border-color:12, --cui-list-group-action-hover-bg:12
+- `--cui-dark-border-subtle` — 66 uses | contexts: border:42, other:24 | props: border-color:18, --cui-alert-border-color:12, --cui-list-group-border-color:12, --cui-list-group-action-hover-bg:12
+- `--cui-primary-bg-subtle` — 66 uses | contexts: other:48, background:18 | props: background-color:18, --cui-accordion-active-bg:12, --cui-alert-bg:12, --cui-list-group-bg:12
+- `--bs-popover-border-width` — 66 uses | contexts: other:48, border:18 | props: bottom:12, left:12, top:12, border-bottom:12
+- `--bs-popover-arrow-width` — 66 uses | contexts: border:36, other:30 | props: border-width:36, width:12, height:12, margin-left:5
+- `--bs-popover-arrow-height` — 66 uses | contexts: other:42, border:24 | props: border-width:24, width:12, height:6, bottom:6
+- `--cui-link-hover-color` — 65 uses | contexts: other:54, text:11 | props: --cui-btn-hover-color:12, --cui-nav-link-hover-color:12, --cui-pagination-hover-color:12, --cui-pagination-focus-color:12
+- `--cui-tooltip-bg` — 62 uses | contexts: border:48, background:14 | props: background-color:14, border-top-color:12, border-right-color:12, border-bottom-color:12
+- `--cui-popover-bg` — 62 uses | contexts: border:48, background:14 | props: background-color:14, border-top-color:12, border-right-color:12, border-bottom-color:12
+- `--cui-form-valid-border-color` — 60 uses | contexts: border:60 | props: border-color:60
+- `--cui-form-invalid-border-color` — 60 uses | contexts: border:60 | props: border-color:60
+- `--cui-offcanvas-padding-y` — 60 uses | contexts: other:60 | props: padding:36, margin:12, margin-top:6, margin-bottom:6
+- `--cui-sidebar-padding-x` — 60 uses | contexts: other:60 | props: padding:48, margin-right:9, margin-left:3
+- `--cui-black-rgb` — 58 uses | contexts: text:20, background:20, border:18 | props: color:20, background-color:20, border-color:18
+- `--cui-white-rgb` — 58 uses | contexts: text:20, background:20, border:18 | props: color:20, background-color:20, border-color:18
+- `--cui-body-color-rgb` — 56 uses | contexts: text:44, other:12 | props: color:44, --cui-card-cap-bg:12
+- `--cui-light-bg-subtle` — 55 uses | contexts: other:36, background:19 | props: background-color:19, --cui-alert-bg:12, --cui-list-group-bg:12, --cui-list-group-active-color:12
+- `--cui-font-sans-serif` — 54 uses | contexts: other:54 | props: font-family:28, --cui-body-font-family:26
+- `--cui-secondary-bg-subtle` — 54 uses | contexts: other:36, background:18 | props: background-color:18, --cui-alert-bg:12, --cui-list-group-bg:12, --cui-list-group-active-color:12
+- `--cui-success-bg-subtle` — 54 uses | contexts: other:36, background:18 | props: background-color:18, --cui-alert-bg:12, --cui-list-group-bg:12, --cui-list-group-active-color:12
+- `--cui-info-bg-subtle` — 54 uses | contexts: other:36, background:18 | props: background-color:18, --cui-alert-bg:12, --cui-list-group-bg:12, --cui-list-group-active-color:12
+- `--cui-warning-bg-subtle` — 54 uses | contexts: other:36, background:18 | props: background-color:18, --cui-alert-bg:12, --cui-list-group-bg:12, --cui-list-group-active-color:12
+- `--cui-danger-bg-subtle` — 54 uses | contexts: other:36, background:18 | props: background-color:18, --cui-alert-bg:12, --cui-list-group-bg:12, --cui-list-group-active-color:12
+- `--cui-dark-bg-subtle` — 54 uses | contexts: other:36, background:18 | props: background-color:18, --cui-alert-bg:12, --cui-list-group-bg:12, --cui-list-group-active-color:12
+- `--bs-table-color` — 54 uses | contexts: text:54 | props: color:54
+- `--bs-table-border-color` — 54 uses | contexts: border:54 | props: border-color:54
+- `--bs-border-color-translucent` — 54 uses | contexts: border:42, other:12 | props: --bs-dropdown-border-color:12, --bs-dropdown-divider-bg:12, --bs-card-border-color:6, --bs-toast-border-color:6
+- `--bs-tooltip-arrow-width` — 54 uses | contexts: border:36, other:18 | props: border-width:36, height:12, width:6
+- `--dark` — 53 uses | contexts: border:26, background:23, text:4 | props: background-color:23, border:13, border-color:12, color:4
+- `--cui-gutter-y` — 49 uses | contexts: other:49 | props: margin-top:49
+- `--cui-btn-focus-box-shadow` — 48 uses | contexts: shadow:48 | props: box-shadow:48
+- `--cui-dropdown-spacer` — 48 uses | contexts: other:48 | props: margin-top:12, margin-bottom:12, margin-left:12, margin-right:12
+- `--cui-nav-tabs-border-width` — 48 uses | contexts: border:24, other:24 | props: border-bottom:12, margin-bottom:12, border:12, margin-top:12
+- `--cui-accordion-inner-border-radius` — 48 uses | contexts: border:48 | props: border-top-left-radius:12, border-top-right-radius:12, border-bottom-right-radius:12, border-bottom-left-radius:12
+- `--cui-pagination-border-radius` — 48 uses | contexts: border:48 | props: border-top-left-radius:12, border-bottom-left-radius:12, border-top-right-radius:12, border-bottom-right-radius:12
+- `--cui-toast-border-width` — 48 uses | contexts: border:48 | props: border:12, border-bottom:12, border-top-left-radius:12, border-top-right-radius:12
+- `--cui-toast-padding-x` — 48 uses | contexts: other:48 | props: padding:24, margin-right:12, margin-left:12
+- `--cui-modal-inner-border-radius` — 48 uses | contexts: border:48 | props: border-top-left-radius:12, border-top-right-radius:12, border-bottom-right-radius:12, border-bottom-left-radius:12
+- `--cui-popover-arrow-border` — 48 uses | contexts: border:48 | props: border-top-color:12, border-right-color:12, border-bottom-color:12, border-left-color:12
+- `--cui-offcanvas-padding-x` — 48 uses | contexts: other:48 | props: padding:36, margin:6, margin-right:3, margin-left:3
+- `--bs-gutter-x` — 48 uses | contexts: other:48 | props: padding-right:16, padding-left:16, margin-right:8, margin-left:8
+- `--bs-tooltip-arrow-height` — 48 uses | contexts: other:24, border:24 | props: border-width:24, width:12, padding:6, height:6
+- `--bs-border-width` — 46 uses | contexts: border:46 | props: border:14, border-top:8, border-right:8, border-bottom:8
+- `--cui-body-bg-rgb` — 44 uses | contexts: other:24, background:20 | props: background-color:20, --cui-toast-bg:12, --cui-toast-header-bg:12
+- `--cui-box-shadow-sm` — 42 uses | contexts: shadow:42 | props: box-shadow:18, --cui-modal-box-shadow:12, --cui-offcanvas-box-shadow:12
+- `--cui-navbar-color` — 42 uses | contexts: text:30, other:12 | props: color:30, --cui-nav-link-color:12
+- `--cui-card-border-color` — 42 uses | contexts: border:42 | props: border:14, border-bottom:14, border-top:14
+- `--cui-header-active-color` — 42 uses | contexts: text:42 | props: color:42
+- `--cui-sidebar-nav-group-indicator-hover-icon` — 42 uses | contexts: other:42 | props: mask-image:24, -webkit-mask-image:18
+- `--cui-link-color` — 41 uses | contexts: other:36, text:5 | props: --cui-btn-color:12, --cui-nav-link-color:12, --cui-pagination-color:12, color:5
+- `--cui-font-monospace` — 40 uses | contexts: other:40 | props: font-family:40
+- `--cui-btn-hover-border-color` — 40 uses | contexts: border:40 | props: border-color:40
+- `--bs-body-color` — 40 uses | contexts: other:24, text:8, background:8 | props: color:8, background-color:8, --bs-table-color:6, --bs-table-striped-color:6
+- `--bs-border-style` — 40 uses | contexts: border:40 | props: border:8, border-top:8, border-right:8, border-bottom:8
+- `--base08` — 39 uses | contexts: text:39 | props: color:39
+- `--base0c` — 39 uses | contexts: text:39 | props: color:39
+- `--cui-btn-color` — 38 uses | contexts: text:38 | props: color:38
+- `--cui-card-bg` — 38 uses | contexts: background:26, border:12 | props: background-color:26, border-bottom-color:12
+- `--cui-popover-border-color` — 38 uses | contexts: border:38 | props: border:14, --cui-popover-arrow-border:12, border-bottom:12
+- `--cui` — 38 uses | contexts: text:20, other:16, background:2 | props: color:20, padding:6, top:4, right:4
+- `--bs-link-hover-color` — 38 uses | contexts: other:30, text:8 | props: color:8, --bs-btn-hover-color:6, --bs-btn-active-color:6, --bs-nav-link-hover-color:6
+- `--cui-btn-hover-color` — 37 uses | contexts: text:34, other:3 | props: color:34, --cui-btn-active-color:3
+- `--fc-event-resizer-dot-total-width` — 36 uses | contexts: other:32, border:4 | props: border-radius:4, width:4, height:4, margin-top:4
+- `--cui-form-valid-color` — 36 uses | contexts: text:24, background:12 | props: color:24, background-color:12
+- `--cui-form-invalid-color` — 36 uses | contexts: text:24, background:12 | props: color:24, background-color:12
+- `--cui-card-border-width` — 36 uses | contexts: border:36 | props: border:12, border-bottom:12, border-top:12
+- `--cui-card-cap-padding-y` — 36 uses | contexts: other:36 | props: padding:24, margin-bottom:12
+- `--cui-accordion-btn-icon-width` — 36 uses | contexts: other:24, background:12 | props: width:12, height:12, background-size:12
+- `--cui-progress-height` — 36 uses | contexts: background:24, other:12 | props: background-size:24, height:12
+- `--cui-toast-border-radius` — 36 uses | contexts: border:36 | props: border-radius:12, border-top-left-radius:12, border-top-right-radius:12
+- `--cui-modal-margin` — 36 uses | contexts: other:36 | props: margin:12, height:12, min-height:12
+- `--cui-modal-header-padding-y` — 36 uses | contexts: other:36 | props: margin:24, padding:12
+- `--cui-header-padding-x` — 36 uses | contexts: other:36 | props: padding:12, flex-basis:12, margin:12
+- `--cui-header-nav-link-padding-y` — 36 uses | contexts: other:36 | props: padding:12, padding-top:12, padding-bottom:12
+- `--cui-sidebar-nav-link-padding-x` — 36 uses | contexts: other:36 | props: padding:12, flex:12, padding-left:9, padding-right:3
+- `--cui-sidebar-nav-link-icon-width` — 36 uses | contexts: other:36 | props: flex:12, padding-left:9, margin-left:9, padding-right:3
+- `--cui-sidebar-nav-link-icon-margin` — 36 uses | contexts: other:36 | props: margin-right:12, margin-left:12, padding-left:9, padding-right:3
+- `--bs-card-cap-padding-x` — 36 uses | contexts: other:36 | props: padding:12, margin-right:12, margin-left:12
+- `--bs-accordion-border-radius` — 36 uses | contexts: border:36 | props: border-bottom-right-radius:12, border-bottom-left-radius:12, border-top-left-radius:6, border-top-right-radius:6
+- `--bs-offcanvas-zindex` — 36 uses | contexts: other:36 | props: z-index:36
+- `--bs-offcanvas-color` — 36 uses | contexts: text:36 | props: color:36
+- `--bs-offcanvas-bg` — 36 uses | contexts: background:36 | props: background-color:36
+- `--light` — 32 uses | contexts: border:15, background:14, text:3 | props: background-color:14, border-right:4, border-left:4, border-bottom:4
+- `--elevation-base-color` — 30 uses | contexts: shadow:30 | props: box-shadow:30
+- `--cui-header-color` — 30 uses | contexts: text:30 | props: color:30
+- `--bs-tooltip-bg` — 30 uses | contexts: border:24, background:6 | props: border-top-color:6, border-right-color:6, border-bottom-color:6, border-left-color:6
+- `--bs-popover-bg` — 30 uses | contexts: border:24, background:6 | props: background-color:6, border-top-color:6, border-right-color:6, border-bottom-color:6
+- `--bs-offcanvas-padding-y` — 30 uses | contexts: other:30 | props: padding:18, margin-top:6, margin-bottom:6
+- `--cui-btn-hover-bg` — 28 uses | contexts: background:28 | props: background-color:28
+- `--cui-dropdown-link-color` — 28 uses | contexts: text:28 | props: color:28
+- `--cui-navbar-active-color` — 28 uses | contexts: text:28 | props: color:28
+- `--cui-card-cap-color` — 28 uses | contexts: text:28 | props: color:28
+- `--cui-card-cap-bg` — 28 uses | contexts: background:28 | props: background-color:28
+- `--cui-accordion-border-color` — 28 uses | contexts: shadow:14, border:14 | props: box-shadow:14, border:14
+- `--cui-btn-close-color` — 28 uses | contexts: text:28 | props: color:28
+- `--cui-popover-header-bg` — 28 uses | contexts: border:14, background:14 | props: border-bottom:14, background-color:14
+- `--cui-sidebar-nav-link-disabled-color` — 28 uses | contexts: text:28 | props: color:28
+- `--cui-sidebar-nav-link-disabled-icon-color` — 28 uses | contexts: text:28 | props: color:28
+- `--cui-modal-padding` — 27 uses | contexts: other:27 | props: padding:24, gap:1, margin-bottom:1, padding-top:1
+- `--cui-sidebar-nav-link-icon-color` — 26 uses | contexts: text:26 | props: color:26
+- `--cui-table-striped-color` — 26 uses | contexts: other:24, text:2 | props: --cui-table-color-type:24, color:2
+- `--cui-table-striped-bg` — 26 uses | contexts: other:26 | props: --cui-table-bg-type:24, --cui-table-accent-bg:2
+- `--cui-btn-border-color` — 26 uses | contexts: border:26 | props: border:14, border-color:12
+- `--cui-btn-bg` — 26 uses | contexts: background:26 | props: background-color:26
+- `--cui-accordion-bg` — 26 uses | contexts: background:14, other:12 | props: background-color:14, --cui-accordion-btn-bg:12
+- `--bs-link-color` — 26 uses | contexts: other:18, text:8 | props: color:8, --bs-btn-color:6, --bs-nav-link-color:6, --bs-pagination-color:6
+- `--cui-callout-border-left-color` — 25 uses | contexts: border:25 | props: border-left-color:25
+- `--fc-event-resizer-thickness` — 24 uses | contexts: other:24 | props: width:4, left:4, right:4, height:4
+- `--cui-dropdown-item-padding-y` — 24 uses | contexts: other:24 | props: padding:24
+- `--cui-dropdown-item-padding-x` — 24 uses | contexts: other:24 | props: padding:24
+- `--cui-nav-tabs-border-radius` — 24 uses | contexts: border:24 | props: border-top-left-radius:12, border-top-right-radius:12
+- `--cui-navbar-brand-padding-y` — 24 uses | contexts: other:24 | props: padding-top:12, padding-bottom:12
+- `--cui-card-spacer-x` — 24 uses | contexts: other:24 | props: padding:12, margin-left:6, margin-right:6
+- `--cui-card-title-spacer-y` — 24 uses | contexts: other:24 | props: margin-bottom:12, margin-top:12
+- `--cui-accordion-border-width` — 24 uses | contexts: shadow:12, border:12 | props: box-shadow:12, border:12
+- `--cui-breadcrumb-item-padding-x` — 24 uses | contexts: other:24 | props: padding-left:12, padding-right:12
+- `--cui-btn-close-white-filter` — 24 uses | contexts: other:24 | props: filter:24
+- `--cui-backdrop-zindex` — 24 uses | contexts: other:24 | props: z-index:24
+- `--cui-backdrop-bg` — 24 uses | contexts: background:24 | props: background-color:24
+- `--cui-backdrop-opacity` — 24 uses | contexts: other:24 | props: opacity:24
+- `--cui-modal-header-padding-x` — 24 uses | contexts: other:24 | props: padding:12, margin:12
+- `--cui-modal-footer-gap` — 24 uses | contexts: other:24 | props: padding:12, margin:12
+- `--cui-popover-inner-border-radius` — 24 uses | contexts: border:24 | props: border-top-left-radius:12, border-top-right-radius:12
+- `--cui-avatar-width` — 24 uses | contexts: other:24 | props: width:12, margin-right:9, margin-left:3
+- `--cui-avatar-border-radius` — 24 uses | contexts: border:24 | props: border-radius:24
+- `--cui-header-padding-y` — 24 uses | contexts: other:24 | props: padding:12, margin:12
+- `--cui-header-brand-padding-y` — 24 uses | contexts: other:24 | props: padding-top:12, padding-bottom:12
+- `--cui-sidebar-zindex` — 24 uses | contexts: other:24 | props: z-index:24
+- `--cui-sidebar-toggler-height` — 24 uses | contexts: other:24 | props: height:12, padding-bottom:12
+- `--cui-sidebar-nav-padding-x` — 24 uses | contexts: other:24 | props: padding:12, flex:12
+- `--cui-sidebar-link-disabled-icon-bullet-bg` — 24 uses | contexts: background:24 | props: background:24
+- `--cui-sidebar-link-disabled-icon-bullet-border-color` — 24 uses | contexts: border:24 | props: border-color:24
+- `--cui-sidebar-nav-group-indicator-hover-color` — 24 uses | contexts: background:24 | props: background-color:24
+- `--cui-sidebar-nav-link-icon-bullet-size` — 24 uses | contexts: other:24 | props: width:12, height:12
+- `--cd-violet-rgb` — 24 uses | contexts: background:12, border:6, other:3, shadow:3 | props: background-color:12, border:6, --cd-sidebar-link-bg:3, --cui-btn-focus-shadow-rgb:3
+- `--base09` — 24 uses | contexts: text:24 | props: color:24
+- `--bs-font-sans-serif` — 24 uses | contexts: other:24 | props: --bs-body-font-family:12, font-family:12
+- `--bs-dropdown-spacer` — 24 uses | contexts: other:24 | props: margin-top:6, margin-bottom:6, margin-left:6, margin-right:6
+- `--bs-nav-tabs-border-width` — 24 uses | contexts: border:12, other:12 | props: border-bottom:6, margin-bottom:6, border:6, margin-top:6
+- `--bs-accordion-inner-border-radius` — 24 uses | contexts: border:24 | props: border-top-left-radius:6, border-top-right-radius:6, border-bottom-right-radius:6, border-bottom-left-radius:6
+- `--bs-pagination-border-radius` — 24 uses | contexts: border:24 | props: border-top-left-radius:6, border-bottom-left-radius:6, border-top-right-radius:6, border-bottom-right-radius:6
+- `--bs-toast-border-width` — 24 uses | contexts: border:24 | props: border:6, border-bottom:6, border-top-left-radius:6, border-top-right-radius:6
+- `--bs-toast-padding-x` — 24 uses | contexts: other:24 | props: padding:12, margin-right:6, margin-left:6
+- `--bs-modal-inner-border-radius` — 24 uses | contexts: border:24 | props: border-top-left-radius:6, border-top-right-radius:6, border-bottom-right-radius:6, border-bottom-left-radius:6
+- `--bs-popover-arrow-border` — 24 uses | contexts: border:24 | props: border-top-color:6, border-right-color:6, border-bottom-color:6, border-left-color:6
+- `--bs-offcanvas-padding-x` — 24 uses | contexts: other:24 | props: padding:18, margin-right:5, margin-left:1
+- `--bs-primary-rgb` — 24 uses | contexts: border:8, text:8, background:8 | props: border-color:8, color:8, background-color:8
+- `--bs-secondary-rgb` — 24 uses | contexts: border:8, text:8, background:8 | props: border-color:8, color:8, background-color:8
+- `--bs-success-rgb` — 24 uses | contexts: border:8, text:8, background:8 | props: border-color:8, color:8, background-color:8
+- `--bs-info-rgb` — 24 uses | contexts: border:8, text:8, background:8 | props: border-color:8, color:8, background-color:8
+- `--bs-warning-rgb` — 24 uses | contexts: border:8, text:8, background:8 | props: border-color:8, color:8, background-color:8
+- `--bs-danger-rgb` — 24 uses | contexts: border:8, text:8, background:8 | props: border-color:8, color:8, background-color:8
+- `--bs-light-rgb` — 24 uses | contexts: border:8, text:8, background:8 | props: border-color:8, color:8, background-color:8
+- `--bs-dark-rgb` — 24 uses | contexts: border:8, text:8, background:8 | props: border-color:8, color:8, background-color:8
+- `--bs-white-rgb` — 24 uses | contexts: border:8, text:8, background:8 | props: border-color:8, color:8, background-color:8
+- `--cui-sidebar-toggler-icon` — 21 uses | contexts: other:21 | props: mask:12, -webkit-mask:9
+- `--cui-sidebar-nav-group-indicator-icon` — 21 uses | contexts: other:21 | props: mask-image:12, -webkit-mask-image:9
+- `--cd-example-padding` — 21 uses | contexts: other:21 | props: margin:18, padding:3
+- `--fc-page-bg-color` — 20 uses | contexts: background:16, shadow:4 | props: background:16, box-shadow:4
+
+## 3) Hardcoded Color Usage by Context
+- `transparent` — 9412 uses | contexts: background:6247, border:2356, other:458, text:223 | props: background-image:4352, background-color:1705, border-color:444
+- `#fff` — 4934 uses | contexts: text:2178, background:1203, other:1153, border:316 | props: color:2115, background-color:911, --cui-btn-hover-color:159
+- `rgba(255, 255, 255, 0.15)` — 3030 uses | contexts: background:2850, shadow:111, other:56, border:10 | props: background-image:2850, -webkit-box-shadow:43, box-shadow:43
+- `#ffffff` — 2532 uses | contexts: text:1129, background:889, border:405, shadow:57 | props: color:1058, background-color:644, background-image:208
+- `#000` — 1474 uses | contexts: other:692, text:357, border:282, background:115 | props: color:355, background-color:109, border-top-color:98
+- `white` — 1159 uses | contexts: text:420, other:410, background:180, icon:91 | props: color:406, background-color:112, fill:91
+- `#080a0c` — 1083 uses | contexts: other:672, text:318, background:93 | props: color:318, --cui-btn-hover-color:162, --cui-btn-active-color:162
+- `#f5f5f5` — 920 uses | contexts: background:864, other:38, text:15, border:3 | props: background-color:478, background-image:386, filter:16
+- `#999999` — 910 uses | contexts: text:600, border:247, background:61, other:2 | props: color:599, background-color:61, border-top-color:55
+- `rgba(0, 0, 0, 0.075)` — 900 uses | contexts: shadow:882, background:12, other:6 | props: box-shadow:413, -webkit-box-shadow:388, -moz-box-shadow:39
+- `#ddd` — 866 uses | contexts: border:828, background:25, shadow:8, text:4 | props: border:307, border-color:243, border-top:107
+- `#333333` — 754 uses | contexts: text:451, background:154, border:135, other:14 | props: color:451, background-image:84, background-color:56
+- `#428bca` — 704 uses | contexts: background:390, border:218, text:90, other:6 | props: background-color:220, background-image:170, border-color:132
+- `#337ab7` — 652 uses | contexts: background:424, border:120, text:108 | props: background-image:264, background-color:160, color:108
+- `#dddddd` — 636 uses | contexts: border:612, background:24 | props: border:201, border-color:132, border-top:123
+- `gray` — 621 uses | contexts: other:333, text:201, border:70, background:15 | props: color:195, host:70, content-type:59
+- `#eeeeee` — 613 uses | contexts: background:303, border:298, text:12 | props: background-color:284, border-color:136, border-top:41
+- `black` — 603 uses | contexts: text:192, background:157, other:109, icon:79 | props: color:175, background-image:97, background-color:45
+- `#000000` — 576 uses | contexts: border:375, text:100, background:91, other:7 | props: color:98, background-color:81, border-top-color:68
+- `#333` — 474 uses | contexts: text:281, border:113, background:64, other:16 | props: color:281, outline:90, background-color:57
+- `#5bc0de` — 456 uses | contexts: background:420, other:19, text:17 | props: background-image:260, background-color:160, color:17
+- `rgba(0, 0, 0, 0.5)` — 444 uses | contexts: background:269, shadow:149, text:26 | props: background-image:266, box-shadow:76, -webkit-box-shadow:73
+- `rgba(0, 0, 0, 0.1)` — 443 uses | contexts: shadow:228, border:197, icon:8, other:6 | props: border-color:185, box-shadow:101, -webkit-box-shadow:81
+- `rgba(0, 0, 0, 0.25)` — 437 uses | contexts: border:257, shadow:91, text:81, background:8 | props: border-color:91, text-shadow:80, border-top-color:40
+- `#212529` — 427 uses | contexts: other:192, text:154, border:78, background:3 | props: color:148, --cui-body-bg:12, --cui-btn-border-color:12
+- `rgba(0, 0, 0, 0.05)` — 422 uses | contexts: shadow:385, border:16, icon:8, other:8 | props: box-shadow:170, -webkit-box-shadow:169, -moz-box-shadow:46
+- `rgba(0, 0, 0, 0.125)` — 398 uses | contexts: shadow:380, border:18 | props: --cui-btn-active-shadow:96, --bs-btn-active-shadow:96, -webkit-box-shadow:93
+- `#fcf8e3` — 396 uses | contexts: background:380, text:15, other:1 | props: background-color:220, background-image:156, color:15
+- `#222222` — 389 uses | contexts: background:285, border:51, text:32, other:21 | props: background-image:178, background-color:97, border-color:32
+- `#6c757d` — 385 uses | contexts: other:153, text:136, border:78, background:18 | props: color:136, background-color:18, border-color:18
+- `#ccc` — 384 uses | contexts: border:274, text:86, icon:16, background:6 | props: border:158, color:86, border-color:65
+- `#dff0d8` — 372 uses | contexts: background:356, text:15, other:1 | props: background-color:200, background-image:156, color:15
+- `#f2dede` — 372 uses | contexts: background:356, text:15, other:1 | props: background-color:200, background-image:156, color:15
+- `#dc3545` — 372 uses | contexts: border:156, other:143, text:38, background:35 | props: border-color:72, color:38, background-color:33
+- `#777777` — 360 uses | contexts: text:290, border:46, background:24 | props: color:290, background-color:24, border-top-color:23
+- `rgba(0, 0, 0, 0.15)` — 347 uses | contexts: shadow:245, border:94, icon:8 | props: box-shadow:108, -webkit-box-shadow:75, border:47
+- `#cccccc` — 337 uses | contexts: border:196, text:100, background:40, other:1 | props: border:144, color:100, border-color:49
+- `rgba(0, 0, 0, 0.2)` — 335 uses | contexts: shadow:180, border:114, text:27, other:8 | props: box-shadow:97, border:91, -webkit-box-shadow:67
+- `#d9534f` — 332 uses | contexts: background:308, text:18, other:6 | props: background-image:156, background-color:151, color:18
+- `#5cb85c` — 331 uses | contexts: background:307, text:18, other:6 | props: background-image:156, background-color:150, color:18
+- `#f0ad4e` — 330 uses | contexts: background:307, text:17, other:6 | props: background-image:156, background-color:151, color:17
+- `rgba(255, 255, 255, 0.1)` — 330 uses | contexts: shadow:280, border:41, background:9 | props: box-shadow:142, -webkit-box-shadow:117, -moz-box-shadow:21
+- `#555555` — 329 uses | contexts: text:218, border:59, background:45, other:7 | props: color:218, background-image:42, border-top-color:25
+- `#e5e5e5` — 326 uses | contexts: border:179, background:142, other:4, text:1 | props: background-color:117, border-bottom:94, border-top:61
+- `#0d6efd` — 319 uses | contexts: other:173, border:96, background:45, text:5 | props: background-color:45, --cui-blue:26, border-color:18
+- `#d9edf7` — 315 uses | contexts: background:299, text:15, other:1 | props: background-image:156, background-color:139, color:15
+- `#eeeff1` — 303 uses | contexts: border:197, background:84, text:22 | props: background-color:76, border-top:47, border-color:47
+- `rgba(var(--cui-emphasis-color-rgb)` — 288 uses | contexts: other:180, text:96, border:12 | props: color:36, text-decoration-color:36, -webkit-text-decoration-color:24
+- `#080808` — 285 uses | contexts: background:199, border:83, text:3 | props: background-color:155, border-color:83, background-image:44
+- `#e8e8e8` — 284 uses | contexts: background:284 | props: background-image:202, background:54, background-color:28
+- `#198754` — 283 uses | contexts: other:134, border:114, text:20, background:15 | props: border-color:30, --cui-green:26, color:20
+- `#ffc107` — 277 uses | contexts: other:137, border:96, background:27, text:17 | props: background-color:27, --cui-yellow:26, border-color:18
+- `rgba(255, 255, 255, .15)` — 272 uses | contexts: background:264, shadow:8 | props: background-image:264, -webkit-box-shadow:4, box-shadow:4
+- `rgba(0, 0, 0, 0.0001)` — 266 uses | contexts: background:266 | props: background-image:266
+- `#e55353` — 264 uses | contexts: border:130, other:120, background:8, text:6 | props: --danger-legacy-theme:24, --cui-danger:20, --cui-form-invalid-color:18
+- `#f8f9fa` — 259 uses | contexts: other:117, border:96, text:23, background:23 | props: background-color:23, border-color:18, color:17
+- `#e6e6e6` — 243 uses | contexts: background:196, border:40, other:7 | props: background-color:104, background-image:84, border-color:39
+- `#b94a48` — 235 uses | contexts: text:162, border:64, background:9 | props: color:162, border-color:60, background-color:9
+- `#39f` — 234 uses | contexts: border:109, other:99, background:20, text:6 | props: --info-legacy-theme:24, --cui-info:20, background-color:18
+- `red` — 232 uses | contexts: other:92, text:48, background:44, border:26 | props: color:48, background:38, abap:24
+- `#999` — 227 uses | contexts: border:120, text:103, background:2, other:1 | props: color:103, border:81, border-top-color:8
+- `#3c763d` — 224 uses | contexts: text:145, border:48, background:31 | props: color:144, border-color:48, background-color:31
+- `#8a6d3b` — 224 uses | contexts: text:145, border:48, background:31 | props: color:144, border-color:48, background-color:31
+- `#a94442` — 224 uses | contexts: text:145, border:48, background:31 | props: color:144, border-color:48, background-color:31
+- `#e4801b` — 224 uses | contexts: text:110, background:71, border:40, shadow:2 | props: color:110, background-color:63, border-color:21
+- `#0dcaf0` — 223 uses | contexts: other:128, border:78, background:9, text:8 | props: --cui-cyan:26, --cui-btn-border-color:12, --cui-btn-disabled-border-color:12
+- `rgba(255, 255, 255, 0.87)` — 220 uses | contexts: other:167, text:29, icon:24 | props: color:29, --cui-body-color:24, --cui-body-color-dark:18
+- `#d6e9c6` — 215 uses | contexts: border:215 | props: border-color:141, border-top-color:37, border-bottom-color:37
+- `#468847` — 214 uses | contexts: text:145, border:60, background:9 | props: color:145, border-color:60, background-color:9
+- `rgba(var(--cui-danger-rgb)` — 211 uses | contexts: text:98, background:38, shadow:36, other:21 | props: background-color:38, color:38, text-decoration-color:36
+- `#777` — 210 uses | contexts: text:189, background:12, border:5, other:4 | props: color:189, background-color:12, border-bottom:5
+- `rgba(var(--cui-success-rgb)` — 208 uses | contexts: text:98, background:38, shadow:36, other:18 | props: background-color:38, color:38, text-decoration-color:36
+- `#dee2e6` — 204 uses | contexts: border:132, other:42, background:24, text:6 | props: border-color:24, background-color:24, border:18
+- `#449d44` — 203 uses | contexts: background:203 | props: background-image:110, background-color:93
+- `#ec971f` — 203 uses | contexts: background:203 | props: background-image:110, background-color:93
+- `#c9302c` — 203 uses | contexts: background:203 | props: background-image:110, background-color:93
+- `#31b0d5` — 203 uses | contexts: background:203 | props: background-image:110, background-color:93
+- `#c09853` — 203 uses | contexts: text:143, border:60 | props: color:143, border-color:60
+- `#212631` — 201 uses | contexts: other:126, border:72, background:3 | props: --cui-dark:36, --cui-body-bg:24, --cui-body-bg-dark:18
+- `#f9b115` — 200 uses | contexts: other:96, border:96, background:6, text:2 | props: --warning-legacy-theme:24, --cui-warning:20, border-right-color:16
+- `#bce8f1` — 198 uses | contexts: border:194, background:4 | props: border-color:120, border-top-color:37, border-bottom-color:37
+- `#6b7785` — 198 uses | contexts: other:108, border:90 | props: --cui-secondary:36, --cui-btn-border-color:24, --cui-btn-color:24
+- `#e7e7e7` — 194 uses | contexts: background:134, border:59, other:1 | props: background-color:122, border-color:59, background:12
+- `#dadbdf` — 190 uses | contexts: border:146, text:26, background:16, other:2 | props: border-color:48, border:34, color:26
+- `#f3f4f7` — 189 uses | contexts: other:96, border:72, text:18, background:3 | props: --cui-light:36, --cui-tertiary-bg:18, --cui-light-text-emphasis:18
+- `#2e6da4` — 184 uses | contexts: background:144, border:40 | props: background-image:132, border-color:40, background-color:12
+- `#eee` — 182 uses | contexts: border:94, background:86, text:2 | props: background-color:62, border-bottom:31, background:24
+- `rgba(var(--cui-primary-rgb)` — 175 uses | contexts: text:98, background:38, other:18, border:18 | props: background-color:38, color:38, text-decoration-color:36
+- `rgba(var(--cui-info-rgb)` — 175 uses | contexts: text:98, background:38, other:21, border:18 | props: background-color:38, color:38, text-decoration-color:36
+- `rgba(var(--cui-warning-rgb)` — 175 uses | contexts: text:98, background:38, other:21, border:18 | props: background-color:38, color:38, text-decoration-color:36
+- `#f89406` — 172 uses | contexts: background:140, border:18, other:14 | props: background-image:104, background-color:36, border-color:18
+- `rgba(var(--cui-secondary-rgb)` — 172 uses | contexts: text:98, background:38, other:18, border:18 | props: background-color:38, color:38, text-decoration-color:36
+- `rgba(var(--cui-light-rgb)` — 172 uses | contexts: text:98, background:38, other:18, border:18 | props: background-color:38, color:38, text-decoration-color:36
+- `rgba(var(--cui-dark-rgb)` — 172 uses | contexts: text:98, background:38, other:18, border:18 | props: background-color:38, color:38, text-decoration-color:36
+- `#f8f8f8` — 169 uses | contexts: background:140, text:24, border:3, other:2 | props: background-image:78, background-color:60, color:24
+- `#ebebeb` — 169 uses | contexts: background:123, border:46 | props: background-image:80, border-bottom:46, background-color:22
+- `#1b9e3e` — 168 uses | contexts: border:90, other:72, background:4, text:2 | props: --cui-success:18, --cui-form-valid-color:18, --cui-form-valid-border-color:18
+- `rgba(8, 10, 12, 0.125)` — 168 uses | contexts: shadow:168 | props: --cui-btn-active-shadow:168
+- `#9d9faa` — 162 uses | contexts: text:145, background:10, border:7 | props: color:145, background-color:10, border-bottom:5
+- `#286090` — 160 uses | contexts: background:134, text:26 | props: background-color:90, background-image:44, color:15
+- `#555` — 159 uses | contexts: text:128, background:16, other:9, shadow:3 | props: color:127, background-color:16, box-shadow:3
+- `#323a49` — 153 uses | contexts: other:84, border:42, text:18, background:9 | props: --cui-secondary-bg:24, --cui-border-color:24, --cui-gray-dark:18
+- `#0088cc` — 150 uses | contexts: background:105, border:27, text:11, other:7 | props: background-image:72, background-color:33, color:11
+- `#5856d6` — 147 uses | contexts: other:72, border:72, text:3 | props: --cui-primary:18, --cui-link-color:18, border-top-color:12
+- `rgba(44, 56, 74, 0.95)` — 146 uses | contexts: other:146 | props: --cui-table-color:18, --cui-table-striped-color:18, --cui-table-active-color:18
+- `#31708f` — 144 uses | contexts: text:97, background:31, border:16 | props: color:96, background-color:31, border-color:16
+- `#ee5f5b` — 136 uses | contexts: background:113, other:14, border:9 | props: background-image:104, filter:14, border-color:9
+- `#eed3d7` — 135 uses | contexts: border:135 | props: border-color:93, border-top-color:21, border-bottom-color:21
+- `#fbeed5` — 135 uses | contexts: border:135 | props: border-color:84, border-top-color:21, border-bottom-color:21
+- `#321fdb` — 134 uses | contexts: other:52, border:38, background:32, text:12 | props: background-color:30, --primary-legacy-theme:24, border-color:16
+- `#d8dbe0` — 134 uses | contexts: border:94, background:30, other:8, text:2 | props: border-color:48, background-color:30, border:12
+- `#d0e9c6` — 133 uses | contexts: background:133 | props: background-image:78, background-color:55
+- `#faf2cc` — 133 uses | contexts: background:133 | props: background-image:78, background-color:55
+- `#ebcccc` — 133 uses | contexts: background:133 | props: background-image:78, background-color:55
+- `#e9ecef` — 129 uses | contexts: background:66, other:36, border:27 | props: background-color:66, --bs-nav-tabs-link-hover-border-color:12, --cui-light-border-subtle:6
+- `#fbb450` — 127 uses | contexts: background:113, other:14 | props: background-image:104, filter:14, background-color:9
+- `#62c462` — 127 uses | contexts: background:113, other:14 | props: background-image:104, filter:14, background-color:9
+- `rgba(var(--cui-elevation-base-color,60,75,100)` — 126 uses | contexts: shadow:126 | props: box-shadow:126
+- `rgba(0, 0, 0, .075)` — 124 uses | contexts: shadow:124 | props: -webkit-box-shadow:62, box-shadow:62
+- `#357ebd` — 121 uses | contexts: background:77, border:44 | props: background-image:68, border-color:44, background-color:9
+- `#608dbb` — 119 uses | contexts: text:43, background:40, border:35, other:1 | props: color:43, background-color:40, border-color:21
+- `#343a40` — 114 uses | contexts: other:54, border:24, background:24, text:12 | props: background-color:24, border-color:18, --cui-secondary-bg:12
+- `rgba(0, 0, 0, 0.3)` — 113 uses | contexts: shadow:75, background:12, border:9, icon:8 | props: box-shadow:33, -webkit-box-shadow:22, -moz-box-shadow:20
+- `#c4e3f3` — 112 uses | contexts: background:112 | props: background-image:78, background-color:34
+- `#f9f9f9` — 112 uses | contexts: background:101, other:8, shadow:3 | props: background-image:52, background-color:49, filter:7
+- `rgba(0, 0, 0, 0)` — 111 uses | contexts: other:66, background:43, shadow:2 | props: -webkit-tap-highlight-color:66, background-color:42, box-shadow:2
+- `#d4d4d4` — 109 uses | contexts: border:93, background:16 | props: border:39, border-bottom:36, border-top:18
+- `#3071a9` — 107 uses | contexts: background:97, text:10 | props: background-image:66, background-color:31, text-shadow:9
+- `#007bff` — 107 uses | contexts: background:48, border:30, text:18, other:11 | props: background-color:48, border-color:30, color:18
+- `rgba(0, 0, 0, 0.175)` — 106 uses | contexts: shadow:88, border:18 | props: box-shadow:46, -webkit-box-shadow:35, --bs-border-color-translucent:12
+- `#1e30f3` — 105 uses | contexts: other:45, border:30, background:21, icon:6 | props: background-color:12, background:9, border-color:6
+- `#666` — 104 uses | contexts: icon:88, text:16 | props: stroke:77, color:16, fill:11
+- `#bd362f` — 104 uses | contexts: background:79, border:18, other:7 | props: background-image:52, background-color:27, border-color:18
+- `#51a351` — 104 uses | contexts: background:79, border:18, other:7 | props: background-image:52, background-color:27, border-color:18
+- `#2f96b4` — 104 uses | contexts: background:79, border:18, other:7 | props: background-image:52, background-color:27, border-color:18
+- `#b0b2bb` — 101 uses | contexts: text:84, border:8, background:7, other:2 | props: color:84, border-color:6, background-color:5
+- `#ebedef` — 100 uses | contexts: other:48, border:24, background:18, text:10 | props: --light-legacy-theme:24, background-color:12, color:10
+- `#e0e0e0` — 98 uses | contexts: background:82, border:16 | props: background-image:46, background-color:36, border-color:16
+- `#419641` — 97 uses | contexts: background:81, border:16 | props: background-image:46, background-color:35, border-color:16
+- `#eb9316` — 97 uses | contexts: background:81, border:16 | props: background-image:46, background-color:35, border-color:16
+- `#c12e2a` — 97 uses | contexts: background:81, border:16 | props: background-image:46, background-color:35, border-color:16
+- `#2aabd2` — 97 uses | contexts: background:81, border:16 | props: background-image:46, background-color:35, border-color:16
+- `#ff0` — 97 uses | contexts: background:89, text:8 | props: background:81, background-color:8, color:8
+- `rgba(255, 255, 255, 0.6)` — 96 uses | contexts: other:82, background:13, text:1 | props: --cui-secondary-color:24, --cui-secondary-color-dark:18, --cui-medium-emphasis-inverse:18
+- `#3b3c43` — 96 uses | contexts: text:64, background:20, border:8, other:4 | props: color:64, background-color:16, background:4
+- `#747786` — 96 uses | contexts: text:83, background:9, border:4 | props: color:83, background-color:8, border:4
+- `rgba(255, 255, 255, 0.25)` — 95 uses | contexts: shadow:36, text:30, other:18, border:9 | props: text-shadow:18, -webkit-box-shadow:18, box-shadow:18
+- `#3a87ad` — 95 uses | contexts: text:82, background:9, border:4 | props: color:82, background-color:9, border-color:4
+- `#2eb85c` — 95 uses | contexts: other:42, border:38, background:9, text:6 | props: --success-legacy-theme:24, border-color:16, background-color:7
+- `#9d9d9d` — 94 uses | contexts: text:90, border:4 | props: color:90, border-color:4
+- `#9da5b1` — 90 uses | contexts: border:60, other:22, background:4, text:4 | props: --cui-secondary-border-subtle:36, background-color:4, --cui-btn-border-color:4
+- `#6261cc` — 90 uses | contexts: other:72, border:18 | props: --cui-primary:18, --cui-link-color:18, --cui-btn-border-color:12
+- `#495057` — 90 uses | contexts: text:54, border:18, other:18 | props: color:36, --cui-border-color:12, --cui-light-text-emphasis:6
+- `rgba(13, 110, 253, 0.25)` — 90 uses | contexts: shadow:84, other:6 | props: box-shadow:54, --cui-focus-ring-color:6, --cui-accordion-btn-focus-box-shadow:6
+- `#81a657` — 89 uses | contexts: background:50, border:20, text:18, other:1 | props: background-color:46, color:18, border-color:12
+- `#28a745` — 88 uses | contexts: border:42, text:19, background:18, other:9 | props: border-color:42, color:19, background-color:18
+- `#2a6496` — 87 uses | contexts: text:45, border:42 | props: color:45, border-top-color:21, border-bottom-color:21
+- `#0055cc` — 84 uses | contexts: background:63, border:14, other:7 | props: background-image:42, background-color:21, border-color:14
+- `#000015` — 84 uses | contexts: other:62, background:10, border:8, text:4 | props: --cui-btn-hover-color:18, --cui-btn-active-color:18, background-color:10
+- `#4799eb` — 83 uses | contexts: other:42, background:28, border:9, text:4 | props: background-color:25, --info-dark-theme:24, container:10
+- `#cf664b` — 83 uses | contexts: background:46, text:20, border:16, other:1 | props: background-color:44, color:20, border-color:10
+- `rgba(255, 255, 255, 0.38)` — 82 uses | contexts: other:82 | props: --cui-tertiary-color:24, --cui-tertiary-color-dark:18, --cui-disabled-inverse:18
+- `#f7f7f7` — 81 uses | contexts: background:78, border:3 | props: background-color:78, border-bottom:3
+- `#80000000` — 80 uses | contexts: other:80 | props: filter:80
+- `#00000000` — 80 uses | contexts: other:80 | props: filter:80
+- `#faebcc` — 80 uses | contexts: border:80 | props: border-color:48, border-top-color:16, border-bottom-color:16
+- `#ebccd1` — 80 uses | contexts: border:80 | props: border-color:48, border-top-color:16, border-bottom-color:16
+- `#d63384` — 79 uses | contexts: other:68, background:9, text:2 | props: --cui-pink:26, --cui-code-color:24, background-color:9
+- `#3c3c3c` — 78 uses | contexts: background:78 | props: background-image:78
+- `#c8e5bc` — 78 uses | contexts: background:78 | props: background-image:78
+- `#b9def0` — 78 uses | contexts: background:78 | props: background-image:78
+- `#f8efc0` — 78 uses | contexts: background:78 | props: background-image:78
+- `#e7c3c3` — 78 uses | contexts: background:78 | props: background-image:78
+- `#adadad` — 78 uses | contexts: border:66, shadow:12 | props: border-color:66, box-shadow:12
+- `#fbfbfb` — 78 uses | contexts: background:71, border:4, text:3 | props: background-color:53, background:18, color:3
+- `rgba(88, 86, 214, 0.25)` — 78 uses | contexts: shadow:60, other:18 | props: box-shadow:36, --cui-focus-ring-color:18, --cui-accordion-btn-focus-box-shadow:6
+- `rgba(var(--cui-link-color-rgb)` — 78 uses | contexts: text:78 | props: text-decoration-color:36, -webkit-text-decoration-color:24, color:18
+- `#222` — 77 uses | contexts: background:72, text:3, other:2 | props: background-image:48, background-color:21, color:3
+- `#265a88` — 77 uses | contexts: background:77 | props: background-image:44, background-color:33
+- `#eea236` — 76 uses | contexts: border:76 | props: border-color:76
+- `#d43f3a` — 76 uses | contexts: border:76 | props: border-color:76
+- `#4cae4c` — 76 uses | contexts: border:76 | props: border-color:76
+- `#46b8da` — 76 uses | contexts: border:76 | props: border-color:76
+- `rgba(0, 0, 0, 0.6)` — 76 uses | contexts: text:76 | props: text-shadow:68, color:8
+- `#fff5f5f5` — 74 uses | contexts: other:74 | props: filter:74
+- `#c8c9cf` — 74 uses | contexts: text:41, border:27, background:6 | props: color:41, border:13, border-color:10
+- `#808080` — 73 uses | contexts: background:37, text:13, icon:11, other:8 | props: background-color:25, color:13, background-image:12
+- `#6781` — 72 uses | contexts: other:72 | props: isready:72
+- `#fff3cd` — 72 uses | contexts: other:60, background:12 | props: --cui-highlight-bg:24, background-color:12, --bs-highlight-bg:12
+- `#249542` — 72 uses | contexts: other:54, border:18 | props: --cui-success:18, --cui-btn-border-color:12, --cui-btn-color:12
+- `#3d99f5` — 72 uses | contexts: other:54, border:18 | props: --cui-info:18, --cui-btn-border-color:12, --cui-btn-color:12
+- `#edad21` — 72 uses | contexts: other:54, border:18 | props: --cui-warning:18, --cui-btn-border-color:12, --cui-btn-color:12
+- `#db5d5d` — 72 uses | contexts: other:54, border:18 | props: --cui-danger:18, --cui-btn-border-color:12, --cui-btn-color:12
+- `#565f6a` — 72 uses | contexts: other:48, border:24 | props: --cui-btn-active-bg:36, --cui-btn-hover-border-color:24, --cui-btn-hover-bg:12
+- `rgba(255, 255, 255, 0.2)` — 71 uses | contexts: shadow:42, text:18, background:7, border:4 | props: text-shadow:18, -webkit-box-shadow:14, -moz-box-shadow:14
+- `silver` — 71 uses | contexts: border:64, other:7 | props: border-bottom:30, border-top:30, border-left:4
+- `#444` — 71 uses | contexts: text:63, border:6, other:2 | props: color:63, border-bottom:3, border-top:3
+- `#d58512` — 70 uses | contexts: border:54, background:16 | props: border-color:54, background-color:16
+- `#ac2925` — 70 uses | contexts: border:54, background:16 | props: border-color:54, background-color:16
+- `#398439` — 70 uses | contexts: border:54, background:16 | props: border-color:54, background-color:16
+- `#269abc` — 70 uses | contexts: border:54, background:16 | props: border-color:54, background-color:16
+- `#444444` — 70 uses | contexts: text:54, background:14, border:2 | props: color:54, background-image:10, background:3
+- `rgba(44,56,74,.95)` — 70 uses | contexts: text:70 | props: color:68, text-shadow:2
+- `#dbc59e` — 69 uses | contexts: shadow:69 | props: -webkit-box-shadow:30, box-shadow:30, -moz-box-shadow:9
+- `#d59392` — 69 uses | contexts: shadow:69 | props: -webkit-box-shadow:30, box-shadow:30, -moz-box-shadow:9
+- `#7aba7b` — 69 uses | contexts: shadow:69 | props: -webkit-box-shadow:30, box-shadow:30, -moz-box-shadow:9
+- `#adb5bd` — 69 uses | contexts: other:30, background:24, border:12, text:3 | props: background-color:24, --bs-dropdown-link-disabled-color:12, --cui-dark-border-subtle:6
+- `rgba(255, 255, 255, 0.09)` — 68 uses | contexts: border:68 | props: border-color:68
+- `rgba(255, 255, 255, 0.5)` — 68 uses | contexts: text:65, background:3 | props: color:38, text-shadow:27, background:2
+- `#149bdf` — 68 uses | contexts: background:61, other:7 | props: background-image:52, background-color:9, filter:7
+- `rgba(0, 0, 0, .5)` — 68 uses | contexts: background:44, shadow:24 | props: background-image:44, -webkit-box-shadow:12, box-shadow:12
+- `#dbdbdb` — 68 uses | contexts: background:44, border:24 | props: background-image:44, border-color:24
+- `#ced2d8` — 67 uses | contexts: other:66, border:1 | props: --cui-secondary-bg-subtle:36, --secondary-legacy-theme:24, wavesurfer:3
+- `#595b66` — 67 uses | contexts: text:43, background:18, border:6 | props: color:43, background-color:14, background:4
+- `#ff337ab7` — 66 uses | contexts: other:66 | props: filter:66
+- `#664d03` — 63 uses | contexts: other:30, text:18, background:9, border:6 | props: --cui-highlight-bg:24, color:12, background-color:9
+- `rgba(102, 175, 233, 0.6)` — 62 uses | contexts: shadow:62 | props: -webkit-box-shadow:31, box-shadow:31
+- `#953b39` — 62 uses | contexts: border:30, text:23, background:9 | props: border-color:30, color:23, background-color:9
+- `#356635` — 62 uses | contexts: border:30, text:23, background:9 | props: border-color:30, color:23, background-color:9
+- `#504` — 62 uses | contexts: other:62 | props: support:62
+- `#5e5e5e` — 61 uses | contexts: text:40, background:21 | props: color:40, background-color:21
+- `#204d74` — 60 uses | contexts: border:40, background:20 | props: border-color:40, background-color:20
+- `#ea868f` — 60 uses | contexts: other:27, border:24, text:6, background:3 | props: --cui-form-invalid-color:24, --cui-form-invalid-border-color:24, --cui-danger-text-emphasis:6
+- `#0044cc` — 60 uses | contexts: background:44, border:12, other:4 | props: background-image:34, border-color:12, background-color:10
+- `#0480be` — 59 uses | contexts: background:52, other:7 | props: background-image:52, filter:7
+- `#c43c35` — 59 uses | contexts: background:52, other:7 | props: background-image:52, filter:7
+- `#57a957` — 59 uses | contexts: background:52, other:7 | props: background-image:52, filter:7
+- `#339bb9` — 59 uses | contexts: background:52, other:7 | props: background-image:52, filter:7
+- `#b25037` — 59 uses | contexts: text:24, background:19, border:15, other:1 | props: color:24, background-color:16, border-color:15
+- `#678a45` — 59 uses | contexts: text:24, border:19, background:15, other:1 | props: color:24, border-color:19, background-color:12
+- `#c9e2b3` — 58 uses | contexts: border:58 | props: border-top-color:37, border-color:21
+- `rgba(255, 255, 255, 0.075)` — 58 uses | contexts: border:34, shadow:21, background:3 | props: border-color:32, -webkit-box-shadow:7, -moz-box-shadow:7
+- `rgba(var(--cui-black-rgb)` — 58 uses | contexts: text:20, background:20, border:18 | props: color:20, background-color:20, border-color:18
+- `rgba(var(--cui-white-rgb)` — 58 uses | contexts: text:20, background:20, border:18 | props: color:20, background-color:20, border-color:18
+- `#4f5d73` — 58 uses | contexts: border:24, other:21, text:11, background:2 | props: color:11, --cui-btn-color:5, --cui-btn-border-color:4
+- `#dcdcdc` — 57 uses | contexts: background:27, border:23, text:4, other:3 | props: background-color:27, border-color:20, color:4
+- `#2b669a` — 57 uses | contexts: background:44, border:13 | props: background-image:44, border-color:13
+- `#75b798` — 57 uses | contexts: other:24, border:24, text:6, background:3 | props: --cui-form-valid-color:24, --cui-form-valid-border-color:24, --cui-success-text-emphasis:6
+- `#e4e7ea` — 56 uses | contexts: border:56 | props: border-color:56
+- `#f0f0f0` — 56 uses | contexts: background:36, border:14, other:6 | props: background-color:18, background:18, border-bottom:10
+- `#3788d8` — 56 uses | contexts: border:36, background:20 | props: border:36, background-color:20
+- `blue` — 56 uses | contexts: text:27, other:26, border:3 | props: color:27, emoji:6, token:3
+- `#6f42c1` — 56 uses | contexts: other:47, background:9 | props: --cui-purple:26, --bs-purple:12, background-color:9
+- `rgba(var(--cui-body-color-rgb)` — 56 uses | contexts: text:44, other:12 | props: color:44, --cui-card-cap-bg:12
+- `#ff5821` — 56 uses | contexts: text:26, background:23, border:7 | props: color:26, background:20, border:4
+- `#269aff` — 55 uses | contexts: border:44, background:11 | props: border:33, border-color:11, background-color:11
+- `#17a2b8` — 54 uses | contexts: background:18, border:18, other:9, text:9 | props: background-color:18, border-color:18, color:9
+- `rgba(37, 43, 54, 0.95)` — 54 uses | contexts: other:54 | props: --cui-body-color:18, --cui-high-emphasis:18, --cui-highlight-color:18
+- `#4645ab` — 54 uses | contexts: other:42, border:12 | props: --cui-link-hover-color:18, --cui-btn-active-bg:18, --cui-btn-hover-border-color:12
+- `#e21e80` — 54 uses | contexts: other:27, border:18, background:6, text:3 | props: --bs-btn-border-color:6, --bs-btn-disabled-border-color:6, background:6
+- `#a47e3c` — 53 uses | contexts: border:30, text:23 | props: border-color:30, color:23
+- `#6d7d9c` — 53 uses | contexts: other:32, text:12, background:9 | props: --cui-gray:18, color:12, background-color:9
+- `#ffe8e8e8` — 52 uses | contexts: other:52 | props: filter:52
+- `#dbdfe6` — 51 uses | contexts: border:18, text:18, other:12, background:3 | props: --cui-border-color:18, --cui-dark-text-emphasis:18, --cui-dropdown-color:6
+- `#0f0f0f` — 50 uses | contexts: background:47, shadow:3 | props: background-image:44, background-color:3, box-shadow:3
+- `#6610f2` — 50 uses | contexts: other:41, background:9 | props: --cui-indigo:26, --bs-indigo:12, background-color:9
+- `#fd7e14` — 50 uses | contexts: other:41, background:9 | props: --cui-orange:26, --bs-orange:12, background-color:9
+- `#20c997` — 50 uses | contexts: other:41, background:9 | props: --cui-teal:26, --bs-teal:12, background-color:9
+- `rgba(0, 0, 0, 0.8)` — 49 uses | contexts: other:33, icon:8, background:8 | props: mask-image:18, -webkit-mask-image:15, fill:8
+- `#06c` — 48 uses | contexts: text:24, icon:16, background:8 | props: color:24, background-color:8, fill:8
+- `#2c3e50` — 48 uses | contexts: background:24, border:24 | props: background-color:24, border-color:24
+- `#2b542c` — 48 uses | contexts: text:32, border:16 | props: color:32, border-color:16
+- `#66512c` — 48 uses | contexts: text:32, border:16 | props: color:32, border-color:16
+- `#843534` — 48 uses | contexts: text:32, border:16 | props: color:32, border-color:16
+- `#505964` — 48 uses | contexts: border:48 | props: --cui-btn-active-border-color:36, --cui-btn-hover-border-color:12
+- `#e86464` — 48 uses | contexts: border:48 | props: --cui-btn-hover-border-color:24, --cui-btn-active-border-color:24
+- `#47a3ff` — 48 uses | contexts: border:48 | props: --cui-btn-hover-border-color:24, --cui-btn-active-border-color:24
+- `#e2e2e2` — 47 uses | contexts: background:44, text:3 | props: background-image:44, color:3
+- `#23527c` — 47 uses | contexts: text:47 | props: color:47
+- `rgba(255, 255, 255, 0.75)` — 46 uses | contexts: text:27, other:18, background:1 | props: color:18, --cui-navbar-hover-color:12, text-shadow:9
+- `#ff428bca` — 45 uses | contexts: other:45 | props: filter:45
+- `#c0c0c0` — 45 uses | contexts: border:42, other:3 | props: border:42, aliceblue:3
+- `#ffffffff` — 44 uses | contexts: other:44 | props: filter:44
+- `#ff5bc0de` — 44 uses | contexts: other:44 | props: filter:44
+- `rgba(0,0,0,.075)` — 44 uses | contexts: shadow:43, other:1 | props: -webkit-box-shadow:19, box-shadow:19, shadow:3
+- `rgba(0, 0, 0, .0001)` — 44 uses | contexts: background:44 | props: background-image:44
+- `#00aaff` — 44 uses | contexts: background:24, text:12, border:8 | props: background-color:24, color:12, border-left-color:4
+- `rgba(var(--cui-body-bg-rgb)` — 44 uses | contexts: other:24, background:20 | props: background-color:20, --cui-toast-bg:12, --cui-toast-header-bg:12
+- `#0a58ca` — 44 uses | contexts: other:27, border:9, text:5, background:3 | props: --bs-link-hover-color:9, --cui-link-hover-color:6, --cui-btn-hover-border-color:6
+- `#3278b3` — 43 uses | contexts: background:34, border:9 | props: background-image:34, border-color:9
+- `rgba(255, 255, 255, 0)` — 43 uses | contexts: other:38, background:4, shadow:1 | props: --cui-gradient:26, --bs-gradient:12, background:4
+- `#c7254e` — 42 uses | contexts: text:40, other:2 | props: color:40, code-color:2
+- `#f9f2f4` — 42 uses | contexts: background:40, other:2 | props: background-color:40, code-bg:2
+- `#e6c1c7` — 42 uses | contexts: border:42 | props: border-color:21, border-top-color:21
+- `#f8e5be` — 42 uses | contexts: border:42 | props: border-color:21, border-top-color:21
+- `#e3e3e3` — 42 uses | contexts: border:42 | props: border:42
+- `rgb(102, 82, 0)` — 42 uses | contexts: background:42 | props: background:42
+- `#2a303d` — 42 uses | contexts: other:42 | props: --cui-tertiary-bg:24, --cui-tertiary-bg-dark:18
+- `rgba(8, 10, 12, 0.075)` — 42 uses | contexts: shadow:42 | props: --cui-box-shadow-sm:18, --cui-box-shadow-inset:18, --cui-btn-box-shadow:6
+- `#373b3e` — 42 uses | contexts: border:30, other:12 | props: --cui-table-active-bg:6, --cui-btn-hover-border-color:6, --cui-btn-active-border-color:6
+- `rgba(0, 0, 0, .25)` — 41 uses | contexts: border:24, shadow:15, text:2 | props: box-shadow:8, -webkit-box-shadow:7, border-top-color:6
+- `#4a566d` — 41 uses | contexts: text:18, border:18, background:3, other:2 | props: --cui-light-text-emphasis:18, --cui-light-border-subtle:18, background-color:3
+- `#b78d00` — 41 uses | contexts: text:25, border:9, background:6, other:1 | props: color:25, border-color:9, background-color:3
+- `rgba(255,255,255,.55)` — 41 uses | contexts: other:32, background:9 | props: label:32, backgroundcolor:9
+- `#ff5cb85c` — 40 uses | contexts: other:40 | props: filter:40
+- `#fff0ad4e` — 40 uses | contexts: other:40 | props: filter:40
+- `#ffd9534f` — 40 uses | contexts: other:40 | props: filter:40
+- `#ffdff0d8` — 40 uses | contexts: other:40 | props: filter:40
+- `#ffd9edf7` — 40 uses | contexts: other:40 | props: filter:40
+- `#fffcf8e3` — 40 uses | contexts: other:40 | props: filter:40
+
+## 4) Group / Extension / Context Summary
+### Core
+- .css: background:24437, border:15393, other:8811, shadow:4327, text:10754
+- .js: background:202, border:30, icon:1, other:825, text:81
+- .less: background:39, border:82, other:148, shadow:13, text:39
+
+### Custom
+- .cshtml: background:541, border:640, icon:7, other:542, shadow:43, text:825
+- .css: background:7253, border:9766, icon:344, other:11748, shadow:1766, text:7981
+- .html: background:94, border:61, other:11, text:93
+- .js: background:1438, border:486, icon:8, other:1289, shadow:184, text:2298
+- .less: background:62, border:45, other:170, shadow:4, text:27
+- .scss: background:12, border:23, other:94, shadow:6, text:11
+- .ts: other:1
+
+### Devextreme
+- .css: background:1048, border:1308, icon:379, other:658, shadow:248, text:1002
+- .js: other:69

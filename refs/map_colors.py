@@ -149,8 +149,7 @@ def is_hue_compatible(lch_a, lch_b, gate_degrees=None):
     Rules:
     - Both achromatic (C < 18): always compatible (grays match grays)
     - Both chromatic (C >= 18): compatible if hue diff <= gate_degrees
-    - One achromatic + one mildly chromatic (C < 20): compatible (transitional)
-    - One achromatic + one chromatic (C >= 20): NOT compatible
+    - Mixed achromatic/chromatic: NOT compatible
     """
     if gate_degrees is None:
         gate_degrees = HUE_GATE_DEGREES
@@ -166,8 +165,21 @@ def is_hue_compatible(lch_a, lch_b, gate_degrees=None):
         return hue_angle_diff(lch_a[2], lch_b[2]) <= gate_degrees
 
     # one achromatic, one chromatic
-    chromatic_c = max(c_a, c_b)
-    return chromatic_c < 20  # strict: only very mild transitional
+    return False
+
+
+def fallback_candidates_by_chroma(source_lch, ctx_eligible):
+    """Fallback pool that preserves chroma class before relaxing.
+
+    If hue-gated candidates are empty, avoid cross-family jumps by first trying
+    tokens with the same achromatic/chromatic class as the source color.
+    """
+    source_is_chromatic = source_lch[1] >= ACHROMATIC_CHROMA
+    if source_is_chromatic:
+        same_class = [t for t in ctx_eligible if t["lch"][1] >= ACHROMATIC_CHROMA]
+    else:
+        same_class = [t for t in ctx_eligible if t["lch"][1] < ACHROMATIC_CHROMA]
+    return same_class if same_class else ctx_eligible
 
 
 # Graduated hue gate: try progressively wider gates before giving up
@@ -315,9 +327,8 @@ def build_clusters(audit_colors, tokens, mode_name):
                     break
 
             if candidates is None:
-                # Last resort: all context-eligible, but prefer chromatic
-                # tokens over achromatic when audit color is chromatic
-                candidates = ctx_eligible
+                # Last resort: prefer same chroma class first, then relax.
+                candidates = fallback_candidates_by_chroma(lch, ctx_eligible)
 
             best_t, best_de = None, float("inf")
             for t in candidates:
@@ -363,7 +374,51 @@ def build_clusters(audit_colors, tokens, mode_name):
             "by_context": by_ctx,
         })
 
-    result.sort(key=lambda x: -x["total_occurrences"])
+    # Sort tokens by semantic color group, then by specificity within group
+    # Group order: neutral → primary → info → success → warning → danger
+    # Within each group: high → medium* → low → on-accent → solid → subtle
+    COLOR_GROUP_ORDER = {
+        "neutral": 0, "primary": 1, "info": 2, "success": 3, "warning": 4, "danger": 5,
+    }
+    VARIANT_ORDER = {
+        "high": 0, "medium*": 1, "low": 2, "on-accent": 3, "solid": 4, "subtle": 5,
+    }
+
+    def _semantic_sort_key(item):
+        path = item["token"]
+        parts = path.split("/")
+        # Extract color group from path (e.g. "text+icons/neutral/high" → "neutral")
+        group = "neutral"
+        variant = ""
+        for p in parts:
+            if p in COLOR_GROUP_ORDER:
+                group = p
+            # Check for variant names
+            for v in VARIANT_ORDER:
+                if p == v or p.endswith("-" + v):
+                    variant = v
+        # For tokens like "background/main", "background/secondary", "background/tertiary"
+        # treat as neutral
+        if group == "neutral" and any(p in ("main", "secondary", "tertiary") for p in parts):
+            group = "neutral"
+        # For accent/* tokens, extract group from suffix: accent/info → info
+        if parts[0] == "accent" and len(parts) > 1 and parts[1] in COLOR_GROUP_ORDER:
+            group = parts[1]
+        # For background/*-subtle tokens: background/info-subtle → info
+        for p in parts:
+            for g in COLOR_GROUP_ORDER:
+                if g in p and g != "neutral":
+                    group = g
+                    break
+        # For container/* tokens, treat as neutral
+        if parts[0] == "container":
+            group = "neutral"
+
+        g_order = COLOR_GROUP_ORDER.get(group, 99)
+        v_order = VARIANT_ORDER.get(variant, 99)
+        return (g_order, v_order, path)
+
+    result.sort(key=_semantic_sort_key)
     return result
 
 

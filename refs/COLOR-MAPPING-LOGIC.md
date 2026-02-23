@@ -87,8 +87,7 @@ Pure CIEDE2000 can match colors with similar lightness/chroma but wrong hue fami
 | Achromatic | Achromatic | Yes (grays match grays) |
 | Chromatic | Chromatic, hue diff ≤ gate° | Yes (same hue family) |
 | Chromatic | Chromatic, hue diff > gate° | **No** (wrong family) |
-| Achromatic | Mildly chromatic (C 18–20) | Yes (very mild transitional) |
-| Achromatic | Chromatic (C ≥ 20) | **No** (don't mix gray + chromatic) |
+| Achromatic | Chromatic | **No** (don't mix gray + chromatic) |
 
 **Graduated fallback** — instead of jumping from strict gate to "all tokens", we widen progressively:
 
@@ -98,9 +97,9 @@ Pure CIEDE2000 can match colors with similar lightness/chroma but wrong hue fami
 | 2 | 50° | Adjacent family (e.g., cyan → green) |
 | 3 | 70° | Broader reach (e.g., cyan → blue) |
 | 4 | 90° | Wide catch (quarter of color wheel) |
-| 5 | All tokens | Last resort fallback |
+| 5 | Same chroma class | Last resort fallback (achromatic→achromatic, chromatic→chromatic) |
 
-This handles the **cyan/teal gap** in the Figma palette: there are no dedicated cyan tokens (success = green h≈147°, info = blue h≈285°), so cyans (h≈196°) need wider gates to reach green or blue tokens instead of being dumped into neutral.
+This handles the **cyan/teal gap** in the Figma palette: there are no dedicated cyan tokens (success = green h≈147°, info = blue h≈285°), so cyans (h≈196°) can still reach green or blue via wider gates while avoiding neutral-family collapse.
 
 #### Stage 2: CIEDE2000 Ranking + Max Distance Guard
 
@@ -143,8 +142,9 @@ Matching rules — which tokens are eligible for each audit context:
 For each (color, context) pair:
 1. Filter tokens by context eligibility
 2. Try graduated hue gates (30° → 50° → 70° → 90°) until compatible tokens found
-3. Pick the token with lowest CIEDE2000 among compatible candidates
-4. If best dE2000 > 40, reject the match (no good token exists)
+3. If none match, fallback to same chroma class (achromatic/chromatic) within context-eligible tokens
+4. Pick the token with lowest CIEDE2000 among candidates
+5. If best dE2000 > 40, reject the match (no good token exists)
 
 ### Step 5: Build Token-First Clusters
 

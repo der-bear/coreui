@@ -4,7 +4,8 @@
       "Bash(pip3 list:*)",
       "Bash(pip3 install:*)",
       "Bash(python3:*)",
-      "Bash(open:*)"
+      "Bash(open:*)",
+      "mcp__plugin_figma_figma__generate_figma_design"
     ]
   }
 }

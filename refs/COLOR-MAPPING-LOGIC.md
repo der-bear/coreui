@@ -157,6 +157,41 @@ For each token:
 - Report: `unique_colors`, `total_occurrences`, `by_context: { text: [...], background: [...], border: [...] }`
 - **All Figma tokens are included** in the output, even those with 0 matching audit colors
 
+#### Token Sort Order — Semantic Color Grouping
+
+Tokens in the output are sorted by **semantic color group**, not by occurrence count. This groups related tokens together for easier visual scanning.
+
+**Group order** (applied across all scope sections):
+
+| Order | Group | Example tokens |
+|-------|-------|----------------|
+| 1 | neutral | `text+icons/neutral/high`, `background/main`, `background/secondary`, `container/header` |
+| 2 | primary | `accent/primary`, `text+icons/primary/high`, `background/primary-subtle` |
+| 3 | info | `accent/info`, `text+icons/info/high`, `border/info/solid` |
+| 4 | success | `accent/success`, `text+icons/success/high`, `border/success/solid` |
+| 5 | warning | `accent/warning`, `text+icons/warning/high`, `border/warning/solid` |
+| 6 | danger | `accent/danger`, `text+icons/danger/high`, `border/danger/solid` |
+
+**Variant order** within each group:
+
+| Order | Variant | Description |
+|-------|---------|-------------|
+| 1 | high | Strongest contrast |
+| 2 | medium* | Medium contrast |
+| 3 | low | Subtle / low contrast |
+| 4 | on-accent | Text on colored backgrounds |
+| 5 | solid | Full-strength border/accent |
+| 6 | subtle | Light background tints |
+
+**Group detection rules:**
+- `accent/{group}` → extract group from second segment (`accent/info` → info)
+- `background/{group}-subtle` → extract group from suffix (`background/info-subtle` → info)
+- `text+icons/{group}/...` → extract group from second segment
+- `border/{group}/...` → extract group from second segment
+- `background/main`, `background/secondary`, `background/tertiary` → neutral
+- `container/*` → neutral
+- Fallback: neutral
+
 ### Step 6: Separate Section — Shadow, Other & Functional Colors
 
 Colors that don't participate in main token matching are collected into a dedicated `separate` array:
@@ -229,7 +264,9 @@ This ensures nothing is lost — shadow colors, rgba values, and "other" usages 
 - Loads `color-mapping-report.json` via `fetch()`
 - **Token clusters** (main section):
   - Tokens grouped by scope: Background (FRAME_FILL), Text & Icons (TEXT_FILL), Border/Stroke (STROKE_COLOR), All Scopes
+  - **Within each scope section**, tokens appear in semantic color group order: neutral → primary → info → success → warning → danger (preserves JSON sort order from Step 5)
   - Each row: **token swatch + name** on left → **row of color swatches** on right → **count**
+  - **Swatches sorted by dE** (closest visual match first) within each token row
   - Hover any swatch for tooltip: color value, hex, dE distance, occurrences, source groups
   - All tokens shown, including those with 0 matches
 - **Separate section** (below main):

@@ -339,9 +339,13 @@ def build_clusters(audit_colors, tokens, mode_name):
 
             # Max-distance guard: skip if dE is too high (no good match)
             if best_t and best_de <= MAX_DE:
+                color_lch = ac["lch"]
                 clusters[best_t["path"]]["by_context"][ctx].append({
                     "color": ac["raw"], "hex": ac["hex"],
                     "de": round(best_de, 2),
+                    "h": round(color_lch[2], 1),  # hue angle 0-360
+                    "l": round(color_lch[0], 1),   # lightness 0-100
+                    "c": round(color_lch[1], 1),   # chroma
                     "occurrences": ctx_count,
                     "groups": ac["groups"],
                 })
@@ -361,7 +365,10 @@ def build_clusters(audit_colors, tokens, mode_name):
                 h = it["hex"]
                 if h not in seen or it["occurrences"] > seen[h]["occurrences"]:
                     seen[h] = it
-            deduped = sorted(seen.values(), key=lambda x: x["de"])
+            # Sort by visual similarity: hue → lightness (achromatic by lightness only)
+            deduped = sorted(seen.values(),
+                             key=lambda x: (x["h"], x["l"]) if x["c"] >= ACHROMATIC_CHROMA
+                                           else (-1, x["l"]))
             by_ctx[ctx_name] = deduped
             total_occ += sum(it["occurrences"] for it in deduped)
             unique_hexes.update(it["hex"] for it in deduped)
@@ -374,15 +381,31 @@ def build_clusters(audit_colors, tokens, mode_name):
             "by_context": by_ctx,
         })
 
-    # Sort tokens by semantic color group, then by specificity within group
-    # Group order: neutral → primary → info → success → warning → danger
-    # Within each group: high → medium* → low → on-accent → solid → subtle
+    # Sort tokens: first by scope group (matching HTML viewer sections),
+    # then by semantic color group, then by variant within group.
+    # Scope order: Background → Text & Icons → Border → All
+    # Color group order: neutral → primary → info → success → warning → danger
+    # Variant order: high → medium* → low → on-accent → solid → subtle
+    SCOPE_ORDER = {"background": 0, "text": 1, "border": 2, "all": 3}
     COLOR_GROUP_ORDER = {
         "neutral": 0, "primary": 1, "info": 2, "success": 3, "warning": 4, "danger": 5,
     }
     VARIANT_ORDER = {
-        "high": 0, "medium*": 1, "low": 2, "on-accent": 3, "solid": 4, "subtle": 5,
+        "high": 0, "medium*": 1, "low": 2, "on-accent": 3,
+        "solid": 4, "accent": 5, "subtle": 6,
     }
+
+    def _scope_key(item):
+        """Determine scope group matching the HTML viewer logic."""
+        scopes = item["scopes"]
+        path = item["token"]
+        if "TEXT_FILL" in scopes or ("SHAPE_FILL" in scopes and path.startswith("text")):
+            return SCOPE_ORDER["text"]
+        if "STROKE_COLOR" in scopes:
+            return SCOPE_ORDER["border"]
+        if "FRAME_FILL" in scopes or "SHAPE_FILL" in scopes:
+            return SCOPE_ORDER["background"]
+        return SCOPE_ORDER["all"]
 
     def _semantic_sort_key(item):
         path = item["token"]
@@ -393,30 +416,33 @@ def build_clusters(audit_colors, tokens, mode_name):
         for p in parts:
             if p in COLOR_GROUP_ORDER:
                 group = p
-            # Check for variant names
             for v in VARIANT_ORDER:
                 if p == v or p.endswith("-" + v):
                     variant = v
-        # For tokens like "background/main", "background/secondary", "background/tertiary"
-        # treat as neutral
-        if group == "neutral" and any(p in ("main", "secondary", "tertiary") for p in parts):
-            group = "neutral"
-        # For accent/* tokens, extract group from suffix: accent/info → info
-        if parts[0] == "accent" and len(parts) > 1 and parts[1] in COLOR_GROUP_ORDER:
-            group = parts[1]
-        # For background/*-subtle tokens: background/info-subtle → info
+        # accent/* tokens: accent/info → group=info, variant=accent (solid fill)
+        if parts[0] == "accent" and len(parts) > 1:
+            if parts[1] in COLOR_GROUP_ORDER:
+                group = parts[1]
+            variant = "accent"
+        # background/*-subtle tokens: background/info-subtle → info
         for p in parts:
             for g in COLOR_GROUP_ORDER:
                 if g in p and g != "neutral":
                     group = g
                     break
-        # For container/* tokens, treat as neutral
+        # container/* → neutral
         if parts[0] == "container":
             group = "neutral"
+        # background/main, secondary, tertiary → neutral, no variant override
+        if parts[0] == "background" and len(parts) > 1 and parts[1] in ("main", "secondary", "tertiary"):
+            group = "neutral"
 
-        g_order = COLOR_GROUP_ORDER.get(group, 99)
-        v_order = VARIANT_ORDER.get(variant, 99)
-        return (g_order, v_order, path)
+        return (
+            _scope_key(item),
+            COLOR_GROUP_ORDER.get(group, 99),
+            VARIANT_ORDER.get(variant, 99),
+            path,
+        )
 
     result.sort(key=_semantic_sort_key)
     return result

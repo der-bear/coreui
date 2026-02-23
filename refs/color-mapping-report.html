@@ -27,7 +27,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif;
 .trow{display:flex;align-items:center;gap:12px;padding:6px 0;border-bottom:1px solid #f4f4f8}
 .trow:last-child{border-bottom:none}
 
-.token-side{display:flex;align-items:center;gap:8px;min-width:260px;flex-shrink:0}
+.token-side{display:flex;align-items:center;gap:8px;width:280px;flex-shrink:0}
 .token-sw{width:28px;height:28px;border-radius:6px;flex-shrink:0}
 .token-info{min-width:0}
 .token-name{font-family:'SF Mono','Fira Code','Menlo',monospace;font-size:12px;font-weight:600;color:#5856d6;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
@@ -55,7 +55,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif;
 .tip .de-exact{color:#34d399}.tip .de-close{color:#60a5fa}.tip .de-moderate{color:#fbbf24}.tip .de-far{color:#f87171}
 
 /* Responsive */
-@media(max-width:768px){.hdr,.summary,.main{padding-left:14px;padding-right:14px}.token-side{min-width:160px}}
+@media(max-width:768px){.hdr,.summary,.main{padding-left:14px;padding-right:14px}.token-side{width:180px}}
 .loading{text-align:center;padding:60px;color:#aaa}
 
 /* Separate section */
@@ -165,14 +165,22 @@ function rebuild(){
     if(!tokens.length) continue;
     h+=`<div class="ctx-section"><div class="ctx-title">${esc(label)}</div>`;
     for(const t of tokens){
-      // Flatten all colors from all sub-contexts, dedupe by hex, sort by dE
+      // Flatten all colors from all sub-contexts, dedupe by hex, sort by visual similarity
       const seen=new Map();
       for(const items of Object.values(t.by_context)){
         for(const it of items){
           if(!seen.has(it.hex)||it.de<seen.get(it.hex).de) seen.set(it.hex, it);
         }
       }
-      const colors=[...seen.values()].sort((a,b)=>a.de-b.de);
+      // Sort: achromatic (c<18) by lightness first, then chromatic by hue→lightness
+      const colors=[...seen.values()].sort((a,b)=>{
+        const aC=a.c||0,bC=b.c||0,aH=a.h||0,bH=b.h||0,aL=a.l||0,bL=b.l||0;
+        const aAchro=aC<18,bAchro=bC<18;
+        if(aAchro&&bAchro) return aL-bL;
+        if(aAchro) return -1;
+        if(bAchro) return 1;
+        return aH!==bH?aH-bH:aL-bL;
+      });
 
       h+=`<div class="trow">`;
       h+=`<div class="token-side">`;
